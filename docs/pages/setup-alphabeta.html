@@ -1,0 +1,2173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+    <head>
+
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="static/css/home-ui.css" rel="stylesheet" />
+
+
+        <title>AlphaBeta Setup</title>
+
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
+
+    </head>
+
+
+
+
+    <body class="bg-gradient-to-l from-stone-700 to-blue-700">
+
+
+        <!-- HEADER -->
+
+        <section>
+            
+
+            <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-8 z-10 relative">
+
+                <div class="grid px-5 py-5 md:grid-cols-3 gap-8">
+
+                    <div class="px-4 py-4 text-left z-10 relative">
+                        <a href="/index.html" class="inline-flex justify-between items-center py-1 px-1 mb-7 text-sm text-blue-700 bg-blue-100 rounded-full dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
+                                <span class="text-xs bg-blue-600 rounded-full text-center text-white px-4 py-1.5">Index Page</span>
+                        </a>
+                    </div>
+                    <div>
+                        <h1 class="text-center mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
+                            <span class="text-blue-600 dark:text-blue-500">
+                                AlphaBeta
+                            </span>Setup Page
+                        </h1>                    
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- GET STARTED HEADER -->
+
+
+
+                <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 z-10 relative">
+
+
+                    <div class="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12 mb-8">
+                
+                        <h1 class="text-center text-gray-900 dark:text-white text-3xl md:text-5xl font-extrabold mb-2">1. - Lets get Started</h1><br>
+                        <p class="text-left text-lg font-normal text-gray-500 dark:text-gray-50 mb-6">First we will need to download some software:</p>     
+                                    
+                        <ul class="text-left text-gray-900 dark:text-white">
+                            <li>
+
+                                1. First off you'll need a service provider such as Amazon, Digital Ocean or Linode, <br>
+                                Personally im partial to Linode.
+
+                            </li>
+                            <li>
+                                
+                                2. Once you've signed up and logged into 
+                                <a href="https://cloud.linode.com/linodes" class="text-blue-600 dark:text-blue-500 hover:underline font-medium text-lg inline-flex items-center">
+                                    Linode
+                                </a>
+                                 we can begin.
+
+                            </li>
+                            <li>
+                                3. Create your "Linode" and folow the instructions given.
+                            </li>
+                            <li>
+                                4. .
+                            </li>
+                            <li>
+                                5. .
+                            </li>
+                            <li>
+                                6. .
+                            </li>
+                            <li>
+                                7. sudo apt update && sudo apt upgrade -y.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <br><br>
+
+
+
+
+
+
+
+
+
+                    <!-- 1ST LIST ELEMENT -->
+
+                    <hr>
+                    
+                    <div class="bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12 mb-8">
+
+                        <h1 class="text-center text-3xl md:text-5xl font-extrabold mb-2">2. - Secure Ubuntu from a remote Shell</h1><br>
+
+                        <hr><br>
+                    
+                    
+                        <br>
+
+                        <div  class="element-container text-left">
+                            <p class="text-left py-2">First we need to open a terminal on our local machine in order to login to our server.</p>
+                        </div>
+
+
+
+
+
+                        <div class="element-container text-left">
+                            <p class="py-2">Login via ssh on your local machine to Ubuntu by using this command.</p>
+                            <button class="copy-button" data-popover-target="popover-click" data-popover-trigger="click" onclick="copyToClipboard('element101')">                       
+                                <div data-popover id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
+                                    <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
+                                        <p>Copied to clipboard</p>
+                                    </div>
+                                    <div data-popper-arrow></div>
+                                </div>  
+                            <a  class="inline-flex justify-between items-center py-2 px-2 pr-4 mb-7 text-sm 
+                            text-blue-700 bg-blue-100 rounded-md dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
+                                <p id="element101" class="element-text">
+                                <span class="text-sm font-medium">
+                                    ssh san@192.168.0.6
+                                </span>
+                                </p>
+                            </a>
+                            </button>
+                        </div>
+
+
+
+
+
+
+                        <div class="element-container text-left">
+                            <p class="py-2">Make sure everything is up to date and installed.</p>
+                            <button class="copy-button" data-popover-target="popover-click" data-popover-trigger="click" onclick="copyToClipboard('element102')">
+                                <div data-popover id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
+                                    <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
+                                        <p>Copied to clipboard</p>
+                                    </div>
+                                    <div data-popper-arrow></div>
+                                </div> 
+                            <a  class="inline-flex justify-between items-center py-2 px-2 pr-4 mb-7 text-sm 
+                            text-blue-700 bg-blue-100 rounded-md dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
+                                <p id="element102" class="element-text">
+                                <span class="text-sm font-medium">
+                                    sudo apt update && sudo apt upgrade -y
+                                </span>
+                                </p>
+                            </a>
+                            </button>
+                        </div>
+
+
+
+                        <div class="element-container text-left">
+                            <p class="py-2">Within your users home directory set up a new folder to contain our ssh keys and configs.
+                            </p>
+                            <button class="copy-button" data-popover-target="popover-click" data-popover-trigger="click" onclick="copyToClipboard('element103')">
+                                <div data-popover id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
+                                    <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
+                                        <p>Copied to clipboard</p>
+                                    </div>
+                                    <div data-popper-arrow></div>
+                                </div> 
+                            <a  class="inline-flex justify-between items-center py-2 px-2 pr-4 mb-7 text-sm 
+                            text-blue-700 bg-blue-100 rounded-md dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
+                                <p id="element103" class="element-text">
+                                <span class="text-sm font-medium">
+
+                                    mkdir ~/.ssh 
+
+
+                                </span>
+                                </p>
+                            </a>
+                            </button>
+                        </div>
+
+
+
+                        <div class="element-container text-left">
+                            <p class="py-2">Copy ssh key from local machine to servers .ssh directory.</p>
+                            <button class="copy-button" data-popover-target="popover-click" data-popover-trigger="click" onclick="copyToClipboard('element104')">
+                                <div data-popover id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
+                                    <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
+                                        <p>Copied to clipboard</p>
+                                    </div>
+                                    <div data-popper-arrow></div>
+                                </div> 
+                            <a  class="inline-flex justify-between items-center py-2 px-2 pr-4 mb-7 text-sm 
+                            text-blue-700 bg-blue-100 rounded-md dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
+                                <p id="element104" class="element-text">
+                                <span class="text-sm font-medium">
+                                    scp /home/san/.ssh/id_rsa.pub san@192.168.0.6:~/.ssh/authorized_keys
+                                </span>
+                                </p>
+                            </a>
+                            </button>
+                        </div>
+
+                        <div class="element-container text-left">
+                            <p class="py-2">Confirm file copied over</p>
+                            <button class="copy-button" data-popover-target="popover-click" data-popover-trigger="click" onclick="copyToClipboard('element105')">
+                                <div data-popover id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
+                                    <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
+                                        <p>Copied to clipboard</p>
+                                    </div>
+                                    <div data-popper-arrow></div>
+                                </div> 
+                            <a  class="inline-flex justify-between items-center py-2 px-2 pr-4 mb-7 text-sm 
+                            text-blue-700 bg-blue-100 rounded-md dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
+                                <p id="element105" class="element-text">
+                                <span class="text-sm font-medium">
+                                    cat ~/.ssh/authorized_keys/id_rsa.pub
+                                </span>
+                                </p>
+                            </a>
+                            </button>
+                        </div>
+
+
+
+                        <br><hr><br>
+
+
+                        <br>
+                        
+                        <h3 class="text-left text-2xl underline text-blue-700">CREATE ADDITIONAL USERS IF NEEDED</h3>
+                        
+                        <br>
+
+
+                        <div class="element-container text-left">
+                            <p class="py-2">Add a unique login for your phone.</p>
+                            <button class="copy-button" data-popover-target="popover-click" data-popover-trigger="click" onclick="copyToClipboard('element106')">
+                                <div data-popover id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
+                                    <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
+                                        <p>Copied to clipboard</p>
+                                    </div>
+                                    <div data-popper-arrow></div>
+                                </div> 
+                            <a  class="inline-flex justify-between items-center py-2 px-2 pr-4 mb-7 text-sm 
+                            text-blue-700 bg-blue-100 rounded-md dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
+                                <p id="element106" class="element-text">
+                                <span class="text-sm font-medium">
+                                    sudo adduser san-phone
+                                </span>
+                                </p>
+                            </a>
+                            </button>
+                        </div>
+
+
+
+                        <div class="element-container text-left">
+                            <p class="py-2">Add san-phone to sudo group.</p>
+                            <button class="copy-button" data-popover-target="popover-click" data-popover-trigger="click" onclick="copyToClipboard('element107')">
+                                <div data-popover id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
+                                    <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
+                                        <p>Copied to clipboard</p>
+                                    </div>
+                                    <div data-popper-arrow></div>
+                                </div> 
+                            <a  class="inline-flex justify-between items-center py-2 px-2 pr-4 mb-7 text-sm 
+                            text-blue-700 bg-blue-100 rounded-md dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
+                                <p id="element107" class="element-text">
+                                <span class="text-sm font-medium">
+                                    sudo usermod -aG sudo san-phone
+                                </span>
+                                </p>
+                            </a>
+                            </button>
+                        </div>
+                        
+
+
+                        <div class="element-container text-left">
+                            <p class="py-2">Add a unique login for your IPad.</p>
+                            <button class="copy-button" data-popover-target="popover-click" data-popover-trigger="click" onclick="copyToClipboard('element108')">
+                                <div data-popover id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
+                                    <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
+                                        <p>Copied to clipboard</p>
+                                    </div>
+                                    <div data-popper-arrow></div>
+                                </div> 
+                            <a  class="inline-flex justify-between items-center py-2 px-2 pr-4 mb-7 text-sm 
+                            text-blue-700 bg-blue-100 rounded-md dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
+                                <p id="element108" class="element-text">
+                                <span class="text-sm font-medium">
+                                    sudo adduser san-pad
+                                </span>
+                                </p>
+                            </a>
+                            </button>
+                        </div>
+
+
+                        <div class="element-container text-left">
+                            <p class="py-2">Add IPad to sudo group.</p>
+                            <button class="copy-button" data-popover-target="popover-click" data-popover-trigger="click" onclick="copyToClipboard('element109')">
+                                <div data-popover id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
+                                    <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
+                                        <p>Copied to clipboard</p>
+                                    </div>
+                                    <div data-popper-arrow></div>
+                                </div> 
+                            <a  class="inline-flex justify-between items-center py-2 px-2 pr-4 mb-7 text-sm 
+                            text-blue-700 bg-blue-100 rounded-md dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
+                                <p id="element109" class="element-text">
+                                <span class="text-sm font-medium">
+                                    sudo usermod -aG sudo san-pad
+                                </span>
+                                </p>
+                            </a>
+                            </button>
+                        </div>
+
+
+                        <br><hr><br>
+                        
+                        <h3 class="text-left text-2xl underline text-blue-700">CREATE A .SSH CONFIG FILE</h3>
+                        
+                        <br>
+
+                        <div class="element-container text-left">
+                            <p class="py-2">Make sure you are logged on to your local machine.</p>
+                            <p class="py-2">This command will create and write to a new config file within the .ssh folder.</p>
+                            
+                            <button class="text-left copy-button" data-popover-target="popover-click" data-popover-trigger="click" onclick="copyToClipboard('element110')">
+                                <div data-popover id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
+                                    <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
+                                        <p>Copied to clipboard</p>
+                                    </div>
+                                    <div data-popper-arrow></div>
+                                </div> 
+                            <a  class="inline-flex justify-between items-center py-2 px-2 pr-4 mb-7 text-sm 
+                            text-blue-700 bg-blue-100 rounded-md dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
+                                <p id="element110" class="element-text">
+                                <span class="text-sm font-medium">
+                                    sudo echo "<br>
+                                    Host n145<br>
+                                        User *****<br>
+                                        HostName **.**.**.***<br>
+                                        Port ****<br>
+                                        IdentityFile /Users/****/.ssh\id_rsa<br>
+                                    Host AlphaBeta.ie<br>
+                                        User *****<br>
+                                        HostName **.**.**.***<br>
+                                        Port ****<br>
+                                        IdentityFile /Users/****/.ssh/id_rsa<br>
+                                    " > .ssh/config<br>
+                                </span>
+                                </p>
+                            </a>
+                            </button>
+                        </div>
+
+
+                        <div class="element-container text-left">
+                            <p class="py-2">I like to use nano to edit files in terminal.</p>
+                            <p class="py-2">So using nano we can fill in the appropriate information for the items marked ***** .</p>
+                            <button class="copy-button" data-popover-target="popover-click" data-popover-trigger="click" onclick="copyToClipboard('element111')">
+                                <div data-popover id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
+                                    <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
+                                        <p>Copied to clipboard</p>
+                                    </div>
+                                    <div data-popper-arrow></div>
+                                </div>
+                            <a  class="inline-flex justify-between items-center py-2 px-2 pr-4 mb-7 text-sm 
+                            text-blue-700 bg-blue-100 rounded-md dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
+                                <p id="element111" class="element-text">
+                                <span class="text-sm font-medium">
+                                    sudo nano ~/.ssh/config
+                                </span>
+                                </p>
+                            </a>
+                            </button>
+                        </div>
+                        
+
+                        <br><hr><br>
+
+
+
+
+                        <h3 class="text-left text-2xl underline text-blue-700">CONFIGURE OUR SSHD_CONFIG FILE</h3>
+
+                        <br>
+                        
+                        <div class="element-container text-left">
+                            <p class="py-2">Use nano or whatever to edit sshd_config.</p>
+                            <button class="copy-button" data-popover-target="popover-click" data-popover-trigger="click" onclick="copyToClipboard('element112')">
+                                <div data-popover id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
+                                    <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
+                                        <p>Copied to clipboard</p>
+                                    </div>
+                                    <div data-popper-arrow></div>
+                                </div>
+                            <a  class="inline-flex justify-between items-center py-2 px-2 pr-4 mb-7 text-sm 
+                            text-blue-700 bg-blue-100 rounded-md dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
+                                <p id="element112" class="element-text">
+                                <span class="text-sm font-medium">
+                                    sudo nano /etc/ssh/sshd_config
+                                </span>
+                                </p>
+                            </a>
+                            </button>
+                        </div>
+
+
+                        <br>
+
+
+                        <div class="element-container text-left">
+
+                            <p class="py-2 text-xl underline">Edit or uncomment these elements within the /etc/ssh/sshd_config file.</p>
+
+                            <hr>              
+                            <p class="py-2">
+                                Port **** <br>
+                                PasswordAuthentication no <br>
+                                AddressFamily inet <br>
+                                PermitRootLogin prohibit-password <br>
+                            </p><hr>
+                        
+                        </div>
+
+
+                        <br>
+
+
+                        <div class="element-container text-left">
+                            <p class="py-2">After you have saved and exit you will need to restart sshd.</p>
+                            <button class="copy-button" data-popover-target="popover-click" data-popover-trigger="click" onclick="copyToClipboard('element113')">
+                                <div data-popover id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
+                                    <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
+                                        <p>Copied to clipboard</p>
+                                    </div>
+                                    <div data-popper-arrow></div>
+                                </div>
+                            <a  class="inline-flex justify-between items-center py-2 px-2 pr-4 mb-7 text-sm 
+                            text-blue-700 bg-blue-100 rounded-md dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
+                                <p id="element113" class="element-text">
+                                <span class="text-sm font-medium">
+                                    sudo systemctl restart sshd
+                                </span>
+                                </p>
+                            </a>
+                            </button>
+
+                        </div>
+
+
+
+
+                        <div class="element-container text-left">
+                            <p class="py-2">Now you should be able to login without a password.</p>
+                            <p class="py-2">*****WARNING*****<br> You should open a second terminal and attempt to login from <br>there before you logout from your existing session.<br>
+                            Just in case there are any mistakes you could lock yourself out of the server.</p><br>
+                            <button class="copy-button" data-popover-target="popover-click" data-popover-trigger="click" onclick="copyToClipboard('element114')">
+                                <div data-popover id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
+                                    <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
+                                        <p>Copied to clipboard</p>
+                                    </div>
+                                    <div data-popper-arrow></div>
+                                </div>
+                            <a  class="inline-flex justify-between items-center py-2 px-2 pr-4 mb-7 text-sm 
+                            text-blue-700 bg-blue-100 rounded-md dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
+                                <p id="element114" class="element-text">
+                                <span class="text-sm font-medium">
+                                    ssh san@192.168.0.6 -p 212
+                                </span>
+                                </p>
+                            </a>
+                            </button>
+                        </div>
+
+                        <div class="element-container text-left">
+                            <p class="py-2">And if your .ssh/config file was correctly configured then this should also work.</p>
+                            <button class="copy-button" data-popover-target="popover-click" data-popover-trigger="click" onclick="copyToClipboard('element115')">
+                                <div data-popover id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
+                                    <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
+                                        <p>Copied to clipboard</p>
+                                    </div>
+                                    <div data-popper-arrow></div>
+                                </div>
+                            <a  class="inline-flex justify-between items-center py-2 px-2 pr-4 mb-7 text-sm 
+                            text-blue-700 bg-blue-100 rounded-md dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
+                                <p id="element115" class="element-text">
+                                <span class="text-sm font-medium">
+                                    ssh n145
+                                </span>
+                                </p>
+                            </a>
+                            </button>
+                        </div>
+                    
+
+
+                        <br><hr><br>
+
+                        <h3 class="text-left text-2xl underline text-blue-700">Set up Firewall</h3>
+
+                        <br>
+                        
+                        <div class="element-container text-left">
+                            <p class="py-2">Use nano or whatever to edit sshd_config.</p>
+                            <button class="copy-button" data-popover-target="popover-click" data-popover-trigger="click" onclick="copyToClipboard('element112')">
+                                <div data-popover id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
+                                    <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
+                                        <p>Copied to clipboard</p>
+                                    </div>
+                                    <div data-popper-arrow></div>
+                                </div>
+                            <a  class="inline-flex justify-between items-center py-2 px-2 pr-4 mb-7 text-sm 
+                            text-blue-700 bg-blue-100 rounded-md dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
+                                <p id="element112" class="element-text">
+                                <span class="text-sm font-medium">
+                                    sudo nano /etc/ssh/sshd_config
+                                </span>
+                                </p>
+                            </a>
+                            </button>
+                        </div>
+
+
+                        <br>
+
+
+                        <div class="element-container text-left">
+
+                            <p class="py-2 text-xl underline">Edit or uncomment these elements within the /etc/ssh/sshd_config file.</p>
+
+                            <hr>              
+                            <p class="py-2">
+                                Port **** <br>
+                                PasswordAuthentication no <br>
+                                AddressFamily inet <br>
+                                PermitRootLogin prohibit-password <br>
+                            </p><hr>
+                        
+                        </div>
+
+
+                        <br>
+
+
+                        <div class="element-container text-left">
+                            <p class="py-2">After you have saved and exit you will need to restart sshd.</p>
+                            <button class="copy-button" data-popover-target="popover-click" data-popover-trigger="click" onclick="copyToClipboard('element113')">
+                                <div data-popover id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
+                                    <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
+                                        <p>Copied to clipboard</p>
+                                    </div>
+                                    <div data-popper-arrow></div>
+                                </div>
+                            <a  class="inline-flex justify-between items-center py-2 px-2 pr-4 mb-7 text-sm 
+                            text-blue-700 bg-blue-100 rounded-md dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
+                                <p id="element113" class="element-text">
+                                <span class="text-sm font-medium">
+                                    sudo systemctl restart sshd
+                                </span>
+                                </p>
+                            </a>
+                            </button>
+
+                        </div>
+
+
+
+
+                        <div class="element-container text-left">
+                            <p class="py-2">Now you should be able to login without a password.</p>
+                            <p class="py-2">*****WARNING*****<br> You should open a second terminal and attempt to login from <br>there before you logout from your existing session.<br>
+                            Just in case there are any mistakes you could lock yourself out of the server.</p><br>
+                            <button class="copy-button" data-popover-target="popover-click" data-popover-trigger="click" onclick="copyToClipboard('element114')">
+                                <div data-popover id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
+                                    <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
+                                        <p>Copied to clipboard</p>
+                                    </div>
+                                    <div data-popper-arrow></div>
+                                </div>
+                            <a  class="inline-flex justify-between items-center py-2 px-2 pr-4 mb-7 text-sm 
+                            text-blue-700 bg-blue-100 rounded-md dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
+                                <p id="element114" class="element-text">
+                                <span class="text-sm font-medium">
+                                    ssh san@192.168.0.6 -p 212
+                                </span>
+                                </p>
+                            </a>
+                            </button>
+                        </div>
+
+                        <div class="element-container text-left">
+                            <p class="py-2">And if your .ssh/config file was correctly configured then this should also work.</p>
+                            <button class="copy-button" data-popover-target="popover-click" data-popover-trigger="click" onclick="copyToClipboard('element115')">
+                                <div data-popover id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
+                                    <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
+                                        <p>Copied to clipboard</p>
+                                    </div>
+                                    <div data-popper-arrow></div>
+                                </div>
+                            <a  class="inline-flex justify-between items-center py-2 px-2 pr-4 mb-7 text-sm 
+                            text-blue-700 bg-blue-100 rounded-md dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
+                                <p id="element115" class="element-text">
+                                <span class="text-sm font-medium">
+                                    ssh n145
+                                </span>
+                                </p>
+                            </a>
+                            </button>
+                        </div>
+
+
+
+                    </div>
+
+
+
+
+
+
+
+
+
+                    <!-- 2ND LIST ELEMENT -->
+
+                    <hr>
+                    
+                    <div class="bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12 mb-8">
+
+                        <h1 class="text-center text-3xl md:text-5xl font-extrabold mb-2">3. - Install some programs</h1><br>
+
+                        <hr><br>
+                    
+                        <h3 class="text-left text-2xl underline text-blue-700">INSTALL NALA, EXA, BTOP, YTDL</h3>
+                    
+                        <br>
+
+                        <div  class="element-container text-left">
+                            <p class="py-2">Lets do the easy ones first.</p>
+                        </div>
+
+                        <div class="element-container text-left">
+                            <p class="py-2">Exa and Nala can easily be installed with apt.</p>
+                            <button class="copy-button" data-popover-target="popover-click" data-popover-trigger="click" onclick="copyToClipboard('element201')">
+                                <div data-popover id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
+                                    <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
+                                        <p>Copied to clipboard</p>
+                                    </div>
+                                    <div data-popper-arrow></div>
+                                </div>
+                            <a  class="inline-flex justify-between items-center py-2 px-2 pr-4 mb-7 text-sm 
+                            text-blue-700 bg-blue-100 rounded-md dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
+                                <p id="element201" class="element-text">
+                                <span class="text-sm font-medium">
+                                    sudo apt install exa
+                                </span>
+                                </p>
+                            </a>
+                            </button>
+                        </div>
+
+
+
+                        <div class="element-container text-left">
+                            <button class="copy-button"data-popover-target="popover-click" data-popover-trigger="click" onclick="copyToClipboard('element202')">
+                                <div data-popover id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
+                                    <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
+                                        <p>Copied to clipboard</p>
+                                    </div>
+                                    <div data-popper-arrow></div>
+                                </div>
+                            <a  class="inline-flex justify-between items-center py-2 px-2 pr-4 mb-7 text-sm 
+                            text-blue-700 bg-blue-100 rounded-md dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
+                                <p id="element202" class="element-text">
+                                <span class="text-sm font-medium">
+                                    sudo apt install nala
+                                </span>
+                                </p>
+                            </a>
+                            </button>
+                        </div>
+
+
+
+                        <div class="element-container text-left">
+                            <button class="copy-button"data-popover-target="popover-click" data-popover-trigger="click" onclick="copyToClipboard('element213')">
+                                <div data-popover id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
+                                    <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
+                                        <p>Copied to clipboard</p>
+                                    </div>
+                                    <div data-popper-arrow></div>
+                                </div>
+                            <a  class="inline-flex justify-between items-center py-2 px-2 pr-4 mb-7 text-sm 
+                            text-blue-700 bg-blue-100 rounded-md dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
+                                <p id="element213" class="element-text">
+                                <span class="text-sm font-medium">
+                                    sudo usermod -aG nala ${USER}
+                                </span>
+                                </p>
+                            </a>
+                            </button>
+                        </div>
+
+                                    
+
+                        <div class="element-container text-left">
+                            <p class="py-2">Next up is Btop.</p>
+                            <p class="py-2">For this we will use snap package manager.</p>
+                            <button class="copy-button" data-popover-target="popover-click" data-popover-trigger="click" onclick="copyToClipboard('element203')">
+                                <div data-popover id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
+                                    <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
+                                        <p>Copied to clipboard</p>
+                                    </div>
+                                    <div data-popper-arrow></div>
+                                </div>
+                            <a  class="inline-flex justify-between items-center py-2 px-2 pr-4 mb-7 text-sm 
+                            text-blue-700 bg-blue-100 rounded-md dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
+                                <p id="element203" class="element-text">
+                                <span class="text-sm font-medium">
+                                    sudo snap install btop
+                                </span>
+                                </p>
+                            </a>
+                            </button>
+                        </div>
+
+
+
+                        <div class="element-container text-left">
+                            <p class="py-2">YTDL is a Youtube Video downloader.</p>
+                            <p class="py-2">Basically a third party plugin for Jellyfin.</p>
+                            <button class="copy-button" data-popover-target="popover-click" data-popover-trigger="click" onclick="copyToClipboard('element204')">
+                                <div data-popover id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
+                                    <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
+                                        <p>Copied to clipboard</p>
+                                    </div>
+                                    <div data-popper-arrow></div>
+                                </div>
+                            <a  class="inline-flex justify-between items-center py-2 px-2 pr-4 mb-7 text-sm 
+                            text-blue-700 bg-blue-100 rounded-md dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
+                                <p id="element204" class="element-text">
+                                <span class="text-sm font-medium">
+                                    python3 -m pip install -U ytdl-sub
+                                </span>
+                                </p>
+                            </a>
+                            </button>
+                        </div>
+
+                        <br><hr><br>
+
+                        <h3 class="text-left text-2xl underline text-blue-700">DOCKER</h3>
+
+                        <br>
+
+                        <div class="element-container text-left">
+                            <p class="py-2">Next up is Docker.</p>
+                            <p class="py-2">First we need to make sure no previous versions of docker exist.</p>
+                            <button class="copy-button" data-popover-target="popover-click" data-popover-trigger="click" onclick="copyToClipboard('element205')">
+                                <div data-popover id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
+                                    <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
+                                        <p>Copied to clipboard</p>
+                                    </div>
+                                    <div data-popper-arrow></div>
+                                </div>
+                            <a  class="inline-flex justify-between items-center py-2 px-2 pr-4 mb-7 text-sm 
+                            text-blue-700 bg-blue-100 rounded-md dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
+                                <p id="element205" class="element-text">
+                                <span class="text-sm font-medium">
+                                    sudo apt-get remove docker docker-engine docker.io containerd runc
+                                </span>
+                                </p>
+                            </a>
+                            </button>
+                        </div>
+
+
+
+                        <div class="element-container text-left">
+                            <p class="py-2">Now install Docker.</p>
+                            <button class="copy-button" data-popover-target="popover-click" data-popover-trigger="click" onclick="copyToClipboard('element206')">
+                                <div data-popover id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
+                                    <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
+                                        <p>Copied to clipboard</p>
+                                    </div>
+                                    <div data-popper-arrow></div>
+                                </div>
+                            <a  class="inline-flex justify-between items-center py-2 px-2 pr-4 mb-7 text-sm 
+                            text-blue-700 bg-blue-100 rounded-md dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
+                                <p id="element206" class="element-text">
+                                <span class="text-sm font-medium">
+                                    sudo apt install docker.io
+                                </span>
+                                </p>
+                            </a>
+                            </button>
+                        </div>
+
+                        <div class="element-container text-left">
+                            <p class="py-2">Add Docker to SuperUser Group (no sudo).</p>
+                            <button class="copy-button" data-popover-target="popover-click" data-popover-trigger="click" onclick="copyToClipboard('element207')">
+                                <div data-popover id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
+                                    <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
+                                        <p>Copied to clipboard</p>
+                                    </div>
+                                    <div data-popper-arrow></div>
+                                </div>
+                            <a  class="inline-flex justify-between items-center py-2 px-2 pr-4 mb-7 text-sm 
+                            text-blue-700 bg-blue-100 rounded-md dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
+                                <p id="element207" class="element-text">
+                                <span class="text-sm font-medium">
+                                    sudo usermod -aG docker ${USER}
+                                </span>
+                                </p>
+                            </a>
+                            </button>
+                        </div>
+
+
+                        <br><hr><br>
+
+
+                        <br>
+                        
+                        <h3 class="text-left text-2xl underline text-blue-700">JELLYFIN</h3>
+                        
+                        <br>
+                        
+
+                        <div class="element-container text-left">
+                            <p class="py-2">First we need a few peripherals.</p>
+                            <button class="copy-button" data-popover-target="popover-click" data-popover-trigger="click" onclick="copyToClipboard('element208')">
+                                <div data-popover id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
+                                    <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
+                                        <p>Copied to clipboard</p>
+                                    </div>
+                                    <div data-popper-arrow></div>
+                                </div>
+                            <a  class="inline-flex justify-between items-center py-2 px-2 pr-4 mb-7 text-sm 
+                            text-blue-700 bg-blue-100 rounded-md dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
+                                <p id="element208" class="element-text">
+                                <span class="text-sm font-medium">
+                                    sudo apt install apt-transport-https
+                                </span>
+                                </p>
+                            </a>
+                            </button>
+                        </div>
+
+
+
+                        <div class="element-container text-left">
+                            <p class="py-2">Get gpg key.</p>
+                            <button class="copy-button" data-popover-target="popover-click" data-popover-trigger="click" onclick="copyToClipboard('element209')">
+                                <div data-popover id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
+                                    <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
+                                        <p>Copied to clipboard</p>
+                                    </div>
+                                    <div data-popper-arrow></div>
+                                </div>
+                            <a  class="inline-flex justify-between items-center py-2 px-2 pr-4 mb-7 text-sm 
+                            text-blue-700 bg-blue-100 rounded-md dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
+                                <p id="element209" class="element-text">
+                                <span class="text-sm font-medium">
+                                    wget -O - https://repo.jellyfin.org/ubuntu/jellyfin_team.gpg.key | sudo apt-key add -
+                                </span>
+                                </p>
+                            </a>
+                            </button>
+                        </div>
+                        
+
+
+                        <div class="element-container text-left">
+                            <p class="py-2">Update our list of available packages.</p>
+                            <button class="text-left copy-button" data-popover-target="popover-click" data-popover-trigger="click" onclick="copyToClipboard('element210')">
+                                <div data-popover id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
+                                    <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
+                                        <p>Copied to clipboard</p>
+                                    </div>
+                                    <div data-popper-arrow></div>
+                                </div>
+                            <a  class="inline-flex justify-between items-center py-2 px-2 pr-4 mb-7 text-sm 
+                            text-blue-700 bg-blue-100 rounded-md dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
+                                <p id="element210" class="element-text">
+                                <span class="text-sm font-medium">
+                                    echo "deb [arch=$( dpkg --print-architecture )] https://repo.jellyfin.org/ubuntu $( lsb_release -c -s ) main" | sudo tee /etc/apt/sources.list.d/jellyfin.list
+                                </span>
+                                </p>
+                            </a>
+                            </button>
+                        </div>
+
+
+                        <div class="element-container text-left">
+                            <p class="py-2">Update the package list.</p>
+                            <button class="copy-button" data-popover-target="popover-click" data-popover-trigger="click" onclick="copyToClipboard('element211')">
+                                <div data-popover id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
+                                    <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
+                                        <p>Copied to clipboard</p>
+                                    </div>
+                                    <div data-popper-arrow></div>
+                                </div>
+                            <a  class="inline-flex justify-between items-center py-2 px-2 pr-4 mb-7 text-sm 
+                            text-blue-700 bg-blue-100 rounded-md dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
+                                <p id="element211" class="element-text">
+                                <span class="text-sm font-medium">
+                                    sudo apt update
+                                </span>
+                                </p>
+                            </a>
+                            </button>
+                        </div>
+
+                        <div class="element-container text-left">
+                            <p class="py-2">Finally we can install Jellyfin.</p>
+                            <button class="copy-button" data-popover-target="popover-click" data-popover-trigger="click" onclick="copyToClipboard('element212')">
+                                <div data-popover id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
+                                    <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
+                                        <p>Copied to clipboard</p>
+                                    </div>
+                                    <div data-popper-arrow></div>
+                                </div>
+                            <a  class="inline-flex justify-between items-center py-2 px-2 pr-4 mb-7 text-sm 
+                            text-blue-700 bg-blue-100 rounded-md dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
+                                <p id="element212" class="element-text">
+                                <span class="text-sm font-medium">
+                                    sudo apt install jellyfin -y
+                                </span>
+                                </p>
+                            </a>
+                            </button>
+                        </div>
+
+
+                        <div class="element-container text-left">
+                            <ol class=" text-left">
+                                <a href="http://n145:8096" class="text-blue-600 dark:text-blue-500 hover:underline font-medium text-lg inline-flex items-center">
+                                    http://N145:8096
+                                    <svg aria-hidden="true" class="w-4 h-4 ml-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                    </svg>
+                                </a>
+                            </ol>
+                        </div>
+
+
+                    </div>
+
+
+
+
+
+
+
+
+
+
+                    <!-- 3RD LIST ELEMENT -->
+
+
+                    <hr>
+                    
+                    <div class="bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12 mb-8">
+
+                        <h1 class="text-center text-3xl md:text-5xl font-extrabold mb-2">4. - Create Containerized apps with Docker</h1><br>
+
+                        <hr><br>
+                    
+                        <h3 class="text-left text-2xl underline text-blue-700">PROVISION CONTAINERS</h3>
+                    
+                        <br><hr><br>
+                        <h3 class="text-left text-2xl underline text-blue-700">PORTAINER</h3>
+                        <br>
+
+                        <div class="element-container text-left">
+                            <p class="py-2">Portainer is a container management app.</p>
+                            <button class="text-left copy-button" data-popover-target="popover-click" data-popover-trigger="click" onclick="copyToClipboard('element301')">
+                                <div data-popover id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
+                                    <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
+                                        <p>Copied to clipboard</p>
+                                    </div>
+                                    <div data-popper-arrow></div>
+                                </div>
+                            <a  class="inline-flex justify-between items-center py-2 px-2 pr-4 mb-7 text-sm 
+                            text-blue-700 bg-blue-100 rounded-md dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
+                                <p id="element301" class="element-text">
+                                <span class="text-sm font-medium">
+                                    docker run -d \ <br>
+                                        --name=portainer \ <br>
+                                        -p 8000:8000 \ <br>
+                                        -p 9000:9000 \ <br>
+                                        -v /var/run/docker.sock:/var/run/docker.sock \ <br>
+                                        -v portainer_data:/data \ <br>
+                                        --restart=always \ <br>
+                                        portainer/portainer-ce  <br>
+                                </span>
+                                </p>
+                            </a>
+                            </button>
+                        </div>
+
+
+                        <div class="element-container text-left">
+                            <p class="py-2">Check to see if docker ha a container called Portainer is running on port 9000.</p>
+
+                            <button class="copy-button"data-popover-target="popover-click" data-popover-trigger="click" onclick="copyToClipboard('element302')">
+                                <div data-popover id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
+                                    <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
+                                        <p>Copied to clipboard</p>
+                                    </div>
+                                    <div data-popper-arrow></div>
+                                </div>
+                            <a  class="inline-flex justify-between items-center py-2 px-2 pr-4 mb-7 text-sm 
+                            text-blue-700 bg-blue-100 rounded-md dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
+                                <p id="element302" class="element-text">
+                                <span class="text-sm font-medium">
+                                    docker ps
+                                </span>
+                                </p>
+                            </a>
+                            </button>
+                        </div>
+
+
+
+                        <div class="element-container text-left">
+                            <ol class=" text-left">
+                                Check the site.... - 
+                                <a href="http://n145:9000" class="text-blue-600 dark:text-blue-500 hover:underline font-medium text-lg inline-flex items-center">
+                                    N145:9000
+
+                                </a>
+                            </ol>
+
+                            <br>
+
+                            <ol class=" text-left">
+                                Check the Docs...... - 
+                                <a href="https://www.portainer.io/" class="text-blue-600 dark:text-blue-500 hover:underline font-medium text-lg inline-flex items-center">
+                                    https://www.portainer.io/
+                                </a>
+                            </ol>
+                        </div>
+
+
+
+                        <br><hr><br>
+
+                        <h3 class="text-left text-2xl underline text-blue-700">RADARR</h3>
+
+
+                        <div class="element-container text-left">
+                            <p class="py-2">Radarr is a Movie indexer.</p>
+                            <button class="text-left copy-button" data-popover-target="popover-click" data-popover-trigger="click" onclick="copyToClipboard('element303')">
+                                <div data-popover id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
+                                    <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
+                                        <p>Copied to clipboard</p>
+                                    </div>
+                                    <div data-popper-arrow></div>
+                                </div>
+                            <a  class="inline-flex justify-between items-center py-2 px-2 pr-4 mb-7 text-sm 
+                            text-blue-700 bg-blue-100 rounded-md dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
+                                <p id="element303" class="element-text">
+                                <span class="text-sm font-medium">
+                                    docker run -d \ <br>
+                                        --name=radarr \ <br>
+                                        -e PUID=1000 \ <br>
+                                        -e PGID=1000 \ <br>
+                                        -e TZ=Europe/London \ <br>
+                                        -p 7878:7878 \ <br>
+                                        -v /media/ssd/Movies:/media/ssd/Movies \ <br>
+                                        -v /media/new_media/movies:/media/new_media/movies \ <br>
+                                        -v /media/transmission/complete:/watch \ <br>
+                                        --restart unless-stopped \ <br>
+                                        linuxserver/radarr
+                                </span>
+                                </p>
+                            </a>
+                            </button>
+                        </div>
+
+
+
+                        <div class="element-container text-left">
+                            <p class="py-2">Check to see if docker ha a container called Portainer is running on port 9000.</p>
+                            <button class="copy-button" data-popover-target="popover-click" data-popover-trigger="click" onclick="copyToClipboard('element304')">
+                                <div data-popover id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
+                                    <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
+                                        <p>Copied to clipboard</p>
+                                    </div>
+                                    <div data-popper-arrow></div>
+                                </div>
+                            <a  class="inline-flex justify-between items-center py-2 px-2 pr-4 mb-7 text-sm 
+                            text-blue-700 bg-blue-100 rounded-md dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
+                                <p id="element304" class="element-text">
+                                <span class="text-sm font-medium">
+                                    docker ps
+                                </span>
+                                </p>
+                            </a>
+                            </button>
+                        </div>
+
+
+
+                        <div class="element-container text-left">
+                            <ol class=" text-left">
+                                Check the site.... - 
+                                <a href="http://n145:9000" class="text-blue-600 dark:text-blue-500 hover:underline font-medium text-lg inline-flex items-center">
+                                    N145:9000
+
+                                </a>
+                            </ol>
+
+                            <br>
+
+                            <ol class=" text-left">
+                                Check the Docs...... - 
+                                <a href="https://www.portainer.io/" class="text-blue-600 dark:text-blue-500 hover:underline font-medium text-lg inline-flex items-center">
+                                    https://www.portainer.io/
+                                </a>
+                            </ol>
+                        </div>
+
+                        <br><hr><br>
+                        
+                        <h3 class="text-left text-2xl underline text-blue-700">SONARR</h3>
+
+                        <br>
+
+                        <div class="element-container text-left">
+                            <p class="py-2">Sonarr is a TV Show indexer.</p>
+                            <button class="text-left copy-button" data-popover-target="popover-click" data-popover-trigger="click" onclick="copyToClipboard('element305')">
+                                <div data-popover id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
+                                    <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
+                                        <p>Copied to clipboard</p>
+                                    </div>
+                                    <div data-popper-arrow></div>
+                                </div>
+                            <a  class="inline-flex justify-between items-center py-2 px-2 pr-4 mb-7 text-sm 
+                            text-blue-700 bg-blue-100 rounded-md dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
+                                <p id="element305" class="element-text">
+                                <span class="text-sm font-medium">
+                                    docker run -d\ <br>
+                                        --name=sonarr \ <br>
+                                        -e PUID=1000 \ <br>
+                                        -e PGID=1000 \ <br>
+                                        -e TZ=Europe/London \ <br>
+                                        -p 8989:8989 \ <br>
+                                        -v /media/ssd/TV-Shows:/media/ssd/TV-Shows \ <br>
+                                        -v /media/new_media/tvshows:/media/new_media/tvshows \ <br>
+                                        -v /media/transmission/complete:/watch  \ <br>
+                                        --restart unless-stopped \ <br>
+                                        linuxserver/sonarr
+                                </span>
+                                </p>
+                            </a>
+                            </button>
+                        </div>
+
+
+
+                        <div class="element-container text-left">
+                            <p class="py-2">Check to see if docker ha a container called Portainer is running on port 9000.</p>
+                            <button class="copy-button" data-popover-target="popover-click" data-popover-trigger="click" onclick="copyToClipboard('element306')">
+                                <div data-popover id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
+                                    <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
+                                        <p>Copied to clipboard</p>
+                                    </div>
+                                    <div data-popper-arrow></div>
+                                </div>
+                            <a  class="inline-flex justify-between items-center py-2 px-2 pr-4 mb-7 text-sm 
+                            text-blue-700 bg-blue-100 rounded-md dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
+                                <p id="element306" class="element-text">
+                                <span class="text-sm font-medium">
+                                    docker ps
+                                </span>
+                                </p>
+                            </a>
+                            </button>
+                        </div>
+
+
+                        <div class="element-container text-left">
+                            <ol class=" text-left">
+                                Check the site.... - 
+                                <a href="http://n145:9000" class="text-blue-600 dark:text-blue-500 hover:underline font-medium text-lg inline-flex items-center">
+                                    N145:9000
+
+                                </a>
+                            </ol>
+
+                            <br>
+
+                            <ol class=" text-left">
+                                Check the Docs...... - 
+                                <a href="https://www.portainer.io/" class="text-blue-600 dark:text-blue-500 hover:underline font-medium text-lg inline-flex items-center">
+                                    https://www.portainer.io/
+                                </a>
+                            </ol>
+                        </div>
+
+
+                        <br><hr><br>
+
+                        <h3 class="text-left text-2xl underline text-blue-700">TRANSMISSION</h3>
+
+                        <br>
+
+                        <div class="element-container text-left">
+                            <p class="py-2">Transmission is a download manager.</p>
+                            <button class="text-left copy-button" data-popover-target="popover-click" data-popover-trigger="click" onclick="copyToClipboard('element307')">
+                                <div data-popover id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
+                                    <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
+                                        <p>Copied to clipboard</p>
+                                    </div>
+                                    <div data-popper-arrow></div>
+                                </div>
+                            <a  class="inline-flex justify-between items-center py-2 px-2 pr-4 mb-7 text-sm 
+                            text-blue-700 bg-blue-100 rounded-md dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
+                                <p id="element307" class="element-text">
+                                <span class="text-sm font-medium">
+                                    docker run --cap-add=NET_ADMIN -d \ <br>
+                                        --name=transmission\ <br>
+                                        -e PUID=1000 \ <br>
+                                        -e PGID=1000 \ <br>
+                                        -p 9091:9091 \ <br>
+                                        -p 51413:51413 \ <br>
+                                        -p 51413:51413/udp \ <br>
+                                        -v /media/new_media/tvshows:/complete/tvshows \ <br>
+                                        -v /media/new_media/movies:/complete/movies \ <br>
+                                        -v /media/transmission/data:/config \ <br>
+                                        -v /media/transmission/complete:/watch \ <br>
+                                        -e TRANSMISSION_DOWNLOAD_DIR=/complete \ <br>
+                                        -e TRANSMISSION_INCOMPLETE_DIR=/complete/incomplete \ <br>
+                                        -e TZ=Europe/London \ <br>
+                                        -e LOCAL_NETWORK=192.168.0.150 \ <br>
+                                        --log-driver json-file \ <br>
+                                        --log-opt max-size=10m \ <br>
+                                        --restart=always \ <br>
+                                        linuxserver/transmission
+                                </span>
+                                </p>
+                            </a>
+                            </button>
+                        </div>
+
+
+                        
+                        <br>
+                        
+
+                        <div class="element-container text-left">
+                            <p class="py-2">Check to see if docker ha a container called Portainer is running on port 9000.</p>
+                            <button class="copy-button" data-popover-target="popover-click" data-popover-trigger="click" onclick="copyToClipboard('element308')">
+                                <div data-popover id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
+                                    <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
+                                        <p>Copied to clipboard</p>
+                                    </div>
+                                    <div data-popper-arrow></div>
+                                </div>
+                            <a  class="inline-flex justify-between items-center py-2 px-2 pr-4 mb-7 text-sm 
+                            text-blue-700 bg-blue-100 rounded-md dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
+                                <p id="element308" class="element-text">
+                                <span class="text-sm font-medium">
+                                    docker ps
+                                </span>
+                                </p>
+                            </a>
+                            </button>
+                        </div>
+
+
+
+                        <div class="element-container text-left">
+                            <ol class=" text-left">
+                                Check the site.... - 
+                                <a href="http://n145:9000" class="text-blue-600 dark:text-blue-500 hover:underline font-medium text-lg inline-flex items-center">
+                                    N145:9000
+
+                                </a>
+                            </ol>
+
+                            <br>
+
+                            <ol class=" text-left">
+                                Check the Docs...... - 
+                                <a href="https://www.portainer.io/" class="text-blue-600 dark:text-blue-500 hover:underline font-medium text-lg inline-flex items-center">
+                                    https://www.portainer.io/
+                                </a>
+                            </ol>
+                        </div>
+
+
+
+                        <br><hr><br>
+
+                        <h3 class="text-left text-2xl underline text-blue-700">JACKET</h3>
+
+                        <br>
+
+                        <div class="element-container text-left">
+                            <p class="py-2">Jacket is an indexer for DL sources.</p>
+                            <button class="text-left copy-button" data-popover-target="popover-click" data-popover-trigger="click" onclick="copyToClipboard('element309')">
+                                <div data-popover id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
+                                    <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
+                                        <p>Copied to clipboard</p>
+                                    </div>
+                                    <div data-popper-arrow></div>
+                                </div>
+                            <a  class="inline-flex justify-between items-center py-2 px-2 pr-4 mb-7 text-sm 
+                            text-blue-700 bg-blue-100 rounded-md dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
+                                <p id="element309" class="element-text">
+                                <span class="text-sm font-medium">
+                                    sudo docker create --name=jackett \ <br>
+                                    --restart=always \ <br>
+                                    -v /media/downloads/data:/config \ <br>
+                                    -v /media/downloads:/downloads \ <br>
+                                    -e PGID=1001 -e PUID=1001 \ <br>
+                                    -e TZ=Europe/London \ <br>
+                                    -p 9117:9117 \ <br>
+                                    linuxserver/jackett
+                                </span>
+                                </p>
+                            </a>
+                            </button>
+                        </div>
+                        
+
+
+                        <div class="element-container text-left">
+                            <p class="py-2">Check to see if docker ha a container called Portainer is running on port 9000.</p>
+                            <button class="copy-button" data-popover-target="popover-click" data-popover-trigger="click" onclick="copyToClipboard('element310')">
+                                <div data-popover id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
+                                    <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
+                                        <p>Copied to clipboard</p>
+                                    </div>
+                                    <div data-popper-arrow></div>
+                                </div>
+                            <a  class="inline-flex justify-between items-center py-2 px-2 pr-4 mb-7 text-sm 
+                            text-blue-700 bg-blue-100 rounded-md dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
+                                <p id="element310" class="element-text">
+                                <span class="text-sm font-medium">
+                                    docker ps
+                                </span>
+                                </p>
+                            </a>
+                            </button>
+                        </div>
+
+
+
+                        <div class="element-container text-left">
+                            <ol class=" text-left">
+                                Check the site.... - 
+                                <a href="http://n145:9000" class="text-blue-600 dark:text-blue-500 hover:underline font-medium text-lg inline-flex items-center">
+                                    N145:9000
+
+                                </a>
+                            </ol>
+
+                            <br>
+
+                            <ol class=" text-left">
+                                Check the Docs...... - 
+                                <a href="https://www.portainer.io/" class="text-blue-600 dark:text-blue-500 hover:underline font-medium text-lg inline-flex items-center">
+                                    https://www.portainer.io/
+                                </a>
+                            </ol>
+                        </div>
+
+
+
+
+                        <br><hr><br>
+
+                        <h3 class="text-left text-2xl underline text-blue-700">WELCOME PAGE</h3>
+
+                        <br>
+
+                        <div class="element-container text-left">
+                            <p class="py-2">Welcome page is a landing page for N145.</p>
+                            <button class="text-left copy-button" data-popover-target="popover-click" data-popover-trigger="click" onclick="copyToClipboard('element311')">
+                                <div data-popover id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
+                                    <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
+                                        <p>Copied to clipboard</p>
+                                    </div>
+                                    <div data-popper-arrow></div>
+                                </div>
+                            <a  class="inline-flex justify-between items-center py-2 px-2 pr-4 mb-7 text-sm 
+                            text-blue-700 bg-blue-100 rounded-md dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
+                                <p id="element311" class="element-text">
+                                    <span class="text-sm font-medium">
+                                        docker run -d \ <br>
+                                            --name N145 \ <br>
+                                            -p 80:80 \ <br>
+                                            -v /var/www/html:/usr/share/nginx/html \ <br>
+                                            --restart unless-stopped nginx
+                                    </span>
+                                </p>
+                            </a>
+                            </button>
+                        </div>
+
+                        <div class="element-container text-left">
+                            <p class="py-2">Check to see if docker ha a container called Portainer is running on port 80.</p>
+                            <button class="copy-button" data-popover-target="popover-click" data-popover-trigger="click" onclick="copyToClipboard('element312')">
+                                <div data-popover id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
+                                    <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
+                                        <p>Copied to clipboard</p>
+                                    </div>
+                                    <div data-popper-arrow></div>
+                                </div>
+                            <a  class="inline-flex justify-between items-center py-2 px-2 pr-4 mb-7 text-sm 
+                            text-blue-700 bg-blue-100 rounded-md dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
+                                <p id="element312" class="element-text">
+                                <span class="text-sm font-medium">
+                                    docker ps
+                                </span>
+                                </p>
+                            </a>
+                            </button>
+                        </div>
+
+                        <div class="element-container text-left">
+                            <ol class=" text-left">
+                                Check the site.... - 
+                                <a href="http://n145:9000" class="text-blue-600 dark:text-blue-500 hover:underline font-medium text-lg inline-flex items-center">
+                                    N145:9000
+
+                                </a>
+                            </ol>
+
+                            <br>
+
+                            <ol class=" text-left">
+                                Check the Docs...... - 
+                                <a href="https://www.portainer.io/" class="text-blue-600 dark:text-blue-500 hover:underline font-medium text-lg inline-flex items-center">
+                                    https://www.portainer.io/
+                                </a>
+                            </ol>
+                        </div>
+
+
+
+
+
+
+
+
+
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+                    <!-- 4TH LIST ELEMENT -->
+
+                    
+                    <div class="bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12 mb-8">
+
+                        <h1 class="text-center text-3xl md:text-5xl font-extrabold mb-2">5. - Close the lid uninterrupted</h1><br>
+        
+                        <hr><br>
+                    
+                        <div class="element-container text-left">
+                            <p class="py-2">In order to close the lid without the machine powering down <br> we'll need to configure our systemd file.</p>
+
+                            <button class="copy-button"data-popover-target="popover-click" data-popover-trigger="click" onclick="copyToClipboard('element401')">
+                                <div data-popover id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
+                                    <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
+                                        <p>Copied to clipboard</p>
+                                    </div>
+                                    <div data-popper-arrow></div>
+                                </div>
+                            <a  class="inline-flex justify-between items-center py-2 px-2 pr-4 mb-7 text-sm 
+                            text-blue-700 bg-blue-100 rounded-md dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
+                                <p id="element401" class="element-text">
+                                <span class="text-sm font-medium">
+                                    sudo nano /etc/systemd/logind.conf
+                                </span>
+                                </p>
+                            </a>
+                            </button>
+                        </div>
+
+
+                        <div class="element-container text-left">
+
+                            <p class="py-2">
+                                Scroll down to find these values and edit accordingly. <br><hr><br>
+
+                                EDIT ---> #HandleSuspendKey=suspend ----
+                                TO ---> HandleSuspendKey=ignore <br>
+                                
+                                EDIT ---> #HandleLidSwitch=suspend ----
+                                TO ---> HandleLidSwitch=ignore <br>
+                                
+                                EDIT ---> #HandleLidSwitchDocked=ignore ----
+                                TO ---> HandleLidSwitchDocked=ignore <br>
+                            </p>
+                        </div>
+                        <br><hr><br>
+                        
+
+
+                        <div class="element-container text-left">
+                            <p class="py-2">Once thats done we can restart our systemd.</p>
+
+                            <button class="copy-button"data-popover-target="popover-click" data-popover-trigger="click" onclick="copyToClipboard('element401')">
+                                <div data-popover id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
+                                    <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
+                                        <p>Copied to clipboard</p>
+                                    </div>
+                                    <div data-popper-arrow></div>
+                                </div>
+                            <a  class="inline-flex justify-between items-center py-2 px-2 pr-4 mb-7 text-sm 
+                            text-blue-700 bg-blue-100 rounded-md dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
+                                <p id="element401" class="element-text">
+                                <span class="text-sm font-medium">
+                                    sudo systemctl restart systemd-logind       
+                                </span>
+                                </p>
+                            </a>
+                            </button>
+                        </div>
+
+
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+                    <!-- 5TH LIST ELEMENT -->
+
+                    <hr>
+                    
+
+                    
+                    <div class="bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12 mb-8">
+
+                        <h1 class="text-center text-3xl md:text-5xl font-extrabold mb-2">6. - Unattended Upgrades</h1><br>
+        
+                        <hr><br>
+                    
+                        <div class="element-container text-left">
+                            <p class="py-2">Unattended Upgrades can be configured to update the system automatically.</p>
+                            <p class="py-2">First we will need to install and configure it.</p>
+                            <button class="copy-button"data-popover-target="popover-click" data-popover-trigger="click" onclick="copyToClipboard('element501')">
+                                <div data-popover id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
+                                    <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
+                                        <p>Copied to clipboard</p>
+                                    </div>
+                                    <div data-popper-arrow></div>
+                                </div>
+                            <a  class="inline-flex justify-between items-center py-2 px-2 pr-4 mb-7 text-sm 
+                            text-blue-700 bg-blue-100 rounded-md dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
+                                <p id="element501" class="element-text">
+                                <span class="text-sm font-medium">
+                                    sudo apt install unattended-upgrades apt-listchanges bsd-mailx -y
+                                </span>
+                                </p>
+                            </a>
+                            </button>
+                        </div>
+                    
+                        
+                        <div class="element-container text-left">
+                            <p class="py-2">Now we need to unpack it.</p>
+                            <button class="copy-button"data-popover-target="popover-click" data-popover-trigger="click" onclick="copyToClipboard('element502')">
+                                <div data-popover id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
+                                    <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
+                                        <p>Copied to clipboard</p>
+                                    </div>
+                                    <div data-popper-arrow></div>
+                                </div>
+                            <a  class="inline-flex justify-between items-center py-2 px-2 pr-4 mb-7 text-sm 
+                            text-blue-700 bg-blue-100 rounded-md dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
+                                <p id="element502" class="element-text">
+                                <span class="text-sm font-medium">
+                                    sudo dpkg-reconfigure -plow unattended-upgrades
+                                </span>
+                                </p>
+                            </a>
+                            </button>
+                        </div>
+
+
+                        <div class="element-container text-left">
+                            <p class="py-2">So now we need to configure the conf file.</p>
+                            <button class="copy-button"data-popover-target="popover-click" data-popover-trigger="click" onclick="copyToClipboard('element503')">
+                                <div data-popover id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
+                                    <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
+                                        <p>Copied to clipboard</p>
+                                    </div>
+                                    <div data-popper-arrow></div>
+                                </div>
+                            <a  class="inline-flex justify-between items-center py-2 px-2 pr-4 mb-7 text-sm 
+                            text-blue-700 bg-blue-100 rounded-md dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
+                                <p id="element503" class="element-text">
+                                <span class="text-sm font-medium">
+                                    sudo nano /etc/apt/apt.conf.d/50unattended-upgrades
+                                </span>
+                                </p>
+                            </a>
+                            </button>
+                        </div>
+
+
+
+
+
+                        <div class="element-container text-left">
+
+                            <p class="py-2">
+                                Scroll down to find these values and edit accordingly. <br><hr><br>
+
+
+
+                                                
+                                Enter email for notifications <br>
+                                
+
+
+                            </p>
+                        </div>
+                        <br><hr><br>
+                        
+
+
+                        <div class="element-container text-left">
+                            <p class="py-2">Once thats done we can attempt a dry run.</p>
+
+                            <button class="copy-button"data-popover-target="popover-click" data-popover-trigger="click" onclick="copyToClipboard('element504')">
+                                <div data-popover id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
+                                    <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
+                                        <p>Copied to clipboard</p>
+                                    </div>
+                                    <div data-popper-arrow></div>
+                                </div>
+                            <a  class="inline-flex justify-between items-center py-2 px-2 pr-4 mb-7 text-sm 
+                            text-blue-700 bg-blue-100 rounded-md dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
+                                <p id="element504" class="element-text">
+                                <span class="text-sm font-medium">
+                                    sudo unattended-upgrades --dry-run
+                                </span>
+                                </p>
+                            </a>
+                            </button>
+                        </div>
+
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <!-- 6TH LIST ELEMENT -->
+
+
+                    <div class="bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12 mb-8">
+
+                        <h1 class="text-center text-3xl md:text-5xl font-extrabold mb-2">7. - Fail2Ban</h1><br>
+        
+                        <hr><br>
+                    
+
+                        <div class="element-container text-left">
+
+                            <h3 class="text-left text-3xl underline text-blue-700">Provision</h3>
+
+                            <p class="py-2">Simply use apt to install fail2ban</p>
+
+                            <button class="copy-button"data-popover-target="popover-click" data-popover-trigger="click" onclick="copyToClipboard('element601')">
+                                <div data-popover id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
+                                    <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
+                                        <p>Copied to clipboard</p>
+                                    </div>
+                                    <div data-popper-arrow></div>
+                                </div>
+                            <a  class="inline-flex justify-between items-center py-2 px-2 pr-4 mb-7 text-sm 
+                            text-blue-700 bg-blue-100 rounded-md dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
+                                <p id="element601" class="element-text">
+                                <span class="text-sm font-medium">
+                                    sudo apt install fail2ban -y
+                                </span>
+                                </p>
+                            </a>
+                            </button>
+                        </div>
+
+
+
+                        <div class="element-container text-left">
+                            <p class="py-2">Check to see if the service is healthy.</p>
+
+                            <button class="copy-button"data-popover-target="popover-click" data-popover-trigger="click" onclick="copyToClipboard('element602')">
+                                <div data-popover id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
+                                    <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
+                                        <p>Copied to clipboard</p>
+                                    </div>
+                                    <div data-popper-arrow></div>
+                                </div>
+                            <a  class="inline-flex justify-between items-center py-2 px-2 pr-4 mb-7 text-sm 
+                            text-blue-700 bg-blue-100 rounded-md dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
+                                <p id="element602" class="element-text">
+                                <span class="text-sm font-medium">
+                                    sudo systemctl status fail2ban.service
+                                </span>
+                                </p>
+                            </a>
+                            </button>
+                        </div>
+
+
+                        <h3 class="text-left text-3xl underline text-blue-700">Configure</h3>
+
+
+                        <div class="element-container text-left">
+                            <p class="py-2">Change directory to /etc/fail2ban.</p>
+
+                            <button class="copy-button"data-popover-target="popover-click" data-popover-trigger="click" onclick="copyToClipboard('element603')">
+                                <div data-popover id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
+                                    <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
+                                        <p>Copied to clipboard</p>
+                                    </div>
+                                    <div data-popper-arrow></div>
+                                </div>
+                            <a  class="inline-flex justify-between items-center py-2 px-2 pr-4 mb-7 text-sm 
+                            text-blue-700 bg-blue-100 rounded-md dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
+                                <p id="element603" class="element-text">
+                                <span class="text-sm font-medium">
+                                    cd /etc/fail2ban
+                                </span>
+                                </p>
+                            </a>
+                            </button>
+                        </div>
+
+
+                        <div class="element-container text-left">
+                            <p class="py-2">List files in folder.</p>
+
+                            <button class="copy-button"data-popover-target="popover-click" data-popover-trigger="click" onclick="copyToClipboard('element604')">
+                                <div data-popover id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
+                                    <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
+                                        <p>Copied to clipboard</p>
+                                    </div>
+                                    <div data-popper-arrow></div>
+                                </div>
+                            <a  class="inline-flex justify-between items-center py-2 px-2 pr-4 mb-7 text-sm 
+                            text-blue-700 bg-blue-100 rounded-md dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
+                                <p id="element604" class="element-text">
+                                <span class="text-sm font-medium">
+                                    ls -la
+                                </span>
+                                </p>
+                            </a>
+                            </button>
+                        </div>
+
+
+                        <div class="element-container text-left">
+                            <p class="py-2">Copy the conf file to a local file.</p>
+
+                            <button class="copy-button"data-popover-target="popover-click" data-popover-trigger="click" onclick="copyToClipboard('element605')">
+                                <div data-popover id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
+                                    <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
+                                        <p>Copied to clipboard</p>
+                                    </div>
+                                    <div data-popper-arrow></div>
+                                </div>
+                            <a  class="inline-flex justify-between items-center py-2 px-2 pr-4 mb-7 text-sm 
+                            text-blue-700 bg-blue-100 rounded-md dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
+                                <p id="element605" class="element-text">
+                                <span class="text-sm font-medium">
+                                    sudo cp jail.conf jail.local
+                                </span>
+                                </p>
+                            </a>
+                            </button>
+                        </div>
+
+
+                        <div class="element-container text-left">
+                            <p class="py-2">Use nano to edit the new file.</p>
+
+                            <button class="copy-button"data-popover-target="popover-click" data-popover-trigger="click" onclick="copyToClipboard('element606')">
+                                <div data-popover id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
+                                    <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
+                                        <p>Copied to clipboard</p>
+                                    </div>
+                                    <div data-popper-arrow></div>
+                                </div>
+                            <a  class="inline-flex justify-between items-center py-2 px-2 pr-4 mb-7 text-sm 
+                            text-blue-700 bg-blue-100 rounded-md dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
+                                <p id="element606" class="element-text">
+                                <span class="text-sm font-medium">
+                                    sudo nano jail.local
+                                </span>
+                                </p>
+                            </a>
+                            </button>
+                            <p>
+                                Scroll down to find "#JAILS   #SSH servers   #[sshd]" 
+                                <br>
+                                Above where it states "port = ssh" add the following.
+                                <br>
+                                <hr>
+                                enabled = true <br>
+                                bantime = 10m <br>
+                                maxretry = 5 <br>
+                                findtime = 10m
+                                <hr>
+                            </p>
+                        
+                        </div>
+
+                        <br>
+                        
+
+
+                        <h3 class="text-left text-3xl underline text-blue-700">Enable and Check</h3>
+
+                        <div class="element-container text-left">
+                            <p class="py-2">Now thats done we should restart the service.</p>
+
+                            <button class="copy-button"data-popover-target="popover-click" data-popover-trigger="click" onclick="copyToClipboard('element607')">
+                                <div data-popover id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
+                                    <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
+                                        <p>Copied to clipboard</p>
+                                    </div>
+                                    <div data-popper-arrow></div>
+                                </div>
+                            <a  class="inline-flex justify-between items-center py-2 px-2 pr-4 mb-7 text-sm 
+                            text-blue-700 bg-blue-100 rounded-md dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
+                                <p id="element607" class="element-text">
+                                <span class="text-sm font-medium">
+                                    sudo systemctl restart fail2ban
+                                </span>
+                                </p>
+                            </a>
+                            </button>
+                        </div>
+
+
+                        <div class="element-container text-left">
+                            <p class="py-2">Check the status.</p>
+
+                            <button class="copy-button"data-popover-target="popover-click" data-popover-trigger="click" onclick="copyToClipboard('element608')">
+                                <div data-popover id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
+                                    <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
+                                        <p>Copied to clipboard</p>
+                                    </div>
+                                    <div data-popper-arrow></div>
+                                </div>
+                            <a  class="inline-flex justify-between items-center py-2 px-2 pr-4 mb-7 text-sm 
+                            text-blue-700 bg-blue-100 rounded-md dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
+                                <p id="element608" class="element-text">
+                                <span class="text-sm font-medium">
+                                    sudo systemctl status fail2ban.service
+                                </span>
+                                </p>
+                            </a>
+                            </button>
+                        </div>
+
+
+                        <div class="element-container text-left">
+                            <p class="py-2">Check our iptables.</p>
+
+                            <button class="copy-button"data-popover-target="popover-click" data-popover-trigger="click" onclick="copyToClipboard('element609')">
+                                <div data-popover id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
+                                    <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
+                                        <p>Copied to clipboard</p>
+                                    </div>
+                                    <div data-popper-arrow></div>
+                                </div>
+                            <a  class="inline-flex justify-between items-center py-2 px-2 pr-4 mb-7 text-sm 
+                            text-blue-700 bg-blue-100 rounded-md dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
+                                <p id="element609" class="element-text">
+                                <span class="text-sm font-medium">
+                                    sudo iptables -S | grep f2b
+                                </span>
+                                </p>
+                            </a>
+                            </button>
+                        </div>
+
+
+                        <div class="element-container text-left">
+                            <p class="py-2">I cant remember what this does.</p>
+
+                            <button class="copy-button"data-popover-target="popover-click" data-popover-trigger="click" onclick="copyToClipboard('element610')">
+                                <div data-popover id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
+                                    <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
+                                        <p>Copied to clipboard</p>
+                                    </div>
+                                    <div data-popper-arrow></div>
+                                </div>
+                            <a  class="inline-flex justify-between items-center py-2 px-2 pr-4 mb-7 text-sm 
+                            text-blue-700 bg-blue-100 rounded-md dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
+                                <p id="element610" class="element-text">
+                                <span class="text-sm font-medium">
+                                    sudo fail2ban-client status sshd
+                                </span>
+                                </p>
+                            </a>
+                            </button>
+                        </div>
+
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+            
+
+                    
+
+                    <!-- 7TH LIST ELEMENT -->
+
+                    <hr>
+
+                    <div class="bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12 mb-8">
+
+                        <h1 class="text-center text-3xl md:text-5xl font-extrabold mb-2">8. - Mount Drives (Persistent)</h1><br>
+        
+                        <hr><br>
+                    
+                        <div class="element-container text-left">
+                            <p class="py-2">Once thats done we can attempt a dry run.</p>
+
+                            <button class="copy-button"data-popover-target="popover-click" data-popover-trigger="click" onclick="copyToClipboard('element701')">
+                                <div data-popover id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
+                                    <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
+                                        <p>Copied to clipboard</p>
+                                    </div>
+                                    <div data-popper-arrow></div>
+                                </div>
+                            <a  class="inline-flex justify-between items-center py-2 px-2 pr-4 mb-7 text-sm 
+                            text-blue-700 bg-blue-100 rounded-md dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
+                                <p id="element701" class="element-text">
+                                <span class="text-sm font-medium">
+                                    sudo fdisk -l
+                                </span>
+                                </p>
+                            </a>
+                            </button>
+                        </div>
+
+
+                        <div class="element-container text-left">
+                            <p class="py-2">Once thats done we can attempt a dry run.</p>
+
+                            <button class="copy-button"data-popover-target="popover-click" data-popover-trigger="click" onclick="copyToClipboard('element702')">
+                                <div data-popover id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
+                                    <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
+                                        <p>Copied to clipboard</p>
+                                    </div>
+                                    <div data-popper-arrow></div>
+                                </div>
+                            <a  class="inline-flex justify-between items-center py-2 px-2 pr-4 mb-7 text-sm 
+                            text-blue-700 bg-blue-100 rounded-md dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
+                                <p id="element702" class="element-text">
+                                <span class="text-sm font-medium">
+                                    sudo blkid
+                                </span>
+                                </p>
+                            </a>
+                            </button>
+                        </div>
+
+
+                        <div class="element-container text-left">
+                            <p class="py-2">Once thats done we can attempt a dry run.</p>
+
+                            <button class="copy-button"data-popover-target="popover-click" data-popover-trigger="click" onclick="copyToClipboard('element703')">
+                                <div data-popover id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
+                                    <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
+                                        <p>Copied to clipboard</p>
+                                    </div>
+                                    <div data-popper-arrow></div>
+                                </div>
+                            <a  class="inline-flex justify-between items-center py-2 px-2 pr-4 mb-7 text-sm 
+                            text-blue-700 bg-blue-100 rounded-md dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
+                                <p id="element703" class="element-text">
+                                <span class="text-sm font-medium">
+                                    cd /media
+                                </span>
+                                </p>
+                            </a>
+                            </button>
+                        </div>
+
+
+                        <div class="element-container text-left">
+                            <p class="py-2">Once thats done we can attempt a dry run.</p>
+
+                            <button class="copy-button"data-popover-target="popover-click" data-popover-trigger="click" onclick="copyToClipboard('element704')">
+                                <div data-popover id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
+                                    <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
+                                        <p>Copied to clipboard</p>
+                                    </div>
+                                    <div data-popper-arrow></div>
+                                </div>
+                            <a  class="inline-flex justify-between items-center py-2 px-2 pr-4 mb-7 text-sm 
+                            text-blue-700 bg-blue-100 rounded-md dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
+                                <p id="element704" class="element-text">
+                                <span class="text-sm font-medium">
+                                    sudo mkdir /media/ssd
+                                </span>
+                                </p>
+                            </a>
+                            </button>
+                        </div>
+
+
+                        <div class="element-container text-left">
+                            <p class="py-2">Once thats done we can attempt a dry run.</p>
+
+                            <button class="copy-button"data-popover-target="popover-click" data-popover-trigger="click" onclick="copyToClipboard('element705')">
+                                <div data-popover id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
+                                    <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
+                                        <p>Copied to clipboard</p>
+                                    </div>
+                                    <div data-popper-arrow></div>
+                                </div>
+                            <a  class="inline-flex justify-between items-center py-2 px-2 pr-4 mb-7 text-sm 
+                            text-blue-700 bg-blue-100 rounded-md dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
+                                <p id="element705" class="element-text">
+                                <span class="text-sm font-medium">
+                                    sudo nano /etc/fstab
+                                </span>
+                                </p>
+                            </a>
+                            </button>
+                        </div>
+
+
+                        <div class="element-container text-left">
+                            <p class="py-2">Once thats done we can attempt a dry run.</p>
+
+                            <button class="copy-button"data-popover-target="popover-click" data-popover-trigger="click" onclick="copyToClipboard('element706')">
+                                <div data-popover id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
+                                    <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
+                                        <p>Copied to clipboard</p>
+                                    </div>
+                                    <div data-popper-arrow></div>
+                                </div>
+                            <a  class="inline-flex justify-between items-center py-2 px-2 pr-4 mb-7 text-sm 
+                            text-blue-700 bg-blue-100 rounded-md dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
+                                <p id="element706" class="element-text">
+                                <span class="text-sm font-medium">
+                                    /dev/disk/by-uuid/01CC95E295165CC0  /media/ssd ntfs default  0  0
+                                </span>
+                                </p>
+                            </a>
+                            </button>
+                        </div>
+
+
+                        <div class="element-container text-left">
+                            <p class="py-2">Once thats done we can attempt a dry run.</p>
+
+                            <button class="copy-button"data-popover-target="popover-click" data-popover-trigger="click" onclick="copyToClipboard('element707')">
+                                <div data-popover id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
+                                    <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
+                                        <p>Copied to clipboard</p>
+                                    </div>
+                                    <div data-popper-arrow></div>
+                                </div>
+                            <a  class="inline-flex justify-between items-center py-2 px-2 pr-4 mb-7 text-sm 
+                            text-blue-700 bg-blue-100 rounded-md dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
+                                <p id="element707" class="element-text">
+                                <span class="text-sm font-medium">
+                                    sudo mount -a
+                                </span>
+                                </p>
+                            </a>
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+        
+        </section>
+                
+
+
+
+        <script>
+            function copyToClipboard(elementId) {
+                var element = document.getElementById(elementId);
+                var range = document.createRange();
+                range.selectNode(element);
+                window.getSelection().addRange(range);
+
+                try {
+                var successful = document.execCommand('copy');
+
+                } catch (err) {
+                console.error('Failed to copy:', err);
+                }
+
+                window.getSelection().removeAllRanges();
+            }
+        </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
+    </body>
+</html>
+
