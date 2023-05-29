@@ -28,6 +28,180 @@
 
 
 
+./Workspace/DjangoProjects/devsearch/venv/Scripts/Activate
+CD Workspace\DjangoProjects\devsearch
+python manage.py runserver 8888
+
+
+
+----  Initial setup  ----
+
+
+
+mkdir devsearch
+cd devsearch
+mkdir venv
+cd venv
+python -m venv .
+start venv - ( .\Scripts\activate ) or open folder in VSCode
+cd ..
+
+python -m pip install --upgrade pip
+python -m pip install django 
+
+
+=========================================================
+
+----  start project and create new apps/pages  -----
+
+
+django-admin startproject devsearch .
+
+
+python manage.py startapp projects
+APPEND--  settings.py 
+
+'projects.apps.ProjectConfig',
+
+
+----------------------------------
+
+APPEND--  devsearch/devsearch/urls.py 
+
+from django.contrib import admin
+from django.urls import path, include
+
+
+urlpatterns = [
+    path('', include('projects.urls')),
+    path('admin/', admin.site.urls),
+ 
+]
+
+----------------------------------
+
+APPEND--  devsearch/views.py 
+
+
+from django.http import HttpResponse
+
+
+def projects(request):
+    return HttpResponse('This is our project page')
+
+
+def project(request, pk):
+    return HttpResponse('Project page:' + str(pk))
+
+--------------------------------------
+
+OPEN--  http://127.0.0.1:8888/projects/
+
+http://127.0.0.1:8888/project/
+
+http://127.0.0.1:8888/project/3/
+
+http://127.0.0.1:8888/project/45645/
+
+-------------------------------------
+
+
+APPEND--  devsearch/projects
+CREATE--  urls.py
+APPEND--  devsearch/projects/urls.py
+ 
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('', projects),
+    path('project/<str:pk>/', project),
+
+
+
+
+
+
+
+OPEN--  http://127.0.0.1:8888/projects/
+
+http://127.0.0.1:8888/project/
+
+http://127.0.0.1:8888/project/3/
+
+http://127.0.0.1:8888/project/45645/
+
+http://127.0.0.1:8888/
+
+
+MKDIR--  devsearch/templates
+CREATE--  projects.html
+CREATE--  single-projects.html
+
+APPEND--  devsearch/views.py
+
+
+def projects(request):
+    return render(request, 'projects.html')
+
+
+APPEND--  devsearch/settings.py
+
+import os
+
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates')
+        ],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]
+
+
+
+
+CREATE--  projects.html
+
+
+
+
+==========================================================
+
+
+1:09:10
+
+
+======================================================
+IE
+Django 2021 Course Session #2 | Admin Panel, Models & Database Queries
+
+
+https://www.youtube.com/watch?v=2fPppUQrI_Y&list=RDCMUCTZRcDjjkVajGL6wd76UnGg&index=1
+
+
+10:40
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
