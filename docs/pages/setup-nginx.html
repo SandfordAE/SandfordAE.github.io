@@ -1,12 +1,72 @@
-/home/san/dev/GIT.txt==========================================================================
-==========================================================================
-Nginx Mastery
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="static/css/home-ui.css" rel="stylesheet" />
+    <title>Nginx Setup</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
+</head>
+
+
+<body class="bg-gradient-to-l from-stone-700 to-blue-700">
+
+    <div class="px-4 py-4 text-left z-10 relative">
+        <a href="/index.html" class="inline-flex justify-between items-center py-1 px-1 mb-7 text-sm text-blue-700 bg-blue-100 rounded-full dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
+                <span class="text-xs bg-blue-600 rounded-full text-center text-white px-4 py-1.5">Back to Digital Résumé/Portfolio</span>
+        </a>
+    </div>
+
+    <h1 class="flex h-screen justify-center items-center text-gray-50 text-5xl font-bold">Setup Nginx</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        function copyToClipboard(elementId) {
+            var element = document.getElementById(elementId);
+            var range = document.createRange();
+            range.selectNode(element);
+            window.getSelection().addRange(range);
+
+            try {
+            var successful = document.execCommand('copy');
+
+            } catch (err) {
+            console.error('Failed to copy:', err);
+            }
+
+            window.getSelection().removeAllRanges();
+        }
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
+</body>
+
+
+</html>
+
+
+
+
+
 
 https://www.youtube.com/playlist?list=PLOLrQ9Pn6cawvMA5JjhzoQrnKbYGYQqx1
 
 ==========================================================================
 
-Running examples in VSCode with Docker extenton
+Running examples in VSCode with Docker extentions
 
 
 ==========================================================================
@@ -46,14 +106,14 @@ nginx -s stop
 
 docker-compose up -d
 
-docker build -t weserver .
+docker build -t webserver .
 
 docker run -it -rm -d -p 8000:80 --name web webserver 
 
 
 
 NB>>>
-	--- Nignx Default folders
+	--- Nginx Default folders
 
 /usr/share/nginx/html
 
