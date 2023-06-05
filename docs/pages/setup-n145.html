@@ -134,6 +134,15 @@
                                         TRANSMISSION
                                     </li>
 
+                                    <li>
+                                        <a href="http://n145:9117" class="text-blue-600 dark:text-blue-500 hover:underline font-medium text-lg inline-flex items-center">
+                                            http://N145:91117
+                                            <svg aria-hidden="true" class="w-4 h-4 ml-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                            </svg>
+                                        </a>
+                                        JACKETT
+                                    </li>
                                 </ol>
 
                             </p>
@@ -156,14 +165,14 @@
                                 <h2 class="text-left text-gray-900 dark:text-white text-3xl font-extrabold mb-2">Contents of this page</h2>
                                 <p class="text-lg font-normal text-gray-500 dark:text-gray-400 mb-4">                
                                     <ul class="text-left">
-                                        <li>1 - Get Started</li>
-                                        <li>2 - Secure Ubuntu from a remote Shell</li>        
-                                        <li>3 - Install some programs</li>
-                                        <li>4 - Create Containerized apps with Docker</li>        
-                                        <li>5 - Close the lid uninterrupted</li>
-                                        <li>6 - Unattended Upgrades</li>
-                                        <li>7 - Fail2Ban</li>
-                                        <li>8 - Mount Drives (Persistent)</li>
+                                        <li><a href="#get_started">1 - Get Started</a></li>
+                                        <li><a href="#secure_ubuntu">2 - Secure Ubuntu from a remote Shell</a></li>        
+                                        <li><a href="#install_progs">3 - Install some programs</a></li>
+                                        <li><a href="#containers">4 - Create Containerized apps with Docker</a></li>        
+                                        <li><a href="#close_lid">5 - Close the lid uninterrupted</a></li>
+                                        <li><a href="#unattended_upgrades">6 - Unattended Upgrades</a></li>
+                                        <li><a href="#fail2ban">7 - Fail2Ban</a></li>
+                                        <li><a href="#mount">8 - Mount Drives (Persistent)</a></li>
                                     </ul>
     
                                 </p>
@@ -177,7 +186,7 @@
                             <p class="text-center text-lg font-normal text-gray-500 dark:text-gray-400">N145 is an old Samsung laptop/notebook </h2>
                             <p class="text-center text-lg font-normal text-gray-500 dark:text-gray-400 mb-6">now being repurposed as a home media server.</p>                        
                         
-                            <h2 class="text-gray-900 dark:text-white text-3xl font-extrabold mb-2">Samsung N145 Spec</h2>
+                            <h2 class="text-gray-900 dark:text-white text-3xl font-extrabold mb-2">Samsung N145 Spec</h2><br>
 
                             <ul>
                                 <li class="underline">Processor</li>
@@ -185,15 +194,15 @@
                                 <li class="underline">Graphics adapter</li>
                                 <li>Intel Graphics Media Accelerator (GMA) 3150</li><br>
                                 <li class="underline">Memory</li>
-                                <li>1024 MB  , PC2-6400 400MHz</li>
+                                <li>1024 MB  , PC2-6400 400MHz</li><br>
                                 <li class="underline">Soundcard</li>
                                 <li>Realtek ALC269 @ Intel NM10 ICH</li><br>
                                 <li class="underline">Connections</li>
                                 <li>3 USB 2.0, 1 VGA, Audio Connections: line out, microphone, Card Reader: SD/SDHC/SDXC/MMC</li><br>
                                 <li class="underline">Networking</li>
                                 <li>Marvell Yukon 88E8040 Family PCI-E Fast Ethernet Controller (10/100MBit/s), Atheros AR9285 Wireless Network Adapter (b/g/n = Wi-Fi 4)</li><br>
-                                <li class="underline">Size</li>
-                                <li>height x width x depth (in mm): 50 x 270 x 190 ( = 1.97 x 10.63)</li> <br>
+                                <li class="underline">Size/Dimensions</li>
+                                <li>Height x Width x Depth (in mm): 50 x 270 x 190 ( = 1.97 x 10.63)</li> <br>
                                 <ol class=" text-left">
                                     Check out the
                                     <a href="https://www.notebookcheck.net/Intel-Atom-N150-Notebook-Processor.23722.0.html" class="text-blue-600 dark:text-blue-500 hover:underline font-medium text-lg inline-flex items-center">
@@ -222,7 +231,7 @@
                 <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 z-10 relative">
 
 
-                    <div class="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12 mb-8">
+                    <div id="get_started" class=" bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12 mb-8">
                 
                         <h1 class="text-center text-gray-900 dark:text-white text-3xl md:text-5xl font-extrabold mb-2">1. - Lets get Started</h1><br>
                         <p class="text-left text-lg font-normal text-gray-500 dark:text-gray-400 mb-6">First we will need to download some software:</p>     
@@ -252,11 +261,15 @@
                             <li>
                                 4. Copy your downloaded Image of Ubuntu to the root folder on Ventoy.
                             </li>
+                            <br>
+                            
+                            <p class="text-2xl">In order to install our new OS we will need to <br> reconfigure the BIOS to boot from the USB.</p>
+                            <br>
                             <li>
                                 5. Restart the machine and ensure that it is set to boot from USB.
                             </li>
                             <li>
-                                6. Follow the installation steps to get Ubuntu 22.04.1 LTS installed on your machine.
+                                6. Follow the installation steps to get Ubuntu 22.04.1 LTS installed.
                             </li>
                             <li>
                                 7. Now we are ready harden the system and install some peripherals.
@@ -278,7 +291,7 @@
 
                     <hr>
                     
-                    <div class="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12 mb-8">
+                    <div id="secure_ubuntu" class="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12 mb-8">
 
                         <h1 class="text-center text-gray-900 dark:text-white text-3xl md:text-5xl font-extrabold mb-2">2. - Secure Ubuntu from a remote Shell</h1><br>
 
@@ -288,22 +301,22 @@
                         <br>
 
                         <div  class="element-container text-left">
-                            <p class="text-left py-2">First we need to open a terminal on our local machine in order to login to our server.</p>
+                            <p class="text-left py-2">First we need to open a terminal on our local machine.</p>
+                            <p>In order to login to our server we will use ssh.</p>
                         </div>
 
 
 
 
-
                         <div class="element-container text-left">
-                            <p class="py-2">Login to Ubuntu with ssh via your local machine by using this command.</p>
+                            <p class="py-2">Login to Ubuntu with ssh via your local machine by using this command with YOUR appropriate info.</p>
                             <button class="copy-button" data-popover-target="popover-click" data-popover-trigger="click" onclick="copyToClipboard('element101')">                       
-                                <div data-popover id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
-                                    <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
+                                <div id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-auto text-sm text-gray-50 transition-opacity duration-300 bg-red-500 border border-red-400 rounded-full shadow-sm opacity-0 dark:text-black dark:border-gray-600 dark:bg-red-700">
+                                    <div class="px-2 py-1 bg-green-600 border-b border-gray-200 rounded-full dark:border-transparent dark:bg-green-400">
                                         <p>Copied to clipboard</p>
                                     </div>
                                     <div data-popper-arrow></div>
-                                </div>  
+                                </div>
                             <a  class="inline-flex justify-between items-center py-2 px-2 pr-4 mb-7 text-sm 
                             text-blue-700 bg-blue-100 rounded-md dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
                                 <p id="element101" class="element-text">
@@ -319,16 +332,15 @@
 
 
 
-
                         <div class="element-container text-left">
                             <p class="py-2">Update system files and repository lists.</p>
                             <button class="copy-button" data-popover-target="popover-click" data-popover-trigger="click" onclick="copyToClipboard('element102')">
-                                <div data-popover id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
-                                    <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
+                                <div id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-auto text-sm text-gray-50 transition-opacity duration-300 bg-red-500 border border-red-400 rounded-full shadow-sm opacity-0 dark:text-black dark:border-gray-600 dark:bg-red-700">
+                                    <div class="px-2 py-1 bg-green-600 border-b border-gray-200 rounded-full dark:border-transparent dark:bg-green-400">
                                         <p>Copied to clipboard</p>
                                     </div>
                                     <div data-popper-arrow></div>
-                                </div> 
+                                </div>
                             <a  class="inline-flex justify-between items-center py-2 px-2 pr-4 mb-7 text-sm 
                             text-blue-700 bg-blue-100 rounded-md dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
                                 <p id="element102" class="element-text">
@@ -346,12 +358,12 @@
                             <p class="py-2">Within your users home directory set up a new folder to contain our ssh keys and configs.
                             </p>
                             <button class="copy-button" data-popover-target="popover-click" data-popover-trigger="click" onclick="copyToClipboard('element103')">
-                                <div data-popover id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
-                                    <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
+                                <div id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-auto text-sm text-gray-50 transition-opacity duration-300 bg-red-500 border border-red-400 rounded-full shadow-sm opacity-0 dark:text-black dark:border-gray-600 dark:bg-red-700">
+                                    <div class="px-2 py-1 bg-green-600 border-b border-gray-200 rounded-full dark:border-transparent dark:bg-green-400">
                                         <p>Copied to clipboard</p>
                                     </div>
                                     <div data-popper-arrow></div>
-                                </div> 
+                                </div>
                             <a  class="inline-flex justify-between items-center py-2 px-2 pr-4 mb-7 text-sm 
                             text-blue-700 bg-blue-100 rounded-md dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
                                 <p id="element103" class="element-text">
@@ -368,12 +380,12 @@
                         <div class="element-container text-left">
                             <p class="py-2">Copy ssh key from local machine to servers .ssh directory.</p>
                             <button class="copy-button" data-popover-target="popover-click" data-popover-trigger="click" onclick="copyToClipboard('element104')">
-                                <div data-popover id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
-                                    <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
+                                <div id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-auto text-sm text-gray-50 transition-opacity duration-300 bg-red-500 border border-red-400 rounded-full shadow-sm opacity-0 dark:text-black dark:border-gray-600 dark:bg-red-700">
+                                    <div class="px-2 py-1 bg-green-600 border-b border-gray-200 rounded-full dark:border-transparent dark:bg-green-400">
                                         <p>Copied to clipboard</p>
                                     </div>
                                     <div data-popper-arrow></div>
-                                </div> 
+                                </div>
                             <a  class="inline-flex justify-between items-center py-2 px-2 pr-4 mb-7 text-sm 
                             text-blue-700 bg-blue-100 rounded-md dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
                                 <p id="element104" class="element-text">
@@ -388,12 +400,12 @@
                         <div class="element-container text-left">
                             <p class="py-2">Confirm file copied over</p>
                             <button class="copy-button" data-popover-target="popover-click" data-popover-trigger="click" onclick="copyToClipboard('element105')">
-                                <div data-popover id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
-                                    <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
+                                <div id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-auto text-sm text-gray-50 transition-opacity duration-300 bg-red-500 border border-red-400 rounded-full shadow-sm opacity-0 dark:text-black dark:border-gray-600 dark:bg-red-700">
+                                    <div class="px-2 py-1 bg-green-600 border-b border-gray-200 rounded-full dark:border-transparent dark:bg-green-400">
                                         <p>Copied to clipboard</p>
                                     </div>
                                     <div data-popper-arrow></div>
-                                </div> 
+                                </div>
                             <a  class="inline-flex justify-between items-center py-2 px-2 pr-4 mb-7 text-sm 
                             text-blue-700 bg-blue-100 rounded-md dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
                                 <p id="element105" class="element-text">
@@ -420,12 +432,12 @@
                         <div class="element-container text-left">
                             <p class="py-2">Add a unique login for your phone.</p>
                             <button class="copy-button" data-popover-target="popover-click" data-popover-trigger="click" onclick="copyToClipboard('element106')">
-                                <div data-popover id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
-                                    <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
+                                <div id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-auto text-sm text-gray-50 transition-opacity duration-300 bg-red-500 border border-red-400 rounded-full shadow-sm opacity-0 dark:text-black dark:border-gray-600 dark:bg-red-700">
+                                    <div class="px-2 py-1 bg-green-600 border-b border-gray-200 rounded-full dark:border-transparent dark:bg-green-400">
                                         <p>Copied to clipboard</p>
                                     </div>
                                     <div data-popper-arrow></div>
-                                </div> 
+                                </div>
                             <a  class="inline-flex justify-between items-center py-2 px-2 pr-4 mb-7 text-sm 
                             text-blue-700 bg-blue-100 rounded-md dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
                                 <p id="element106" class="element-text">
@@ -442,12 +454,12 @@
                         <div class="element-container text-left">
                             <p class="py-2">Add san-phone to sudo group.</p>
                             <button class="copy-button" data-popover-target="popover-click" data-popover-trigger="click" onclick="copyToClipboard('element107')">
-                                <div data-popover id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
-                                    <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
+                                <div id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-auto text-sm text-gray-50 transition-opacity duration-300 bg-red-500 border border-red-400 rounded-full shadow-sm opacity-0 dark:text-black dark:border-gray-600 dark:bg-red-700">
+                                    <div class="px-2 py-1 bg-green-600 border-b border-gray-200 rounded-full dark:border-transparent dark:bg-green-400">
                                         <p>Copied to clipboard</p>
                                     </div>
                                     <div data-popper-arrow></div>
-                                </div> 
+                                </div>
                             <a  class="inline-flex justify-between items-center py-2 px-2 pr-4 mb-7 text-sm 
                             text-blue-700 bg-blue-100 rounded-md dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
                                 <p id="element107" class="element-text">
@@ -464,12 +476,12 @@
                         <div class="element-container text-left">
                             <p class="py-2">Add a unique login for your IPad.</p>
                             <button class="copy-button" data-popover-target="popover-click" data-popover-trigger="click" onclick="copyToClipboard('element108')">
-                                <div data-popover id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
-                                    <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
+                                <div id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-auto text-sm text-gray-50 transition-opacity duration-300 bg-red-500 border border-red-400 rounded-full shadow-sm opacity-0 dark:text-black dark:border-gray-600 dark:bg-red-700">
+                                    <div class="px-2 py-1 bg-green-600 border-b border-gray-200 rounded-full dark:border-transparent dark:bg-green-400">
                                         <p>Copied to clipboard</p>
                                     </div>
                                     <div data-popper-arrow></div>
-                                </div> 
+                                </div>
                             <a  class="inline-flex justify-between items-center py-2 px-2 pr-4 mb-7 text-sm 
                             text-blue-700 bg-blue-100 rounded-md dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
                                 <p id="element108" class="element-text">
@@ -485,12 +497,12 @@
                         <div class="element-container text-left">
                             <p class="py-2">Add IPad to sudo group.</p>
                             <button class="copy-button" data-popover-target="popover-click" data-popover-trigger="click" onclick="copyToClipboard('element109')">
-                                <div data-popover id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
-                                    <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
+                                <div id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-auto text-sm text-gray-50 transition-opacity duration-300 bg-red-500 border border-red-400 rounded-full shadow-sm opacity-0 dark:text-black dark:border-gray-600 dark:bg-red-700">
+                                    <div class="px-2 py-1 bg-green-600 border-b border-gray-200 rounded-full dark:border-transparent dark:bg-green-400">
                                         <p>Copied to clipboard</p>
                                     </div>
                                     <div data-popper-arrow></div>
-                                </div> 
+                                </div>
                             <a  class="inline-flex justify-between items-center py-2 px-2 pr-4 mb-7 text-sm 
                             text-blue-700 bg-blue-100 rounded-md dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
                                 <p id="element109" class="element-text">
@@ -514,12 +526,12 @@
                             <p class="py-2">This command will create and write to a new config file within the .ssh folder.</p>
                             
                             <button class="text-left copy-button" data-popover-target="popover-click" data-popover-trigger="click" onclick="copyToClipboard('element110')">
-                                <div data-popover id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
-                                    <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
+                                <div id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-auto text-sm text-gray-50 transition-opacity duration-300 bg-red-500 border border-red-400 rounded-full shadow-sm opacity-0 dark:text-black dark:border-gray-600 dark:bg-red-700">
+                                    <div class="px-2 py-1 bg-green-600 border-b border-gray-200 rounded-full dark:border-transparent dark:bg-green-400">
                                         <p>Copied to clipboard</p>
                                     </div>
                                     <div data-popper-arrow></div>
-                                </div> 
+                                </div>
                             <a  class="inline-flex justify-between items-center py-2 px-2 pr-4 mb-7 text-sm 
                             text-blue-700 bg-blue-100 rounded-md dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
                                 <p id="element110" class="element-text">
@@ -600,10 +612,11 @@
 
                         <div class="element-container text-left">
 
-                            <p class="py-2 text-xl underline">Edit or uncomment these elements within the /etc/ssh/sshd_config file.</p>
+                            <p class="py-2 text-2xl ">Edit and/or uncomment these elements within the <br><span class="text-green-600">/etc/ssh/sshd_config</span> file.</p>
 
+                            <br>
                             <hr>              
-                            <p class="py-2">
+                            <p class="text-green-600 py-2">
                                 Port **** <br>
                                 PasswordAuthentication no <br>
                                 AddressFamily inet <br>
@@ -617,7 +630,7 @@
 
 
                         <div class="element-container text-left">
-                            <p class="py-2">After you have saved and exit you will need to restart sshd.</p>
+                            <p class="py-2">After you have saved and exited you will need to restart <span class="text-green-600">sshd</span>.</p>
                             <button class="copy-button" data-popover-target="popover-click" data-popover-trigger="click" onclick="copyToClipboard('element113')">
                                 <div data-popover id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
                                     <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
@@ -642,7 +655,7 @@
 
                         <div class="element-container text-left">
                             <p class="py-2">Now you should be able to login without a password.</p>
-                            <p class="py-2">*****WARNING*****<br> You should open a second terminal and attempt to login from <br>there before you logout from your existing session.<br>
+                            <p class="py-2"><span class="text-4xl text-red-700">*****WARNING*****</span><br> You should open a second terminal and attempt to login from <br>there before you logout from your existing session.<br>
                             Just in case there are any mistakes you could lock yourself out of the server.</p><br>
                             <button class="copy-button" data-popover-target="popover-click" data-popover-trigger="click" onclick="copyToClipboard('element114')">
                                 <div data-popover id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
@@ -696,7 +709,7 @@
 
                     <hr>
                     
-                    <div class="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12 mb-8">
+                    <div id="install_progs"" class="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12 mb-8">
 
                         <h1 class="text-center text-gray-900 dark:text-white text-3xl md:text-5xl font-extrabold mb-2">3. - Install some programs</h1><br>
 
@@ -1032,7 +1045,7 @@
 
                     <hr>
                     
-                    <div class="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12 mb-8">
+                    <div id="containers" class="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12 mb-8">
 
                         <h1 class="text-center text-gray-900 dark:text-white text-3xl md:text-5xl font-extrabold mb-2">4. - Create Containerized apps with Docker</h1><br>
 
@@ -1529,7 +1542,7 @@
                     <!-- 4TH LIST ELEMENT -->
 
                     
-                    <div class="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12 mb-8">
+                    <div id="close_lid" class="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12 mb-8">
 
                         <h1 class="text-center text-gray-900 dark:text-white text-3xl md:text-5xl font-extrabold mb-2">5. - Close the lid uninterrupted</h1><br>
         
@@ -1561,15 +1574,16 @@
 
                             <p class="py-2">
                                 Scroll down to find these values and edit accordingly. <br><hr><br>
-
-                                EDIT ---> #HandleSuspendKey=suspend ----
-                                TO ---> HandleSuspendKey=ignore <br>
-                                
-                                EDIT ---> #HandleLidSwitch=suspend ----
-                                TO ---> HandleLidSwitch=ignore <br>
-                                
-                                EDIT ---> #HandleLidSwitchDocked=ignore ----
-                                TO ---> HandleLidSwitchDocked=ignore <br>
+                                <p class="text-green-600">
+                                    EDIT ---> #HandleSuspendKey=suspend ----
+                                    TO ---> HandleSuspendKey=ignore <br>
+                                    
+                                    EDIT ---> #HandleLidSwitch=suspend ----
+                                    TO ---> HandleLidSwitch=ignore <br>
+                                    
+                                    EDIT ---> #HandleLidSwitchDocked=ignore ----
+                                    TO ---> HandleLidSwitchDocked=ignore <br>
+                                </p>
                             </p>
                         </div>
                         <br><hr><br>
@@ -1577,7 +1591,7 @@
 
 
                         <div class="element-container text-left">
-                            <p class="py-2">Once thats done we can restart our systemd.</p>
+                            <p class="py-2">Once thats done we can restart our <span class="text-green-600">systemd</span>.</p>
 
                             <button class="copy-button"data-popover-target="popover-click" data-popover-trigger="click" onclick="copyToClipboard('element401')">
                                 <div data-popover id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
@@ -1617,7 +1631,7 @@
                     
 
                     
-                    <div class="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12 mb-8">
+                    <div id="unattended_upgrades" class="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12 mb-8">
 
                         <h1 class="text-center text-gray-900 dark:text-white text-3xl md:text-5xl font-extrabold mb-2">6. - Unattended Upgrades</h1><br>
         
@@ -1746,7 +1760,7 @@
                     <!-- 6TH LIST ELEMENT -->
 
 
-                    <div class="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12 mb-8">
+                    <div id="fail2ban" class="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12 mb-8">
 
                         <h1 class="text-center text-gray-900 dark:text-white text-3xl md:text-5xl font-extrabold mb-2">7. - Fail2Ban</h1><br>
         
@@ -2018,7 +2032,7 @@
 
                     <hr>
 
-                    <div class="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12 mb-8">
+                    <div id="mount" class="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12 mb-8">
 
                         <h1 class="text-center text-gray-900 dark:text-white text-3xl md:text-5xl font-extrabold mb-2">8. - Mount Drives (Persistent)</h1><br>
         

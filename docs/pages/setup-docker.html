@@ -7,8 +7,10 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Git Cheatsheet</title>
+        <title>Docker Cheatsheet</title>
         <link href="static/cs/home.css" rel="stylesheet" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
+
     </head>
 
 
@@ -37,7 +39,7 @@
                 <div>
                     <h1 class="text-center mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
                         <span class="text-blue-600 dark:text-blue-500">
-                            Git
+                            Docker
                         </span>Cheatsheet
                     </h1>                    
                 </div>
@@ -61,9 +63,9 @@
                         <div class="grid px-3 py-1 md:grid-cols-2 gap-14">
             
 
-                            <div class="bg-gray-50    dark:bg-gradient-to-l dark:from-gray-700 dark:via-gray-500 dark:to-black      border border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12">
+                            <div class="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12">
                 
-                                <p class="text-lg font-normal text-gray-500 dark:text-gray-100 mb-4">
+                                <p class="text-lg font-normal text-gray-500 dark:text-gray-400 mb-4">
                                     
                                     <h2 class="text-gray-900 dark:text-white text-3xl font-extrabold mb-2">Official Docs</h2>
                                     <hr><br>
@@ -110,14 +112,14 @@
                                     <hr>
                                     <p class=" text-lg font-normal text-gray-500 dark:text-gray-400 mb-4">                
                                         <ul class="text-left">
-                                            <li><a href="#get_started">1 - Get Started</a></li>
-                                            <li><a href="#initialise_git">2 - Initializing git</a></li>
-
+                                            <li>1 - Get Started</li>
+                                            <li>2 - Initializing git</li>        
                                             <li>3 - Pushing data to github</li>
                                             <li>4 - Github Hosted WebSite</li>
-                                            <li>5 - Set up remote repository</li>
+                                            <li>5 - set up remote repository</li>
                                         </ul>
 
+        
                                     </p>
                                 </p>
 
@@ -239,7 +241,7 @@
                     <!-- 1ST LIST ELEMENT -->
 
 
-                    <div id="get_started" class="text-left bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12 mb-8">
+                    <div class="text-left bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12 mb-8">
 
                         <h1 class="text-center text-gray-900 dark:text-white text-3xl md:text-5xl font-extrabold mb-2">1. - Get Started</h1><br>
         
@@ -306,7 +308,7 @@
 
 
 
-                        <h3 id="initialise_git" class="py-4 text-3xl underline text-blue-700">Create a .Git folder.</h3>
+                        <h3 class="py-4 text-3xl underline text-blue-700">Create a .Git folder.</h3>
 
                         <p class="py-2">With Git installed  we are ready to initialize a folder.</p>
 
@@ -636,3 +638,364 @@
     </body>
 </html>
 
+
+=========================================================
+Docker Essentials series Playlist for learn linux TV
+https://www.youtube.com/playlist?list=PLT98CRl2KxKECHltRib03tG8pyKEzwf9t
+=========================================================
+(Part 1) - Introduction
+https://www.youtube.com/watch?v=WpwtzQq5Er4&list=PLT98CRl2KxKECHltRib03tG8pyKEzwf9t&index=1
+=========================================================
+(Part 2) - What is Docker?
+https://www.youtube.com/watch?v=CZIGEjMrzd8&list=PLT98CRl2KxKECHltRib03tG8pyKEzwf9t&index=2
+=========================================================
+(Part 3) - Installing Docker on Windows 10
+https://www.youtube.com/watch?v=PgR3Wc4_X1g&list=PLT98CRl2KxKECHltRib03tG8pyKEzwf9t&index=3
+=========================================================
+(Part 4) - Running Containers
+https://www.youtube.com/watch?v=VevE65N3BOs&list=PLT98CRl2KxKECHltRib03tG8pyKEzwf9t&index=4
+=========================================================
+
+sudo usermod -aG docker ${USER}
+
+
+docker images
+docker pull ubuntu
+docker run ubuntu
+docker run nginx
+CTRL->C
+
+docker ps
+docker ps -a
+
+docker run -it ubuntu /bin/bash
+
+apt update
+
+ls -la
+
+exit
+
+=========================================================
+(Part 5) - Making Containers Persist
+https://www.youtube.com/watch?v=sOchDelOAIU&list=PLT98CRl2KxKECHltRib03tG8pyKEzwf9t&index=5
+=========================================================
+
+docker run -it ubuntu
+exit
+
+docker run -it -d ubuntu
+docker ps
+
+"""
+PS C:\Users\San> docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED         STATUS         PORTS     NAMES
+57e15e532aee   ubuntu    "bash"    3 minutes ago   Up 3 minutes             practical_pascal
+"""
+
+docker attach 57e15e532aee
+
+apt update && apt install nano -y
+
+CTRL->P+Q
+
+docker ps
+
+docker attach 57e15e532aee
+
+docker exit
+
+docker ps    --------  CONTAINER STILL RUNNING!!!!!
+
+
+=========================================================
+(Part 6) - Accessing Containerized Apps
+https://www.youtube.com/watch?v=iXD5FnJYZB4&list=PLT98CRl2KxKECHltRib03tG8pyKEzwf9t&index=6
+=========================================================
+
+docker run -it -d -p 80:80 nginx
+
+docker ps
+
+Get-NetIPAddress
+ 
+GO TO SITE
+
+docker ps
+
+docker stop b02882d3838e
+
+docker run -it -d --restart unless-stopped -p 80:80 nginx
+
+docker ps
+
+docker attach 57e15e532aee
+
+CTRL->C
+
+docker ps         --------  CONTAINER STILL RUNNING!!!!
+
+=========================================================
+(Part 7) - Creating Images
+https://www.youtube.com/watch?v=IY1dwuOdeLU&list=PLT98CRl2KxKECHltRib03tG8pyKEzwf9t&index=7
+=========================================================
+
+
+docker run -it ubuntu
+
+apt update && apt dist-upgrade -y
+
+apt install apache2 -y
+
+/etc/init.d/apache2 start
+/etc/init.d/apache2 status
+apt install nano -y
+
+CTRL->P+Q
+
+docker ps
+
+docker commit 09740aef95a4 ubuntu-apache:1.0
+
+docker images
+
+docker stop 92be555846ab
+
+docker ps
+
+docker run -d -it -p 8002:80 ubuntu-apache:1.0    --- RUNNING BUT NO ACCESS
+
+docker commit --change='ENTRYPOINT ["apachectl", "-DFOREGROUND"]' 92be555846ab ubuntu-apache:1.1
+
+docker images
+
+docker stop 92be555846ab
+
+docker run -d -it -p 8002:80 ubuntu-apache:1.1
+
+
+
+CREATE A NEW "Dockerfile"
+
+"""
+FROM ubuntu
+
+MAINTAINER San <Sanfo@email.com>
+
+# Skip prompts
+ARG DEBIAN_FRONTEND=noninteractive
+
+
+# Update packages
+RUN apt update; apt dist-upgrade -y
+
+# Install packages
+RUN apt install -y apache2 nano
+
+# Set entrypoint
+ENTRYPOINT apache2ctl -D FOREGROUND
+"""
+
+IN THE SAME FOLDER
+
+docker build -t san/ubuntu-apache:1.2 .
+
+docker images
+
+docker rmi 4ad2ac92b9a8       ------------------- TO REMOVE IMAGES
+docker rm 17de174247bd        ----------------TO REMOVE CONTAINERS
+
+
+docker run -d -it -p 8002:80 san/ubuntu-apache:1.2
+
+docker psls
+
+CHECK YOUR BROWSER - APACHE SHOULD BE RUNNING
+
+
+=========================================================
+
+=========================================================
+
+=========================================================
+
+sudo docker exec -it cbe992277c09 /bin/bash
+
+
+
+
+
+
+=========================================================
+
+=========================================================
+
+=========================================================
+
+
+docker build -t ms-ocr:1.2 .
+
+docker run -d -it -p 8888:80 ms-ocr:1.2
+
+docker run -d -it -p 8888:80 ms-ocr
+
+docker run -it -d --restart unless-stopped -p 80:80 ms-ocr:1.2
+
+docker stop 28623877caa4
+
+
+
+
+=========================================================
+
+=========================================================
+GENERAL COMMANDS
+=========================================================
+
+sudo apt-get update && sudo apt-get upgrade -y
+apt install docker.io
+
+
+docker pull centos
+docker pull alpine
+docker run -d -t --name sanfo599/ocr-ms Python
+docker ps
+docker exec -it FastApiMicro bash
+exit
+
+docker pull alpine
+docker run -d -t --name ocr-ms python
+docker exec -it ocr-ms bash
+docker ps
+
+
+
+docker pull thenetworkchuck/nccoffee:frenchpress
+docker run -t -d -p 80:80 --name nccoffee thenetworkchuck/nccoffee:frenchpress
+
+docker stop nccoffee
+docker start nccoffee
+
+docker -rmi nscoffee
+
+
+docker stats
+docker
+
+
+docker login
+sanfo599
+_Sandford2129446
+
+scp -r ms-ocr root@176.58.121.51:~
+scp -r ms-ocr root@176.58.121.51:~
+scp -r ms-ocr root@176.58.121.51:~
+
+docker build -t ms-ocr .
+
+docker images
+
+docker push sanfo599/ms-ocr
+docker pull sanfo599/ms-ocr:latest
+cd
+docker run -d -t -p 80:80 sanfo599/ms-ocr
+
+
+docker exec -it ms-site bash
+docker stop ms-ocr
+docker start ms-ocr
+
+
+docker rmi -f sanfo599/ms-ocr
+docker tag ms-ocr sanfo599/ms-ocr
+docker push sanfo599/ms-ocr
+
+
+
+
+
+docker run ms-imdb
+
+docker tag ms-site sanfo599/ms-site
+docker push sanfo599/ms-site
+docker pull sanfo599/ms-site:latest
+
+
+http://80.85.85.167/
+docker exec -it b0c85757cdd9 /bin/sh
+
+
+sudo curl -L https://github.com/docker/compose/releases/download/1.25.4/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+
+
+
+
+
+
+
+docker build -t ws-alpha .
+
+docker tag ms-site sanfo599/ws-alpha
+docker push sanfo599/ws-alpha
+
+docker login
+
+
+
+To use the access token from your Docker CLI client:
+
+1. Run docker login -u sanfo599
+
+2. At the password prompt, enter the personal access token.
+
+Docker-Token=4ea6fb4b-5267-4d76-a38d-193b7cce6fb2
+
+4ea6fb4b-5267-4d76-a38d-193b7cce6fb2
+
+
+
+
+
+
+
+gunicorn --worker-tmp-dir /dev/shm -k uvicorn.workers.UvicornWorker app.main:app
+
+
+
+
+
+
+docker run --cap-add=NET_ADMIN -d \
+  --name=transmission\
+  -e PUID=1000 \
+  -e PGID=1000 \
+  -p 9091:9091 \
+  -p 51413:51413 \
+  -p 51413:51413/udp \
+  -v /media/new_media/tvshows:/New_Shows \
+  -v /media/new_media/movies:/New_Movies \
+  -v /home/san/docker/transmission/data:/Data \
+  -v /media/transmission/complete:/Complete \
+  -v /media/transmission/incomplete:/Incomplete \
+  -e TZ=Europe/London \
+  -e LOCAL_NETWORK=192.168.0.150 \
+  -e TRANSMISSION_DOWNLOAD_DIR=/media/transmission/newstuff \
+  -e TRANSMISSION_INCOMPLETE_DIR=/downloads/incomplete \
+  --log-driver json-file \
+  --log-opt max-size=10m \
+  --restart=always \
+  linuxserver/transmission
+
+
+sudo docker run -d \
+  --name=ms-ocr \
+  -p 8888:80 \
+  -e LOCAL_NETWORK=80.85.85.167 \
+  -e DEBEG=0 \
+  -e ECHO_ACTIVE=1 \
+  -e APP_AUTH_TOKEN=f364b2421648d9bd3c402313cf1424f72b99cad6db284a2393155a075fe4edf3 \
+  -e APP_AUTH_TOKEN_PROD=f364b2421648d9bd3c402313cf1424f72b99cad6db284a2393155a075fe4edf3 \
+  -e SKIP_AUTH=0 \
+  --restart unless-stopped \
+  ms-ocr:2.5
