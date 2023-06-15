@@ -858,7 +858,7 @@ apt install docker.io
 
 docker pull centos
 docker pull alpine
-docker run -d -t --name sanfo599/ocr-ms Python
+docker run -d -t --name sandfordae/ocr-ms Python
 docker ps
 docker exec -it FastApiMicro bash
 exit
@@ -884,8 +884,10 @@ docker
 
 
 docker login
-sanfo599
-_Sandford2129446
+enter user name 
+pw
+
+
 
 scp -r ms-ocr root@176.58.121.51:~
 scp -r ms-ocr root@176.58.121.51:~
@@ -895,10 +897,10 @@ docker build -t ms-ocr .
 
 docker images
 
-docker push sanfo599/ms-ocr
-docker pull sanfo599/ms-ocr:latest
+docker push sandfordae/ms-ocr
+docker pull sandfordae/ms-ocr:latest
 cd
-docker run -d -t -p 80:80 sanfo599/ms-ocr
+docker run -d -t -p 80:80 sandfordae/ms-ocr
 
 
 docker exec -it ms-site bash
@@ -906,9 +908,9 @@ docker stop ms-ocr
 docker start ms-ocr
 
 
-docker rmi -f sanfo599/ms-ocr
-docker tag ms-ocr sanfo599/ms-ocr
-docker push sanfo599/ms-ocr
+docker rmi -f sandfordae/ms-ocr
+docker tag ms-ocr sandfordae/ms-ocr
+docker push sandfordae/ms-ocr
 
 
 
@@ -916,12 +918,12 @@ docker push sanfo599/ms-ocr
 
 docker run ms-imdb
 
-docker tag ms-site sanfo599/ms-site
-docker push sanfo599/ms-site
-docker pull sanfo599/ms-site:latest
+docker tag ms-site sandfordae/ms-site
+docker push sandfordae/ms-site
+docker pull sandfordae/ms-site:latest
 
 
-http://80.85.85.167/
+http://**.**.**.***/
 docker exec -it b0c85757cdd9 /bin/sh
 
 
@@ -936,8 +938,8 @@ sudo chmod +x /usr/local/bin/docker-compose
 
 docker build -t ws-alpha .
 
-docker tag ms-site sanfo599/ws-alpha
-docker push sanfo599/ws-alpha
+docker tag ms-site sandfordae/ws-alpha
+docker push sandfordae/ws-alpha
 
 docker login
 
@@ -945,13 +947,13 @@ docker login
 
 To use the access token from your Docker CLI client:
 
-1. Run docker login -u sanfo599
+1. Run docker login -u sandfordae
 
 2. At the password prompt, enter the personal access token.
 
 Docker-Token=4ea6fb4b-5267-4d76-a38d-193b7cce6fb2
 
-4ea6fb4b-5267-4d76-a38d-193b7cce6fb2
+
 
 
 
@@ -988,10 +990,17 @@ docker run --cap-add=NET_ADMIN -d \
   linuxserver/transmission
 
 
+
+
+
+
+  microservice-OCR
+
+
 sudo docker run -d \
   --name=ms-ocr \
   -p 8888:80 \
-  -e LOCAL_NETWORK=80.85.85.167 \
+  -e LOCAL_NETWORK=**.**.**.*** \
   -e DEBEG=0 \
   -e ECHO_ACTIVE=1 \
   -e APP_AUTH_TOKEN=f364b2421648d9bd3c402313cf1424f72b99cad6db284a2393155a075fe4edf3 \
