@@ -1,0 +1,808 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+      
+    <!-- META Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Tab title -->
+    <title>SandfordAE.GitHub.io</title>
+
+    <!-- CDN for tw_cards_example fonts - Don't forget to create a fontFamily{} within tailwind.config.js -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link  href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Slab:wght@100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Flowbite min.js -->
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
+
+    <!-- TailwindCSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Htmx -->
+    <script src="https://unpkg.com/htmx.org@2.0.2" integrity="sha384-Y7hw+L/jvKeWIRRkqWYfPcvVxHzVzn5REgzbawhxAuQGwX1XWe70vji+VSeHOThJ" crossorigin="anonymous"></script>
+
+    <!-- CSS file -->
+    <link rel="stylesheet" href="styles/css/styles.css">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="img/favicon.ico">
+
+
+  </head>
+
+
+
+
+
+
+
+
+
+
+  <body class="bg-slate-300 text-white">
+
+    <div class="relative">
+
+
+      <!-- Landing Page -->
+      <div class="px-6 sticky top-0 h-screen flex flex-col items-center justify-center animated-background 
+                  bg-gradient-to-tr from-sky-300 via-sky-400 to-blue-500
+                  " id="landing_page" >
+
+        <section class="animated-background overflow-hidden bg-opacity-10 backdrop-blur-xl
+                        bg-gradient-to-l from-gray-200 via-stone-50 to-stone-200 
+                        ">
+
+          <div class="mx-auto max-w-7xl px-6 lg:px-8">
+
+            <div class="p-8">
+              <h1 class="text-gray-900 text-3xl font-extrabold text-center sm:text-6xl p-4"><span class="text-7xl text-indigo-700">SandfordAE</span>.github.io</h1>
+            </div>
+
+            <p class="text-gray-900 max-w-3xl mx-auto mt-4 text-xl text-center ">
+              A simple UI created with Html and TailwindCSS, <br>
+              Created to allow me (and you) to easily explore the latest additions and features I've added to the 
+              <a href="https://github.com/SandfordAE" class="underline font-extrabold">SandfordAE</a> 
+              repo found at 
+              <a href="https://github.com/SandfordAE" class="underline font-extrabold">GitHub</a>.
+              <br><br>
+            </p>
+
+          </div>
+
+
+          <div class="max-w-screen-xl 2xl:max-w-screen-3xl px-12 md:px-24 mx-auto py-12 lg:pt-8 space-y-24 flex flex-col justify-center">
+
+            <div class="flex flex-col sm:flex-row mx-auto">
+
+              <a href="#about_us"> <img src="img/GH_About_Us.png" class="rounded-xl  -rotate-12 hover:rotate-0 duration-500 hover:-translate-y-12 h-full w-full object-cover hover:scale-150 transform origin-bottom" alt="#_"> </a>
+              <a href="#django_projects"> <img src="img/GH_Projects.png" class="rounded-xl  rotate-6 hover:rotate-0 duration-500 hover:-translate-y-12 h-full w-full object-cover hover:scale-150 transform origin-bottom" alt="#_"> </a>
+              <a href="#scripts_auto"> <img src="img/GH_Scripts.png" class="rounded-xl  -rotate-12 hover:rotate-0 duration-500 hover:-translate-y-12 h-full w-full object-cover hover:scale-150 transform origin-bottom" alt="#_"> </a>
+              <a href="#setup_guides"> <img src="img/GH_Setup.png" class="rounded-xl  rotate-6 hover:rotate-0 duration-500 hover:-translate-y-12 h-full w-full object-cover hover:scale-150 transform origin-bottom" alt="#_"> </a>
+              <a href="#contact_us"> <img src="img/GH_Contact.png" class="rounded-xl  -rotate-12 hover:rotate-0 duration-500 hover:-translate-y-12 h-full w-full object-cover hover:scale-150 transform origin-bottom" alt="#_"> </a>
+            </div>
+      
+          </div>
+
+
+
+          <div class="pb-8">
+            <p class="text-gray-900 max-w-3xl mx-auto mt-4 text-xl text-center ">
+              The purpose of the public repos are primarily to give me access to a curated list of code snippets and frameworks in order to allow me to quickly begin the development process,
+              <br><br>
+              But seeing as its a public facing repo I figured theres no harm in creating an interface that may help other people along in their way in their learning experiences and overall 
+              make it easier for them (and me) to get started generating code.
+            </p>
+          </div>
+
+        </section>
+
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+      <!-- About Us -->
+      <div class="sticky top-0 h-screen p-6 flex flex-col items-center justify-center animated-background 
+                  bg-gradient-to-bl from-green-200 via-neutral-50 to-blue-200
+                  " id="about_us">
+
+        <section class="overflow-hidden bg-white py-8 sm:py-16">
+            <div class="mx-auto max-w-7xl px-6 lg:px-8">
+
+              <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+                <div class="lg:pr-8 lg:pt-4">
+
+                  <div class="lg:max-w-lg">
+
+                    <h2 class="text-base font-semibold leading-7 text-indigo-600">Produce faster</h2>
+                    <p class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Development Tools</p>
+                    <p class="mt-6 text-lg leading-8 text-gray-600">I've built various automatons that allows me to quickly get started developing with a basic Django backend and Tailwind configured and ready to go  up front.</p>
+
+
+                    <dl class="mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-600 lg:max-w-none">
+
+
+                      <div class="relative pl-9">
+                        <dt class="inline font-semibold text-gray-900">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"
+                            class="absolute left-1 top-1 h-5 w-5 text-indigo-600">
+                            <path fill-rule="evenodd"
+                              d="M5.5 17a4.5 4.5 0 01-1.44-8.765 4.5 4.5 0 018.302-3.046 3.5 3.5 0 014.504 4.272A4 4 0 0115 17H5.5zm3.75-2.75a.75.75 0 001.5 0V9.66l1.95 2.1a.75.75 0 101.1-1.02l-3.25-3.5a.75.75 0 00-1.1 0l-3.25 3.5a.75.75 0 101.1 1.02l1.95-2.1v4.59z"
+                              clip-rule="evenodd"></path>
+                          </svg>
+                          Django Projects - 
+                        </dt>
+                        <dd class="inline">WebApps and tools built on top of the Django platform. A number of Django projects with bespoke solutions built in for testing before deployment.
+                        </dd>
+                      </div>
+
+
+
+                      <div class="relative pl-9">
+                        <dt class="inline font-semibold text-gray-900">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                            fill="currentColor" aria-hidden="true" class="absolute left-1 top-1 h-5 w-5 text-indigo-600">
+                            <path
+                              d="M3.196 12.87l-.825.483a.75.75 0 000 1.294l7.25 4.25a.75.75 0 00.758 0l7.25-4.25a.75.75 0 000-1.294l-.825-.484-5.666 3.322a2.25 2.25 0 01-2.276 0L3.196 12.87z">
+                            </path>
+                            <path
+                              d="M3.196 8.87l-.825.483a.75.75 0 000 1.294l7.25 4.25a.75.75 0 00.758 0l7.25-4.25a.75.75 0 000-1.294l-.825-.484-5.666 3.322a2.25 2.25 0 01-2.276 0L3.196 8.87z">
+                            </path>
+                            <path
+                              d="M10.38 1.103a.75.75 0 00-.76 0l-7.25 4.25a.75.75 0 000 1.294l7.25 4.25a.75.75 0 00.76 0l7.25-4.25a.75.75 0 000-1.294l-7.25-4.25z">
+                            </path>
+                          </svg>
+                          Scripts and Automation's - 
+                        </dt>
+                        <dd class="inline">A myriad of shell scripts to allow me to get set up, back stuff up or just make my terminal look cool and of course to generate and create code quickly and with ease.</dd>
+                      </div>
+
+
+
+                      <div class="relative pl-9">
+                        <dt class="inline font-semibold text-gray-900">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                            fill="currentColor" aria-hidden="true" class="absolute left-1 top-1 h-5 w-5 text-indigo-600">
+                            <path fill-rule="evenodd"
+                              d="M14.5 10a4.5 4.5 0 004.284-5.882c-.105-.324-.51-.391-.752-.15L15.34 6.66a.454.454 0 01-.493.11 3.01 3.01 0 01-1.618-1.616.455.455 0 01.11-.494l2.694-2.692c.24-.241.174-.647-.15-.752a4.5 4.5 0 00-5.873 4.575c.055.873-.128 1.808-.8 2.368l-7.23 6.024a2.724 2.724 0 103.837 3.837l6.024-7.23c.56-.672 1.495-.855 2.368-.8.096.007.193.01.291.01zM5 16a1 1 0 11-2 0 1 1 0 012 0z"
+                              clip-rule="evenodd"></path>
+                            <path
+                              d="M14.5 11.5c.173 0 .345-.007.514-.022l3.754 3.754a2.5 2.5 0 01-3.536 3.536l-4.41-4.41 2.172-2.607c.052-.063.147-.138.342-.196.202-.06.469-.087.777-.067.128.008.257.012.387.012zM6 4.586l2.33 2.33a.452.452 0 01-.08.09L6.8 8.214 4.586 6H3.309a.5.5 0 01-.447-.276l-1.7-3.402a.5.5 0 01.093-.577l.49-.49a.5.5 0 01.577-.094l3.402 1.7A.5.5 0 016 3.31v1.277z">
+                            </path>
+                          </svg>
+                          Setup Guides - 
+                        </dt>
+                        <dd class="inline">A bunch of README.md's detailing the setting up and configuration of your development environment, machine and frameworks.
+                        </dd>
+                      </div>
+
+                    </dl>
+
+                  </div>
+
+
+                  <div class="mt-10 flex items-center gap-x-6">
+                    <a href="https://github.com/SandfordAE"
+                      class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+                      Go to the Repo
+                    </a>
+                    <a href="#contact_us" class="text-sm font-semibold leading-6 text-gray-700">Request an API key
+                      <span aria-hidden="true">→</span>
+                    </a>
+                  </div>
+
+
+                </div>
+
+                <img src="img/stock_0.jpeg" alt="Product screenshot" class="w-[48rem] max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] md:-ml-4 lg:-ml-0" width="2432" height="1442">
+              
+              </div>
+            </div>
+          </section>
+                  
+      </div>
+
+
+
+
+
+
+
+
+
+
+      <!-- Within the Repo's -->
+      <div class="sticky top-0 h-screen flex flex-col items-center justify-center animated-background  
+            bg-gradient-to-tl from-indigo-800 via-neutral-400 to-purple-800 
+            text-slate-900
+            " id="django_projects" >
+
+        <section class="">
+            <div class="container max-w-xl p-6 mx-auto space-y-12 lg:px-8 lg:max-w-7xl">
+
+              <div>
+                <h2 class="text-3xl font-bold text-center sm:text-5xl">Django Project's</h2>
+                <p class="max-w-3xl mx-auto mt-4 text-xl text-center ">Most of the repo's containing Django projects are working solutions to problems I was encountering and these are the solutions that I came up with.</p>
+              </div>
+
+              <div class="grid lg:gap-8 lg:grid-cols-2 lg:items-center">
+                <div>
+                  <div class="mt-4 space-y-12">
+
+                    <div class="flex">
+
+                      <div class="flex-shrink-0">
+                        <div class="flex items-center justify-center w-12 h-12 rounded-md">
+                          <svg class="lucide lucide-rocket" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path>
+                            <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path>
+                            <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path>
+                            <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path>
+                          </svg>
+                        </div>
+                      </div>
+
+                      <div class="ml-4">
+                        <h4 class="text-lg font-medium leadi ">django_boilerplate_basic</h4>
+                        <p class="mt-2 ">A boilerplate Django project with the minimum to get started developing with Git, django-tailwind , AllAuth and django-decouple integrated and configured.</p>
+                      </div>
+
+                    </div>
+
+
+                    <div class="flex">
+                      <div class="flex-shrink-0">
+                        <div class="flex items-center justify-center w-12 h-12 rounded-md">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-bookmark-plus">
+                            <path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"></path>
+                            <line x1="12" x2="12" y1="7" y2="13"></line>
+                            <line x1="15" x2="9" y1="10" y2="10"></line>
+                          </svg></div>
+                      </div>
+
+                      <div class="ml-4">
+                        <h4 class="text-lg font-medium leadi ">django_boilerplate_saas_courses</h4>
+                        <p class="mt-2 ">Interactive Learning Resource that allows access to an extensive library of interactive resources (mainly short video's) that can be easily edited by the client.</p>
+                      </div>
+                    </div>
+
+
+                    <div class="flex">
+                      <div class="flex-shrink-0">
+                        <div class="flex items-center justify-center w-12 h-12 rounded-md">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-video">
+                            <path d="m22 8-6 4 6 4V8Z"></path>
+                            <rect width="14" height="12" x="2" y="6" rx="2" ry="2"></rect>
+                          </svg></div>
+                      </div>
+
+                      <div class="ml-4">
+                        <h4 class="text-lg font-medium leadi ">django_boilerplate_saas_b2c</h4>
+                        <p class="mt-2 ">Experience seamless video integration with enhanced streaming capabilities, providing a better and more uninterrupted learning experience.</p>
+                      </div>
+                    </div>
+
+
+                    <div class="flex">
+                      <div class="flex-shrink-0">
+                        <div class="flex items-center justify-center w-12 h-12 rounded-md">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-file-question">
+                            <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
+                            <path d="M10 10.3c.2-.4.5-.8.9-1a2.1 2.1 0 0 1 2.6.4c.3.4.5.8.5 1.3 0 1.3-2 2-2 2"></path>
+                            <path d="M12 17h.01"></path>
+                          </svg></div>
+                      </div>
+
+                      <div class="ml-4">
+                        <h4 class="text-lg font-medium leadi ">django_ollama_client </h4>
+                        <p class="mt-2 ">Client side Django app to interact with multimodal .</p>
+                      </div>
+
+
+                    </div>
+                  </div>
+                </div>
+                <div aria-hidden="true" class="mt-10 lg:mt-0">
+                  <img width="600" height="600" src="img/stock_1.jpeg" class="mx-auto rounded-lg shadow-lg dark-bg-gray-500" style="color:transparent">
+                </div>
+              </div>
+            </div>
+          </section>
+
+      </div>
+
+
+
+
+
+
+
+
+      <!-- Scripts and Automation's -->
+      <div class="animated-background flex flex-col items-center justify-center 
+                  bg-gradient-to-tl from-lime-200 via-sky-500 to-violet-500 
+                  sticky top-0 h-screen text-black
+                  " id="scripts_auto" >
+
+        <section class="">
+          <div class="container max-w-xl p-6 mx-auto space-y-12 lg:px-8 lg:max-w-7xl">
+
+            <div>
+              <h2 class="text-3xl font-bold text-center sm:text-5xl">Scripts and Automation's</h2>
+              <p class="max-w-3xl mx-auto mt-4 text-xl text-center ">Helper and management scripts to make life easier.</p>
+            </div>
+
+            <div class="grid lg:gap-8 lg:grid-cols-2 lg:items-center">
+              <div>
+
+                <div class="mt-4 space-y-12">
+
+                  <div class="flex">
+
+                    <div class="flex-shrink-0">
+                      <div class="flex items-center justify-center w-12 h-12 rounded-md">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                          class="lucide lucide-rocket">
+                          <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path>
+                          <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path>
+                          <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path>
+                          <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path>
+                        </svg></div>
+                    </div>
+
+                    <div class="ml-4">
+                      <h4 class="text-lg font-medium leadi ">Django_Innit</h4>
+                      <p class="mt-2 ">A Django Initiation script to start projects.</p>
+                    </div>
+
+                  </div>
+
+
+                  <div class="flex">
+
+                    <div class="flex-shrink-0">
+                      <div class="flex items-center justify-center w-12 h-12 rounded-md">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                          class="lucide lucide-bookmark-plus">
+                          <path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"></path>
+                          <line x1="12" x2="12" y1="7" y2="13"></line>
+                          <line x1="15" x2="9" y1="10" y2="10"></line>
+                        </svg></div>
+                    </div>
+
+                    <div class="ml-4">
+                      <h4 class="text-lg font-medium leadi ">Arch_Update</h4>
+                      <p class="mt-2 ">As the filename suggests it will update Arch linux.</p>
+                    </div>
+
+                  </div>
+
+
+                  <div class="flex">
+
+                    <div class="flex-shrink-0">
+                      <div class="flex items-center justify-center w-12 h-12 rounded-md">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                          class="lucide lucide-video">
+                          <path d="m22 8-6 4 6 4V8Z"></path>
+                          <rect width="14" height="12" x="2" y="6" rx="2" ry="2"></rect>
+                        </svg></div>
+                    </div>
+
+                    <div class="ml-4">
+                      <h4 class="text-lg font-medium leadi ">Docker_Deploy</h4>
+                      <p class="mt-2 ">Deploy Django project with Docker.</p>
+                    </div>
+
+                  </div>
+
+
+                  <div class="flex">
+
+                    <div class="flex-shrink-0">
+                      <div class="flex items-center justify-center w-12 h-12 rounded-md">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                          class="lucide lucide-file-question">
+                          <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
+                          <path d="M10 10.3c.2-.4.5-.8.9-1a2.1 2.1 0 0 1 2.6.4c.3.4.5.8.5 1.3 0 1.3-2 2-2 2"></path>
+                          <path d="M12 17h.01"></path>
+                        </svg></div>
+                    </div>
+
+                    <div class="ml-4">
+                      <h4 class="text-lg font-medium leadi ">CDN_Collect</h4>
+                      <p class="mt-2 ">A script to consolidate all CDN sources for a webapp before dockerised and deployed.</p>
+                    </div>
+
+                  </div>
+
+
+                </div>
+              </div>
+
+              <div aria-hidden="true" class="mt-10 lg:mt-0">
+                <img width="600" height="600" src="img/stock_2.jpeg" class="mx-auto rounded-lg shadow-lg dark-bg-gray-500" style="color:transparent">
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+
+
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+      <!-- Setup Guides -->
+      <div id="setup_guides" class="animated-background flex flex-col items-center justify-center 
+                  bg-gradient-to-tr from-amber-200 via-amber-200 to-red-400 
+                  sticky top-0 h-screen text-black">
+
+
+        <section class="">
+          <div class="container max-w-xl p-6 mx-auto space-y-12 lg:px-8 lg:max-w-7xl">
+
+            <div>
+              <h2 class="text-3xl font-bold text-center sm:text-5xl">Setup Guides</h2>
+              <p class="max-w-3xl mx-auto mt-4 text-xl text-center ">A bunch of README.md files and my notes from challenging deploys.</p>
+            </div>
+
+            <div class="grid lg:gap-8 lg:grid-cols-2 lg:items-center">
+              <div>
+                <div class="mt-4 space-y-12">
+                  <div class="flex">
+                    <div class="flex-shrink-0">
+                      <div class="flex items-center justify-center w-12 h-12 rounded-md">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                          class="lucide lucide-rocket">
+                          <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path>
+                          <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path>
+                          <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path>
+                          <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path>
+                        </svg></div>
+                    </div>
+                    <div class="ml-4">
+                      <h4 class="text-lg font-medium leadi ">TailwindCSS setup guide</h4>
+                      <p class="mt-2 ">Setting up and configuring TailwindCSS.</p>
+                    </div>
+                  </div>
+                  <div class="flex">
+                    <div class="flex-shrink-0">
+                      <div class="flex items-center justify-center w-12 h-12 rounded-md">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                          class="lucide lucide-bookmark-plus">
+                          <path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"></path>
+                          <line x1="12" x2="12" y1="7" y2="13"></line>
+                          <line x1="15" x2="9" y1="10" y2="10"></line>
+                        </svg></div>
+                    </div>
+                    <div class="ml-4">
+                      <h4 class="text-lg font-medium leadi ">Git setup and config</h4>
+                      <p class="mt-2 ">Setup and configurations for Git, Github and actions.</p>
+                    </div>
+                  </div>
+                  <div class="flex">
+                    <div class="flex-shrink-0">
+                      <div class="flex items-center justify-center w-12 h-12 rounded-md">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                          class="lucide lucide-video">
+                          <path d="m22 8-6 4 6 4V8Z"></path>
+                          <rect width="14" height="12" x="2" y="6" rx="2" ry="2"></rect>
+                        </svg></div>
+                    </div>
+                    <div class="ml-4">
+                      <h4 class="text-lg font-medium leadi ">SEO and subdomains</h4>
+                      <p class="mt-2 ">DNS configs and SEO automatons.</p>
+                    </div>
+                  </div>
+                  <div class="flex">
+                    <div class="flex-shrink-0">
+                      <div class="flex items-center justify-center w-12 h-12 rounded-md">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                          class="lucide lucide-file-question">
+                          <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
+                          <path d="M10 10.3c.2-.4.5-.8.9-1a2.1 2.1 0 0 1 2.6.4c.3.4.5.8.5 1.3 0 1.3-2 2-2 2"></path>
+                          <path d="M12 17h.01"></path>
+                        </svg></div>
+                    </div>
+                    <div class="ml-4">
+                      <h4 class="text-lg font-medium leadi ">Notes from Django projects</h4>
+                      <p class="mt-2 ">Setup notes from previous Django projects.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div aria-hidden="true" class="mt-10 lg:mt-0">
+                <img width="600" height="600" src="img/stock_3.jpeg" class="mx-auto rounded-lg shadow-lg dark-bg-gray-500" style="color:transparent">
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+      <!-- Contact Us Page -->
+      <div id="contact_us" class="animated-background flex flex-col items-center justify-center 
+                  bg-gradient-to-r from-green-400 to-blue-500 
+                  sticky top-0 h-screen text-black">
+
+
+
+
+
+        <section class="body-font relative bg-gray-900 text-gray-400">
+
+          <div class="container mx-auto px-5 py-24">
+            
+            <div class="mb-12 flex w-full flex-col text-center">
+              <h1 class="title-font mb-4 text-2xl font-medium text-white sm:text-3xl">Contact Us</h1>
+              <p class="mx-auto text-base leading-relaxed lg:w-2/3">Feel free to reach out to us! Whether you have a question,
+                feedback, or a collaboration proposal, we'd love to hear from you.
+              </p>
+            </div>
+
+            <div class="mx-auto md:w-2/3 lg:w-1/2">
+              <div class="-m-2 flex flex-wrap">
+
+                <!-- form -->
+                <div class="w-1/2 p-2">
+                  <div class="relative">
+                    <input type="text" id="name" name="name" class="peer w-full rounded border border-gray-700 bg-gray-800 bg-opacity-40 py-1 px-3 text-base leading-8 text-gray-100 placeholder-transparent outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:bg-gray-900 focus:ring-2 focus:ring-indigo-900" placeholder="Name" />
+                    <label for="name" class="absolute left-3 -top-6 bg-transparent text-sm leading-7 text-indigo-500 transition-all peer-placeholder-shown:left-3 peer-placeholder-shown:top-2 peer-placeholder-shown:bg-gray-900 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:left-3 peer-focus:-top-6 peer-focus:text-sm peer-focus:text-indigo-500">Name</label>
+                  </div>
+                </div>
+                <div class="w-1/2 p-2">
+                  <div class="relative">
+                    <input type="email" id="email" name="email" class="peer w-full rounded border border-gray-700 bg-gray-800 bg-opacity-40 py-1 px-3 text-base leading-8 text-gray-100 placeholder-transparent outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:bg-gray-900 focus:ring-2 focus:ring-indigo-900" placeholder="Email" />
+                    <label for="email" class="absolute left-3 -top-6 bg-transparent text-sm leading-7 text-indigo-500 transition-all peer-placeholder-shown:left-3 peer-placeholder-shown:top-2 peer-placeholder-shown:bg-gray-900 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:left-3 peer-focus:-top-6 peer-focus:text-sm peer-focus:text-indigo-500">Email</label>
+                  </div>
+                </div>
+                <div class="mt-4 w-full p-2">
+                  <div class="relative">
+                    <textarea id="message" name="message" class="peer h-32 w-full resize-none rounded border border-gray-700 bg-gray-800 bg-opacity-40 py-1 px-3 text-base leading-6 text-gray-100 placeholder-transparent outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:bg-gray-900 focus:ring-2 focus:ring-indigo-900" placeholder="Message"></textarea>
+                    <label for="message" class="absolute left-3 -top-6 bg-transparent text-sm leading-7 text-indigo-500 transition-all peer-placeholder-shown:left-3 peer-placeholder-shown:top-2 peer-placeholder-shown:bg-gray-900 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:left-3 peer-focus:-top-6 peer-focus:text-sm peer-focus:text-indigo-500">Message</label>
+                  </div>
+                </div>
+                <div class="w-full p-2">
+                  <button class="mx-auto flex rounded border-0 bg-indigo-500 py-2 px-8 text-lg text-white hover:bg-indigo-600 focus:outline-none">Button</button>
+                </div>
+
+
+                <!-- footer -->
+                <div class="mt-8 w-full border-t border-gray-800 p-2 pt-8 text-center">
+                  <a class="text-indigo-400">admin@GammaDelta.ie</a>
+                  <p class="my-5 leading-normal">6 Main St. <br />Dublin, <br /> MN 56301</p>
+                  <span class="inline-flex">
+                    <a class="text-gray-500">
+                      <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="h-5 w-5" viewBox="0 0 24 24">
+                        <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                      </svg>
+                    </a>
+                    <a class="ml-4 text-gray-500">
+                      <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="h-5 w-5" viewBox="0 0 24 24">
+                        <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+                      </svg>
+                    </a>
+                    <a class="ml-4 text-gray-500">
+                      <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="h-5 w-5" viewBox="0 0 24 24">
+                        <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+                      </svg>
+                    </a>
+                    <a class="ml-4 text-gray-500">
+                      <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="h-5 w-5" viewBox="0 0 24 24">
+                        <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path>
+                      </svg>
+                    </a>
+                  </span>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+          
+        </section>
+
+      </div>
+
+
+
+        
+
+
+      <!-- About Us -->
+      <!-- <div class="sticky top-0 h-screen p-6 flex flex-col items-center justify-center animated-background 
+                  bg-gradient-to-bl from-green-200 via-neutral-50 to-blue-200
+                  " id="about_us">
+      </div> -->
+
+      <!-- Within the Repo's -->
+      <!-- <div class="sticky top-0 h-screen flex flex-col items-center justify-center animated-background  
+            bg-gradient-to-tl from-indigo-800 via-neutral-400 to-purple-800 
+            text-slate-900
+            " id="django_projects" >
+      </div> -->
+
+      <!-- Setup Guides -->
+      <!-- <div id="setup_guides" class="animated-background flex flex-col items-center justify-center 
+                  bg-gradient-to-tr from-amber-200 via-amber-200 to-red-400 
+                  sticky top-0 h-screen text-black">
+      </div> -->
+
+      <!-- Contact Us Page -->
+      <!-- <div id="contact_us" class="animated-background flex flex-col items-center justify-center 
+                  bg-gradient-to-r from-green-400 to-blue-500 
+                  sticky top-0 h-screen text-black">
+      </div> -->
+
+
+
+      <!-- <div class="animated-background flex flex-col items-center justify-center 
+                  bg-gradient-to-l from-gray-200 via-fuchsia-200 to-stone-100 
+                  sticky top-0 h-screen text-black">
+      </div> -->
+
+      <!-- <div class="animated-background flex flex-col items-center justify-center 
+                  bg-gradient-to-tr from-sky-300 via-sky-400 to-blue-500
+                  sticky top-0 h-screen text-black">
+      </div> -->
+
+
+
+
+<!-- 
+      <div class="animated-background flex flex-col items-center justify-center 
+                  bg-gradient-to-l from-gray-200 via-fuchsia-200 to-stone-100 
+                  sticky top-0 h-screen text-black">
+        <h2 class="text-4xl font-bold">The Sixth slide</h2>
+      </div>
+-->
+
+
+
+
+
+<!-- 
+
+      <div class="animated-background flex flex-col items-center justify-center 
+                  bg-gradient-to-tr from-sky-300 via-sky-400 to-blue-500
+                  sticky top-0 h-screen text-black">
+        <h2 class="text-4xl font-bold">The Seventh slide</h2>
+      </div>
+-->
+
+
+
+
+
+<!--         
+      <div class="animated-background flex flex-col items-center justify-center 
+                  bg-gradient-to-tr from-purple-800 via-indigo-400 to-pink-800 
+                  dark:bg-gradient-to-tr dark:from-sky-800 dark:via-blue-800 dark:to-indigo-800
+                  sticky top-0 h-screen text-gray-800">
+
+
+        <section class="py-8 z-10 font-serif">
+          <div class="flex flex-col md:flex-row items-center max-w-6xl px-6 py-8 mx-auto">
+            <div class="w-full md:w-1/2 py-8">
+              <h1 class="text-gray-800 text-7xl font-semibold leading-none tracking-tighter">
+                Welcome to <br><span class="text-blue-300">SandfordAE.github.io <br></span> I am Web Developer.
+              </h1>
+            </div>
+            <div class="w-full md:w-1/2 py-8">
+              <img src="https://www.svgrepo.com/show/493509/person-who-invests.svg" class="g-image">
+            </div>
+          </div>
+        </section>
+
+
+
+      </div> -->
+
+
+    </div>
+
+
+
+<style>
+
+  /* -- animated-gradient-background */
+  .animated-background {
+    background-size: 400%;
+
+    -webkit-animation: animation 10s ease infinite;
+    -moz-animation: animation 10s ease infinite;
+    animation: animation 10s ease infinite;
+  }
+
+  @keyframes animation {
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+    
+    50% {
+        background-position: 100% 50%;
+    }
+  }
+
+</style>
+
+
+    <script src="app.js"></script>
+
+  </body>
+
+
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
