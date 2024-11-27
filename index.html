@@ -19,24 +19,28 @@
     <link  href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Slab:wght@100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+
+    <!-- CSS file -->
+    <link rel="stylesheet" href="style/css/styles.css">
+
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="img/favicon.ico">
+
+    <!-- Optional: Include Font Awesome for Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
     <!-- Flowbite min.js -->
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
 
     <!-- TailwindCSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 
+
+
     <!-- Htmx -->
     <script src="https://unpkg.com/htmx.org@2.0.2" integrity="sha384-Y7hw+L/jvKeWIRRkqWYfPcvVxHzVzn5REgzbawhxAuQGwX1XWe70vji+VSeHOThJ" crossorigin="anonymous"></script>
 
-    <!-- CSS file -->
-    <link rel="stylesheet" href="git_page/style/css/styles.css">
-
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="git_page/img/favicon.ico">
-
-
-    <!-- Optional: Include Font Awesome for Icons -->
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
 
 
@@ -82,16 +86,13 @@
                 bg-gradient-to-tr from-slate-400 to-slate-700 via-gray-950">
 
 
-
       <!-- Header Section -->
-      <header class="bg-white dark:bg-gray-800 shadow-md">
+      <header class="bg-white dark:bg-gray-800 shadow-md rounded-lg ">
 
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
 
-
           <!-- Logo -->
           <div class="text-indigo-500 text-2xl font-semibold"><span class="text-neutral-100">SandfordAE</span>.github.io</div>
-
 
 
           <!-- Navbar Items -->
@@ -163,7 +164,7 @@
 
 
       <!-- Hero Section -->
-      <section id="home" class="flex-1 flex flex-col-reverse md:flex-row items-center justify-between px-6 sm:px-10 md:px-16 py-12 bg-white dark:bg-gray-800">
+      <section id="home" class="flex-1 flex flex-col-reverse md:flex-row items-center rounded-lg  justify-between px-6 sm:px-10 md:px-16 py-12 bg-white dark:bg-gray-800">
 
         <div class="md:w-3/5">
 
@@ -212,7 +213,7 @@
 
 
       <!-- Scripts Section -->
-      <section id="services" class="px-6 sm:px-10 md:px-16 py-12 bg-white dark:bg-gray-800">
+      <section id="services" class="px-6 sm:px-10 md:px-16 py-12 rounded-lg  bg-slate-50 dark:bg-gray-800">
 
         <h2 class="text-indigo-500 text-3xl sm:text-4xl font-semibold mb-6">Scripts</h2>
 
@@ -278,16 +279,34 @@
 
 
       <!-- Boilerplate Projects Section -->
-      <section id="projects" class="px-6 sm:px-10 md:px-16 py-12 bg-white dark:bg-gray-800 ">
+      <section id="projects" class="px-6 sm:px-10 md:px-16 py-12  rounded-lg  bg-white dark:bg-gray-800 ">
         <h2 class="text-indigo-500 text-3xl sm:text-4xl font-semibold mb-6">Boilerplate Django Projects</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+
+
+
           <!-- Project 1 -->
+
+
+
           <div class="bg-gray-100 dark:bg-gray-600 dark:hover:bg-slate-800 dark:hover:shadow-xl dark:hover:shadow-slate-300 rounded-lg p-6 flex flex-col">
             <img src="git_page/img/stock_3.jpg" alt="Course-Saas" class="rounded-lg mb-4 object-cover h-48">
+
             <h3 class="text-indigo-500 text-2xl font-semibold mb-2">Portfolio/Resume/Personal Blog page</h3>
+
             <p class="text-black dark:text-white text-lg flex-grow">Django, Tailwind application to deliver videos and course material (DB Hosted by Cloudinary).</p>
-            <a href="#" class="text-indigo-500 mt-4 font-semibold hover:underline">View Live</a>
+
+            <div class="flex gap-6">
+            <a href="https://github.com/SandfordAE/SandfordAE.github.io"  class="text-indigo-500 mt-4 font-semibold hover:underline">View Repo</a>
+            <a href="https://sandfordae.github.io/resume_page/index.html" class="text-indigo-500 mt-4 font-semibold hover:underline">View Resume</a>
           </div>
+          </div>
+
+
+
+
+
           <!-- Project 2 -->
           <div class="bg-gray-100 dark:bg-gray-600 dark:hover:bg-slate-800 dark:hover:shadow-xl dark:hover:shadow-slate-300 rounded-lg p-6 flex flex-col">
             <img src="git_page/img/stock_2.jpg" alt="E-Com-Saas" class="rounded-lg mb-4 object-cover h-48">
@@ -295,6 +314,9 @@
             <p class="text-black dark:text-white text-lg flex-grow">A Django powered single vendor E-Commerce platform - (Stripe POS).</p>
             <a href="#" class="text-indigo-500 mt-4 font-semibold hover:underline">View Live</a>
           </div>
+
+
+
           <!-- Project 3 -->
           <div class="bg-gray-100 dark:bg-gray-600 dark:hover:bg-slate-800 dark:hover:shadow-xl dark:hover:shadow-slate-300 rounded-lg p-6 flex flex-col">
             <img src="git_page/img/stock_1.jpg" alt="Course-Saas" class="rounded-lg mb-4 object-cover h-48">
@@ -302,6 +324,9 @@
             <p class="text-black dark:text-white text-lg flex-grow">Django, Tailwind application to deliver videos and course material (DB Hosted by Cloudinary).</p>
             <a href="#" class="text-indigo-500 mt-4 font-semibold hover:underline">View Live</a>
           </div>
+
+
+
         </div>
       </section>
 
@@ -313,7 +338,7 @@
 
 
       <!-- Test Projects Section -->
-      <section id="projects" class="px-6 sm:px-10 md:px-16 py-12 bg-white dark:bg-gray-800">
+      <section id="projects" class="px-6 sm:px-10 md:px-16 py-12 rounded-lg bg-white dark:bg-gray-800">
         <h2 class="text-indigo-500 text-3xl sm:text-4xl font-semibold mb-6">Test Projects</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           <!-- Project 1 -->
@@ -355,7 +380,7 @@
 
 
       <!-- About Me Section -->
-      <section id="about" class="px-6 sm:px-10 md:px-16 py-12 bg-white dark:bg-gray-800">
+      <section id="about" class="px-6 sm:px-10 md:px-16 py-12 rounded-lg bg-white dark:bg-gray-800">
 
         <h2 class="text-indigo-500 text-3xl sm:text-4xl font-semibold mb-6 ">
           About Me
@@ -411,7 +436,8 @@
 
 
       <!-- Contact Section -->
-      <section id="contact" class="px-6 sm:px-10 md:px-16 py-12 bg-white dark:bg-gray-800">
+<!-- 
+      <section id="contact" class="px-6 sm:px-10 md:px-16 py-12 rounded-lg bg-white dark:bg-gray-800">
         <h2 class="text-indigo-500 text-3xl sm:text-4xl font-semibold text-center mb-6">Contact me,</h2>
         <p class=" dark:text-white text-black  text-lg text-center mb-8">Get in touch if you would like to get access to a private repo.</p>
         <form class="max-w-2xl mx-auto space-y-6">
@@ -421,7 +447,7 @@
           <button type="submit" class="w-full bg-blue-400 dark:bg-indigo-500 text-white py-3 rounded-lg font-semibold hover:bg-indigo-600 transition">Send</button>
         </form>
       </section>
-
+ -->
 
 
 
@@ -434,9 +460,9 @@
 
 
       <!-- Footer -->
-      <footer class="px-6 sm:px-10 md:px-16 py-6 bg-white dark:bg-gray-800 text-center">
+      <footer class="px-6 sm:px-10 md:px-16 py-6 rounded-lg bg-white dark:bg-gray-800 text-center">
         <p class=" dark:text-white text-black ">
-          © 2024 SandfordAE | Fullstack Developer | UI Designer | Data Analyst | Designed by SandfordAE
+          © 2024 SandfordAE | Software Development | UI Design | Data Analysis | Fullstack Development | AI Leveraging
         </p>
       </footer>
 
