@@ -13,55 +13,74 @@
 // JavaScript for Mobile Menu and Theme Toggle
 
 
+            // Dark mode toggle
+            const darkModeToggle = document.getElementById('darkModeToggle');
+            const html = document.documentElement;
 
-// Mobile Menu Toggle
-const menuButton = document.getElementById('menu-button');
-const mobileMenu = document.getElementById('mobile-menu');
+            darkModeToggle.addEventListener('click', () => {
+                html.classList.toggle('dark');
+                localStorage.setItem('darkMode', html.classList.contains('dark'));
+            });
 
-menuButton.addEventListener('click', () => {
-mobileMenu.classList.toggle('hidden');
-});
+            // Check for saved dark mode preference
+            if (localStorage.getItem('darkMode') === 'true' || 
+                (!('darkMode' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                html.classList.add('dark');
+            }
 
-// Theme Toggle
-const themeToggle = document.getElementById('theme-toggle');
-const darkIcon = document.getElementById('theme-toggle-dark-icon');
-const lightIcon = document.getElementById('theme-toggle-light-icon');
+            // Mobile menu toggle
+            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+            const mobileMenu = document.getElementById('mobileMenu');
 
-// Initial Setup
-if (localStorage.getItem('color-theme') === 'dark' || 
-    (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-document.documentElement.classList.add('dark');
-darkIcon.classList.add('hidden');
-lightIcon.classList.remove('hidden');
-} else {
-document.documentElement.classList.remove('dark');
-darkIcon.classList.remove('hidden');
-lightIcon.classList.add('hidden');
-}
+            mobileMenuToggle.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
 
-themeToggle.addEventListener('click', () => {
-darkIcon.classList.toggle('hidden');
-lightIcon.classList.toggle('hidden');
+            // Smooth scroll for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    const yOffset = -60; // Adjust this value based on your header height
+                    const y = targetElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
 
-// If the page has the class dark, remove it, otherwise add it
-if (document.documentElement.classList.contains('dark')) {
-    document.documentElement.classList.remove('dark');
-    localStorage.setItem('color-theme', 'light');
-} else {
-    document.documentElement.classList.add('dark');
-    localStorage.setItem('color-theme', 'dark');
-}
-});
+                    window.scrollTo({top: y, behavior: 'smooth'});
 
-// Close mobile menu when clicking outside
-window.addEventListener('click', (e) => {
-if (!menuButton.contains(e.target) && !mobileMenu.contains(e.target)) {
-    mobileMenu.classList.add('hidden');
-}
-});
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                });
+            });
 
+            // Intersection Observer for fade-in animations
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
 
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-fade-in-up');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
 
+            document.querySelectorAll('section').forEach(section => {
+                observer.observe(section);
+            });
+
+            // Form submission (replace with your own logic)
+            const form = document.querySelector('form');
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Form submitted! (Replace this with your own logic)');
+                form.reset();
+            });
 
 
 

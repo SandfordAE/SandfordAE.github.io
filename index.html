@@ -1,401 +1,360 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
 
-<!doctype html>
-<html lang="en">
 
 
-  <head>
 
-    <!-- META Tags -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <!-- Tab title -->
-    <title>SandfordAE.GitHub.io</title>
 
-    <!-- CDN for tw_cards_example fonts - Don't forget to create a fontFamily{} within tailwind.config.js -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link  href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Slab:wght@100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap" rel="stylesheet" />
+
+
+
+    <head>
+
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <!-- Tab title -->
+        <title>SandfordAE.GitHub.io</title>
+
+        <!-- Font-Awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+        
+        <script src="https://cdn.tailwindcss.com"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <script>
+            tailwind.config = {
+                darkMode: 'class',
+                theme: {
+                    extend: {
+                        colors: {
+                            primary: {
+                                light: '#4338ca', // indigo-800
+                                dark: '#f97316', // blue-900
+                            }
+                        }
+                    }
+                }
+            }
+        </script>
+
+
+
+
+        <style>
+            @keyframes fadeInUp {
+                from { opacity: 0; transform: translateY(20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+            .animate-fade-in-up {
+                animation: fadeInUp 0.6s ease-out forwards;
+            }
+            .transition-transform {
+                transition-property: transform;
+                transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+                transition-duration: 150ms;
+            }
+        </style>
+
+
+
+
+
+
+    </head>
+
+
+
+
+
+    <body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+
+        <header class="bg-white dark:bg-gray-800 shadow-md fixed w-full z-10 rounded-b-3xl transition-colors duration-300">
+
+            <nav class="container mx-auto px-6 py-3">
+
+                <div class="flex justify-between items-center">
+
+
+                    <!-- Logo -->
+                    <div class="text-primary-light dark:text-primary-dark text-2xl font-semibold">
+                        <i class="fab fa-github text-slate-950 dark:text-neutral-100"></i> 
+                        <span class="text-slate-950 dark:text-neutral-100">SandfordAE</span>.GitHub.io       
+                    </div>
+
+
+                    <div class="hidden md:flex space-x-6">
+                        <a href="#home" class="hover:text-primary-light dark:hover:text-primary-dark transition-colors duration-300">Home</a>
+                        <a href="#scripts" class="hover:text-primary-light dark:hover:text-primary-dark transition-colors duration-300">Scripts</a>
+                        <a href="#projects" class="hover:text-primary-light dark:hover:text-primary-dark transition-colors duration-300">Django Projects</a>
+                        <a href="#test_projects" class="hover:text-primary-light dark:hover:text-primary-dark transition-colors duration-300">Test Projects</a>
+                        <a href="#about" class="hover:text-primary-light dark:hover:text-primary-dark transition-colors duration-300">About</a>
+                        <!-- <a href="#contact" class="hover:text-primary-light dark:hover:text-primary-dark transition-colors duration-300">Contact</a> -->
+
+                    </div>
+
+                    <div class="flex items-center">
+
+                        <button id="darkModeToggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-300 mr-4" aria-label="Toggle dark mode">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                            </svg>
+                        </button>
+
+                        
+                        <button id="mobileMenuToggle" class="md:hidden focus:outline-none" aria-label="Toggle mobile menu">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                            </svg>
+                        </button>
+
+                    </div>
+                </div>
+
+            </nav>
+
+            <div id="mobileMenu" class="md:hidden hidden bg-white dark:bg-gray-800 transition-colors duration-300">
+                <a href="#home" class="block py-2 px-4 text-sm hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-300">Home</a>
+                <a href="#scripts" class="block py-2 px-4 text-sm hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-300">About</a>
+                <a href="#projects" class="block py-2 px-4 text-sm hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-300">Django Projects</a>
+                <a href="#test_projects" class="block py-2 px-4 text-sm hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-300">Test Projects</a>
+                <a href="#about" class="block py-2 px-4 text-sm hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-300">About</a>
+                <!-- <a href="#contact" class="block py-2 px-4 text-sm hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-300">Contact</a> -->
+            </div>
+
+        </header>
+
+
+
+
+
+
+        <main class="container mx-auto px-6 py-20">
+
+
+            <!-- Hero Section -->
+            <section id="home" class="flex-1 flex flex-col-reverse md:flex-row items-center rounded-lg justify-between  py-12">
+
+                <div class="md:w-3/5">
+
+                <p class="text-2xl sm:text-3xl md:text-4xl font-semibold dark:text-gray-300 text-slate-700 mb-4">
+                    Welcome to
+                </p>
+
+                <h1 class=" text-slate-950 dark:text-neutral-100 text-3xl sm:text-4xl md:text-5xl font-semibold  mb-4">
+                    SandfordAE
+                    <span class=" text-primary-light dark:text-primary-dark text-3xl sm:text-4xl md:text-5xl font-semibold ">
+                    .GitHub.io 
+                    </span>
+                </h1>
+
+                <p class="text-lg sm:text-xl md:text-2xl font-medium dark:text-gray-300 text-gray-600">
+                    The repo itself contains a number of scripts and apps created to assist me with
+                    <br>
+                    Fullstack Development, leveraging of AI Tools, UI Design & Data Mining.
+                </p>
+
+                <br>
+
+                <p class="text-lg sm:text-xl md:text-2xl font-medium dark:text-gray-300 text-gray-600">
+                    Unfortunately not all repos are available to the public without an API key, 
+                    <br>
+                    The public repos are mostly boilerplate web-app templates to quickly get started developing.
+                </p> 
+
+                <br>
+
+                <p class="text-lg sm:text-xl md:text-2xl font-medium dark:text-gray-300 text-gray-600">
+                    The objective here is to create end-to-end seamless web experiences for a user to find the repo and information needed to solve their needs.
+                </p>
+
+                </div>
+
+                <div class="md:w-2/5 flex justify-center mb-6 md:mb-0">
+                <img src="img/SandfordAE,github.io.jpg" alt="Profile Picture" class="w-64 h-64 sm:w-80 sm:h-80 rounded-full bg-indigo-500 object-cover">
+                </div>
+                
+            </section>
+
+
+
+
+
+            <!-- Scripts -->
+            <section id="scripts" class="mb-20 animate-fade-in-up" style="animation-delay: 0.2s;">
+                <h2 class="text-3xl font-bold mb-8 text-primary-light dark:text-primary-dark">Scripts</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 transform hover:scale-105 transition-transform">
+                        <h3 class="text-xl font-semibold mb-2">Django_Init</h3>
+                        <p class="mb-4">A Django script to get you up and running.</p>
+                        <a href="#" class="text-primary-light dark:text-primary-dark hover:underline transition-colors duration-300">View the Repo →</a>
+                    </div>
+
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 transform hover:scale-105 transition-transform">
+                        <h3 class="text-xl font-semibold mb-2">Dot_Files</h3>
+                        <p class="mb-4">An automation to facilitate the backing up and reinstalling of dot files for Arch.</p>
+                        <a href="#" class="text-primary-light dark:text-primary-dark hover:underline transition-colors duration-300">View the Repo →</a>
+                    </div>
+
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 transform hover:scale-105 transition-transform">
+                        <h3 class="text-xl font-semibold mb-2">Arch Update Automation</h3>
+                        <p class="mb-4">Update Arch, <br> Pacman and AUR/yay packages, <br>Refresh Docker containers.</p>
+                        <a href="#" class="text-primary-light dark:text-primary-dark hover:underline transition-colors duration-300">View the Repo →</a>
+                    </div>
+
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 transform hover:scale-105 transition-transform">
+                        <h3 class="text-xl font-semibold mb-2">Web Scraping with <br>Python and FastAPI</h3>
+                        <p class="mb-4">Collect and manipulate content from the web using Python.</p>
+                        <a href="#" class="text-primary-light dark:text-primary-dark hover:underline transition-colors duration-300">View the Repo →</a>
+                    </div>
+
+                </div>
+            </section>
+
+
+
+
+            <!-- Boilerplate Projects Section -->
+            <section id="projects" class="mb-20 animate-fade-in-up" style="animation-delay: 0.2s;">
+                <h2 class="text-3xl font-bold mb-8 text-primary-light dark:text-primary-dark">Django Projects (Boilerplate)</h2>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                    <!-- Project 1 -->
+                    <div class="bg-white dark:bg-gray-800 shadow-md hover:shadow-lg dark:hover:bg-slate-700 dark:hover:shadow-xl dark:hover:shadow-slate-300 rounded-lg p-6 flex flex-col hover:scale-105 transition-transform">
+                        <img src="img/stock_3.jpg" alt="Course-Saas" class="rounded-lg mb-4 object-cover h-48">
     
-    <!-- CSS file -->
-    <link rel="stylesheet" href="style/css/styles.css">
+                        <h3 class="text-indigo-500 text-2xl font-semibold mb-2">Portfolio/Resume/Personal Blog page</h3>
+    
+                        <p class="text-black dark:text-white text-lg flex-grow">Django, Tailwind application to deliver videos and course material (DB Hosted by Cloudinary).</p>
+    
+                        <div class="flex gap-6">
+                            <a href="https://github.com/SandfordAE/SandfordAE.github.io"  class="text-indigo-500 mt-4 font-semibold hover:underline">View Repo</a>
+                            <a href="https://sandfordae.github.io/resume_page/index.html" class="text-indigo-500 mt-4 font-semibold hover:underline">View Resume</a>
+                        </div>
+                    </div>
+    
+                    <!-- Project 2 -->
+                    <div class="bg-white dark:bg-gray-800 shadow-md hover:shadow-lg dark:hover:bg-slate-700 dark:hover:shadow-xl dark:hover:shadow-slate-300 rounded-lg p-6 flex flex-col hover:scale-105 transition-transform">
+                        <img src="img/stock_2.jpg" alt="E-Com-Saas" class="rounded-lg mb-4 object-cover h-48">
+                        <h3 class="text-indigo-500 text-2xl font-semibold mb-2">Saas - E-Com (B2C) </h3>
+                        <p class="text-black dark:text-white text-lg flex-grow">A Django powered single vendor E-Commerce platform - (Stripe POS).</p>
+                        <a href="#" class="text-indigo-500 mt-4 font-semibold hover:underline">View Live</a>
+                    </div>
+    
+                    <!-- Project 3 -->
+                    <div class="bg-white dark:bg-gray-800 shadow-md hover:shadow-lg dark:hover:bg-slate-700 dark:hover:shadow-xl dark:hover:shadow-slate-300 rounded-lg p-6 flex flex-col hover:scale-105 transition-transform">
+                        <img src="img/stock_1.jpg" alt="Course-Saas" class="rounded-lg mb-4 object-cover h-48">
+                        <h3 class="text-indigo-500 text-2xl font-semibold mb-2">Saas - Course hosting site</h3>
+                        <p class="text-black dark:text-white text-lg flex-grow">Django, Tailwind application to deliver videos and course material (DB Hosted by Cloudinary).</p>
+                        <a href="#" class="text-indigo-500 mt-4 font-semibold hover:underline">View Live</a>
+                    </div>
+    
+                </div>
+            </section>
+
+
+
+
+            <!-- Test Projects Section -->
+            <section id="test_projects" class="mb-20 animate-fade-in-up" style="animation-delay: 0.2s;">
+                <h2 class="text-3xl font-bold mb-8 text-primary-light dark:text-primary-dark">Test Projects</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Project 1 -->
+                <div class="bg-white dark:bg-gray-800 shadow-md hover:shadow-lg dark:hover:bg-slate-700 dark:hover:shadow-xl dark:hover:shadow-slate-300 rounded-lg p-6 flex flex-col hover:scale-105 transition-transform">
+                    <img src="img/stock_4.jpg" alt="Course-Saas" class="rounded-lg mb-4 object-cover h-48">
+                    <h3 class="text-indigo-500 text-2xl font-semibold mb-2">Portfolio/Resume/Personal Blog page</h3>
+                    <p class="text-black dark:text-white text-lg flex-grow">Django, Tailwind application to deliver videos and course material (DB Hosted by Cloudinary).</p>
+                    <a href="#" class="text-indigo-500 mt-4 font-semibold hover:underline">View Live</a>
+                </div>
+                <!-- Project 2 -->
+                <div class="bg-white dark:bg-gray-800 shadow-md hover:shadow-lg dark:hover:bg-slate-700 dark:hover:shadow-xl dark:hover:shadow-slate-300 rounded-lg p-6 flex flex-col hover:scale-105 transition-transform">
+                    <img src="img/stock_5.jpg" alt="E-Com-Saas" class="rounded-lg mb-4 object-cover h-48">
+                    <h3 class="text-indigo-500 text-2xl font-semibold mb-2">Saas - E-Com (B2C) </h3>
+                    <p class="text-black dark:text-white text-lg flex-grow">A Django powered single vendor E-Commerce platform - (Stripe POS).</p>
+                    <a href="#" class="text-indigo-500 mt-4 font-semibold hover:underline">View Live</a>
+                </div>
+                <!-- Project 3 -->
+                <div class="bg-white dark:bg-gray-800 shadow-md hover:shadow-lg dark:hover:bg-slate-700 dark:hover:shadow-xl dark:hover:shadow-slate-300 rounded-lg p-6 flex flex-col hover:scale-105 transition-transform">
+                    <img src="img/stock_6.jpg" alt="Course-Saas" class="rounded-lg mb-4 object-cover h-48">
+                    <h3 class="text-indigo-500 text-2xl font-semibold mb-2">Saas - Course hosting site</h3>
+                    <p class="text-black dark:text-white text-lg flex-grow">Django, Tailwind application to deliver videos and course material (DB Hosted by Cloudinary).</p>
+                    <a href="#" class="text-indigo-500 mt-4 font-semibold hover:underline">View Live</a>
+                </div>
+                </div>
+            </section>
+
+
+
+
+            <!-- About Me Section -->
+            <section id="about" class="mb-20 animate-fade-in-up" style="animation-delay: 0.2s;">
+
+                <h2 class="text-3xl font-bold mb-8 text-primary-light dark:text-primary-dark">
+                About Me
+                </h2>
+
+                <p class="text-lg sm:text-xl font-medium  dark:text-white text-black ">
+                Hey there, my name is Alan, <br>
+                Check out my <a href="resume_page/index.html" class="text-blue-600 hover:text-primary-light dark:hover:text-primary-dark transition-colors duration-300">Resume</a> <br>
+
+                </p>
+
+                <br>
+
+                <!-- Socials -->
+                <div class="contact-icons">
+                    <div class="contact-icon text-3xl dark:text-white text-gray-800">
+                        <a href="https://www.github.com/SandfordAE" target="_blank">
+                            <i class="fab fa-github text-gray-600 dark:text-gray-400 hover:text-primary-light dark:hover:text-primary-dark transition-colors duration-300"></i>
+                        </a>
+                        <a href="https://stackoverflow.com/users/16775571/san" target="_blank">
+                            <i class="fab fa-stack-overflow text-gray-600 dark:text-gray-400 hover:text-primary-light dark:hover:text-primary-dark transition-colors duration-300"></i>
+                        </a>
+                        <a href="https://hub.docker.com/u/sanfo599" target="_blank">
+                            <i class="fab fa-docker text-gray-600 dark:text-gray-400 hover:text-primary-light dark:hover:text-primary-dark transition-colors duration-300"></i>
+                        </a>
+                        <a href="https://gammadelta.ie/" target="_blank">
+                            <i class="fas fa-globe-europe text-gray-600 dark:text-gray-400 hover:text-primary-light dark:hover:text-primary-dark transition-colors duration-300"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <br>
+
+
+                <p class="text-lg sm:text-xl font-medium  dark:text-white text-black ">
+                Fullstack Web Development, AI leveraging, UI Design, and Mobile Development <br>
+                I have honed my skills in Web Development and advanced UI design principles, enabling me to create intuitive and visually appealing applications.
 
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="img/favicon.ico">
+                Creating intuitive and visually appealing applications 
 
-    <!-- Font-Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Flowbite min.js -->
-    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
+                </p>
 
-    <!-- TailwindCSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
 
-  </head>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <body>
-
-    <div class="flex flex-col animated-background p-5 gap-4 font-poppins min-h-screen
-                bg-gradient-to-tr from-slate-400 to-slate-700 via-gray-950">
-
-
-      <!-- Header Section -->
-      <header class="bg-white dark:bg-gray-800 shadow-md rounded-lg ">
-
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-
-          <!-- Logo -->
-          <div class="text-indigo-500 text-2xl font-semibold"><span class="text-neutral-100">SandfordAE</span>.github.io</div>
-
-
-          <!-- Navbar Items -->
-          <nav>
-            <div class="hidden md:flex space-x-6  ">
-              <a href="#home" class="hover:text-white transition text-black dark:text-indigo-500">Home</a>
-              <a href="#about" class="hover:text-indigo-500 transition text-black dark:text-indigo-500">About Me</a>
-              <a href="#services" class="hover:text-indigo-500 transition text-black dark:text-indigo-500">Scripts</a>
-              <a href="#projects" class="hover:text-indigo-500 transition text-black dark:text-indigo-500">Projects</a>
-              <a href="#contact" class="hover:text-indigo-500 transition text-black dark:text-indigo-500">Contact</a>
-            </div>
-          </nav>
-
-
-
-          <!-- Dark Mode Toggle -->
-          <div class="ml-4">
-            <button id="theme-toggle" class="text-indigo-500 focus:outline-none">
-              <svg id="theme-toggle-dark-icon" class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
-              </svg>
-              <svg id="theme-toggle-light-icon" class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M10 3a1 1 0 011 1v1a1 1 0 11-2 0V4a1 1 0 011-1zm4.22 1.22a1 1 0 011.415 1.415l-.707.707a1 1 0 11-1.414-1.414l.707-.708zM17 10a1 1 0 100 2h1a1 1 0 100-2h-1zm-1.22 4.78a1 1 0 011.415-1.415l.707.708a1 1 0 11-1.414 1.414l-.708-.707zM10 17a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zm-4.78-1.22a1 1 0 00-1.415 1.415l.707.708a1 1 0 001.414-1.414l-.707-.709zM3 10a1 1 0 100 2H2a1 1 0 100-2h1zm1.22-4.78a1 1 0 00-1.415-1.415l-.708.707a1 1 0 001.414 1.414l.709-.708zM10 7a3 3 0 100 6 3 3 0 000-6z"/>
-              </svg>
-            </button>
-          </div>
-          
-
-
-          <!-- Mobile Menu Toggle -->
-          <div class="md:hidden">
-              <button id="menu-button" class="text-indigo-500 focus:outline-none">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                        d="M4 6h16M4 12h16M4 18h16"/>
-                </svg>
-              </button>
-            </div>
-
-        </div>
-        
-
-
-        <!-- Mobile Navigation Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-gray-300 items-center mx-auto p-10 justify-center dark:bg-gray-900">
-          <a href="#home" class="block px-4 py-2 text-indigo-500 hover:bg-gray-700 dark:hover:bg-gray-800">Home</a>
-          <a href="#about" class="block px-4 py-2 hover:bg-gray-700 dark:hover:bg-gray-800">About Me</a>
-          <a href="#services" class="block px-4 py-2 hover:bg-gray-700 dark:hover:bg-gray-800">Scripts</a>
-          <a href="#projects" class="block px-4 py-2 hover:bg-gray-700 dark:hover:bg-gray-800">Projects</a>
-          <a href="#contact" class="block px-4 py-2 hover:bg-gray-700 dark:hover:bg-gray-800">Contact</a>
-        </div>
-
-      </header>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      <!-- Hero Section -->
-      <section id="home" class="flex-1 flex flex-col-reverse md:flex-row items-center rounded-lg  justify-between px-6 sm:px-10 md:px-16 py-12 bg-white dark:bg-gray-800">
-
-        <div class="md:w-3/5">
-
-          <h1 class="text-3xl sm:text-4xl md:text-5xl font-semibold dark:text-white text-black mb-4">
-            Welcome to SandfordAE.Github.io
-          </h1>
-
-          <p class="text-lg sm:text-xl md:text-2xl font-medium dark:text-gray-300 text-gray-600">
-            The repo itself contains a number of scripts and apps created in order to help me with <br>
-            Fullstack Development, leveraging of AI Tools, UI Design & Data Mining.
-          </p>
-
-          <br>
-
-          <p class="text-lg sm:text-xl md:text-2xl font-medium dark:text-gray-300 text-gray-600">
-            Unfortunately not all repos are available to the public without an API key, <br>
-            The public repos are mostly boilerplate web-app templates to quickly get started developing.
-          </p> 
-
-          <br>
-
-          <p class="text-lg sm:text-xl md:text-2xl font-medium dark:text-gray-300 text-gray-600">
-            The objective here is to create end-to-end seamless web experiences for a user to find the repo and information needed to solve their needs.
-          </p>
-
-        </div>
-
-        <div class="md:w-2/5 flex justify-center mb-6 md:mb-0">
-          <img src="img/SandfordAE,github.io.jpg" alt="Profile Picture" class="w-64 h-64 sm:w-80 sm:h-80 rounded-full bg-indigo-500 object-cover">
-        </div>
-        
-      </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      <!-- Scripts Section -->
-      <section id="services" class="px-6 sm:px-10 md:px-16 py-12 rounded-lg  bg-slate-50 dark:bg-gray-800">
-
-        <h2 class="text-indigo-500 text-3xl sm:text-4xl font-semibold mb-6">Scripts</h2>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-
-          <!-- Service 1 --> 
-          <div class="bg-gray-100 dark:bg-gray-600 dark:hover:bg-slate-800 dark:hover:shadow-xl dark:hover:shadow-slate-300 rounded-lg p-6 flex flex-col items-center text-center">
-            <a href="#">
-              <i class="fas fa-code text-indigo-500 text-3xl mb-4"></i>
-              <h3 class="text-black dark:text-white text-2xl font-semibold mb-2">Django_Init</h3>
-              <p class="text-black dark:text-white text-base">A Django script to get you up and running.</p>
-            </a>
-          </div>
-
-
-
-          <!-- Service 2 --> 
-          <div class="bg-gray-100 dark:bg-gray-600 dark:hover:bg-slate-800 dark:hover:shadow-xl dark:hover:shadow-slate-300 rounded-lg p-6 flex flex-col items-center text-center">
-            <a href="#">
-              <i class="fas fa-code text-indigo-500 text-3xl mb-4"></i>
-              <h3 class="text-black dark:text-white text-2xl font-semibold mb-2">Dot_Files</h3>
-              <p class="text-black dark:text-white text-base">An automation to facilitate the backing up and reinstalling of dot files for Arch.</p>
-            </a>
-          </div>
-
-
-          <!-- Service 3 --> 
-          <div class="bg-gray-100 dark:bg-gray-600 dark:hover:bg-slate-800 dark:hover:shadow-xl dark:hover:shadow-slate-300 rounded-lg p-6 flex flex-col items-center text-center">
-            <a href="#">
-              <i class="fas fa-code text-indigo-500 text-3xl mb-4"></i>
-              <h3 class="text-black dark:text-white text-2xl font-semibold mb-2">Arch_Update</h3>
-              <p class="text-black dark:text-white text-base">Update Arch, <br> Pacman and AUR/yay packages, <br>Refresh Docker containers.</p>
-            </a>
-          </div>
-
-
-
-          <!-- Service 4 --> 
-          <div class="bg-gray-100 dark:bg-gray-600 dark:hover:bg-slate-800 dark:hover:shadow-xl dark:hover:shadow-slate-300 rounded-lg p-6 flex flex-col items-center text-center">
-           <a href="#">
-              <i class="fas fa-database text-indigo-500 text-3xl mb-4"></i>
-              <h3 class="text-black dark:text-white text-2xl font-semibold mb-2">Web Scraping with <br>Python and FastAPI</h3>
-              <p class="text-black dark:text-white text-base">Collect and manipulate content from the web using Python.</p>
-            </a>
-          </div>
-
-
-
-        </div>
-
-      </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-      <!-- Boilerplate Projects Section -->
-      <section id="projects" class="px-6 sm:px-10 md:px-16 py-12  rounded-lg  bg-white dark:bg-gray-800 ">
-        <h2 class="text-indigo-500 text-3xl sm:text-4xl font-semibold mb-6">Boilerplate Django Projects</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-
-
-
-
-          <!-- Project 1 -->
-
-
-
-          <div class="bg-gray-100 dark:bg-gray-600 dark:hover:bg-slate-800 dark:hover:shadow-xl dark:hover:shadow-slate-300 rounded-lg p-6 flex flex-col">
-            <img src="img/stock_3.jpg" alt="Course-Saas" class="rounded-lg mb-4 object-cover h-48">
-
-            <h3 class="text-indigo-500 text-2xl font-semibold mb-2">Portfolio/Resume/Personal Blog page</h3>
-
-            <p class="text-black dark:text-white text-lg flex-grow">Django, Tailwind application to deliver videos and course material (DB Hosted by Cloudinary).</p>
-
-            <div class="flex gap-6">
-            <a href="https://github.com/SandfordAE/SandfordAE.github.io"  class="text-indigo-500 mt-4 font-semibold hover:underline">View Repo</a>
-            <a href="https://sandfordae.github.io/resume_page/index.html" class="text-indigo-500 mt-4 font-semibold hover:underline">View Resume</a>
-          </div>
-          </div>
-
-
-
-
-
-          <!-- Project 2 -->
-          <div class="bg-gray-100 dark:bg-gray-600 dark:hover:bg-slate-800 dark:hover:shadow-xl dark:hover:shadow-slate-300 rounded-lg p-6 flex flex-col">
-            <img src="img/stock_2.jpg" alt="E-Com-Saas" class="rounded-lg mb-4 object-cover h-48">
-            <h3 class="text-indigo-500 text-2xl font-semibold mb-2">Saas - E-Com (B2C) </h3>
-            <p class="text-black dark:text-white text-lg flex-grow">A Django powered single vendor E-Commerce platform - (Stripe POS).</p>
-            <a href="#" class="text-indigo-500 mt-4 font-semibold hover:underline">View Live</a>
-          </div>
-
-
-
-          <!-- Project 3 -->
-          <div class="bg-gray-100 dark:bg-gray-600 dark:hover:bg-slate-800 dark:hover:shadow-xl dark:hover:shadow-slate-300 rounded-lg p-6 flex flex-col">
-            <img src="img/stock_1.jpg" alt="Course-Saas" class="rounded-lg mb-4 object-cover h-48">
-            <h3 class="text-indigo-500 text-2xl font-semibold mb-2">Saas - Course hosting site</h3>
-            <p class="text-black dark:text-white text-lg flex-grow">Django, Tailwind application to deliver videos and course material (DB Hosted by Cloudinary).</p>
-            <a href="#" class="text-indigo-500 mt-4 font-semibold hover:underline">View Live</a>
-          </div>
-
-
-
-        </div>
-      </section>
-
-
-
-
-
-
-
-
-      <!-- Test Projects Section -->
-      <section id="projects" class="px-6 sm:px-10 md:px-16 py-12 rounded-lg bg-white dark:bg-gray-800">
-        <h2 class="text-indigo-500 text-3xl sm:text-4xl font-semibold mb-6">Test Projects</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <!-- Project 1 -->
-          <div class="bg-gray-100 dark:bg-gray-600 dark:hover:bg-slate-800 dark:hover:shadow-xl dark:hover:shadow-slate-300 rounded-lg p-6 flex flex-col">
-            <img src="img/stock_4.jpg" alt="Course-Saas" class="rounded-lg mb-4 object-cover h-48">
-            <h3 class="text-indigo-500 text-2xl font-semibold mb-2">Portfolio/Resume/Personal Blog page</h3>
-            <p class="text-black dark:text-white text-lg flex-grow">Django, Tailwind application to deliver videos and course material (DB Hosted by Cloudinary).</p>
-            <a href="#" class="text-indigo-500 mt-4 font-semibold hover:underline">View Live</a>
-          </div>
-          <!-- Project 2 -->
-          <div class="bg-gray-100 dark:bg-gray-600 dark:hover:bg-slate-800 dark:hover:shadow-xl dark:hover:shadow-slate-300 rounded-lg p-6 flex flex-col">
-            <img src="img/stock_5.jpg" alt="E-Com-Saas" class="rounded-lg mb-4 object-cover h-48">
-            <h3 class="text-indigo-500 text-2xl font-semibold mb-2">Saas - E-Com (B2C) </h3>
-            <p class="text-black dark:text-white text-lg flex-grow">A Django powered single vendor E-Commerce platform - (Stripe POS).</p>
-            <a href="#" class="text-indigo-500 mt-4 font-semibold hover:underline">View Live</a>
-          </div>
-          <!-- Project 3 -->
-          <div class="bg-gray-100 dark:bg-gray-600 dark:hover:bg-slate-800 dark:hover:shadow-xl dark:hover:shadow-slate-300 rounded-lg p-6 flex flex-col">
-            <img src="img/stock_6.jpg" alt="Course-Saas" class="rounded-lg mb-4 object-cover h-48">
-            <h3 class="text-indigo-500 text-2xl font-semibold mb-2">Saas - Course hosting site</h3>
-            <p class="text-black dark:text-white text-lg flex-grow">Django, Tailwind application to deliver videos and course material (DB Hosted by Cloudinary).</p>
-            <a href="#" class="text-indigo-500 mt-4 font-semibold hover:underline">View Live</a>
-          </div>
-        </div>
-      </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      <!-- About Me Section -->
-      <section id="about" class="px-6 sm:px-10 md:px-16 py-12 rounded-lg bg-white dark:bg-gray-800">
-
-        <h2 class="text-indigo-500 text-3xl sm:text-4xl font-semibold mb-6 ">
-          About Me
-        </h2>
-
-        <p class="text-lg sm:text-xl font-medium  dark:text-white text-black ">
-          Hey there, my name is Alan, <br>
-          Check out my <a href="resume_page/index.html" class="text-blue-600">Resume</a> <br>
-
-        </p>
-
-        <br>
-
-        <!-- Socials -->
-        <div class="contact-icons">
-            <div class="contact-icon text-3xl dark:text-white text-gray-800">
-                <a href="https://www.github.com/SandfordAE" target="_blank">
-                    <i class="fab fa-github hover:text-sky-700 dark:hover:text-sky-700"></i>
-                </a>
-                <a href="https://stackoverflow.com/users/16775571/san" target="_blank">
-                    <i class="fab fa-stack-overflow dark:hover:text-sky-700"></i>
-                </a>
-                <a href="https://hub.docker.com/u/sanfo599" target="_blank">
-                    <i class="fab fa-docker hover:text-sky-700 dark:hover:text-sky-700"></i>
-                </a>
-                <a href="https://gammadelta.ie/" target="_blank">
-                    <i class="fas fa-globe-europe hover:text-sky-700 dark:hover:text-sky-700"></i>
-                </a>
-            </div>
-        </div>
-
-        <br>
-
-
-        <p class="text-lg sm:text-xl font-medium  dark:text-white text-black ">
-          Fullstack Web Development, AI leveraging, UI Design, and Mobile Development <br>
-          I have honed my skills in Web Development and advanced UI design principles, enabling me to create intuitive and visually appealing applications.
-
-          Creating intuitive and visually appealing applications 
-
-
-        </p>
-
-
-      </section>
+            </section>
 
 
 
@@ -406,6 +365,9 @@
 
 
       <!-- Contact Section -->
+
+
+
 <!-- 
       <section id="contact" class="px-6 sm:px-10 md:px-16 py-12 rounded-lg bg-white dark:bg-gray-800">
         <h2 class="text-indigo-500 text-3xl sm:text-4xl font-semibold text-center mb-6">Contact me,</h2>
@@ -423,61 +385,94 @@
 
 
 
+<!-- 
+            <section id="contact" class="animate-fade-in-up" style="animation-delay: 0.4s;">
+                <h2 class="text-3xl font-bold mb-8 text-primary-light dark:text-primary-dark">Get in Touch</h2>
+                <form class="max-w-lg mx-auto">
+                    <div class="mb-4">
+                        <label for="name" class="block mb-2">Name</label>
+                        <input type="text" id="name" name="name" class="w-full px-4 py-2 rounded-lg bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-light dark:focus:ring-primary-dark transition-all duration-300" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="block mb-2">Email</label>
+                        <input type="email" id="email" name="email" class="w-full px-4 py-2 rounded-lg bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-light dark:focus:ring-primary-dark transition-all duration-300" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="message" class="block mb-2">Message</label>
+                        <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 rounded-lg bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-light dark:focus:ring-primary-dark transition-all duration-300" required></textarea>
+                    </div>
+                    <button type="submit" class="bg-primary-light dark:bg-primary-dark text-white px-6 py-3 rounded-full font-semibold hover:bg-opacity-90 transition-colors duration-300">Send Message</button>
+                </form>
+            </section>
+ -->
 
 
-      <!-- Footer -->
-      <footer class="px-6 sm:px-10 md:px-16 py-6 rounded-lg bg-white dark:bg-gray-800 text-center">
-        <p class=" dark:text-white text-black ">
-          © 2024 SandfordAE | Software Development | UI Design | Data Analysis | Fullstack Development | AI Leveraging
-        </p>
-      </footer>
 
-
-
-
-
-
-
-
-    </div>
-
-
-
-
-
-    <style>
-
-      /* -- animated-gradient-background */
-      .animated-background {
-        background-size: 400%;
-    
-        -webkit-animation: animation 20s ease infinite;
-        -moz-animation: animation 20s ease infinite;
-        animation: animation 20s ease infinite;
-      }
-    
-      @keyframes animation {
-        0%,
-        100% {
-            background-position: 0% 50%;
-        }
-        
-        50% {
-            background-position: 100% 50%;
-        }
-      }
-
-    </style>
+        </main>
 
 
 
 
-    <script src="styles/js/index.js"></script>
-
-
-  </body>
 
 
 
+        <!-- Footer -->
+        <footer class="bg-white dark:bg-gray-800 mt-12 rounded-t-xl transition-colors duration-300">
+            <div class="container mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center">
+                <p>&copy; 2024 SandfordAE All rights reserved. | Fullstack Development | UI Design | Data Analysis | AI Leveraging </p>
+                <div class="flex space-x-4 mt-4 md:mt-0">
+                    <a href="https://github.com/SandfordAE?tab=repositories" class="text-gray-600 dark:text-gray-400 hover:text-primary-light dark:hover:text-primary-dark transition-colors duration-300" aria-label="GitHub">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/SandfordAE/" class="text-gray-600 dark:text-gray-400 hover:text-primary-light dark:hover:text-primary-dark transition-colors duration-300" aria-label="LinkedIn">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                        </svg>
+                    </a>
+                    <a href="https://x.com/SandfordAE" class="text-gray-600 dark:text-gray-400 hover:text-primary-light dark:hover:text-primary-dark transition-colors duration-300" aria-label="X">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5  0 00-.08-.83A7.72 7.72 0 0023 3z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </footer>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <script src="styles/js/index.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+    </body>
 </html>
