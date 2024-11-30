@@ -1,16 +1,8 @@
+
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 
-
-
-
-
-
-
-
-
     <head>
-
 
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,26 +20,10 @@
         <!-- Favicon -->
         <link rel="shortcut icon" href="img/favicon.ico">
 
-
-        
+        <!-- Tailwind Css -->
         <script src="https://cdn.tailwindcss.com"></script>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        <!-- tailwind.config.js -->
         <script>
             tailwind.config = {
                 darkMode: 'class',
@@ -55,15 +31,16 @@
                     extend: {
                         colors: {
                             primary: {
-                                light: '#4338ca', // indigo-800
-                                dark: '#f97316', // blue-900
+                                light: '#1e40af', // indigo-800
+                                dark: '#d97706',
+                                dark2: '#f97316', // Liquid Lava
+
                             }
                         }
                     }
                 }
             }
         </script>
-
 
 
 
@@ -82,11 +59,6 @@
             }
         </style>
 
-
-
-
-
-
     </head>
 
 
@@ -103,7 +75,7 @@
 
 
                     <!-- Logo -->
-                    <div class="text-primary-light dark:text-primary-dark text-2xl font-semibold">
+                    <div class="text-primary-light text-2xl font-semibold">
                         <i class="fab fa-github text-slate-950 dark:text-neutral-100"></i> 
                         <span class="text-slate-950 dark:text-neutral-100">SandfordAE</span>.GitHub.io       
                     </div>
@@ -169,7 +141,7 @@
 
                 <h1 class=" text-slate-950 dark:text-neutral-100 text-3xl sm:text-4xl md:text-5xl font-semibold  mb-4">
                     SandfordAE
-                    <span class=" text-primary-light dark:text-primary-dark text-3xl sm:text-4xl md:text-5xl font-semibold ">
+                    <span class=" text-primary-light text-3xl sm:text-4xl md:text-5xl font-semibold ">
                     .GitHub.io 
                     </span>
                 </h1>
@@ -318,46 +290,44 @@
             <section id="about" class="mb-20 animate-fade-in-up" style="animation-delay: 0.2s;">
 
                 <h2 class="text-3xl font-bold mb-8 text-primary-light dark:text-primary-dark">
-                About Me
+                    About Me
                 </h2>
 
                 <p class="text-lg sm:text-xl font-medium  dark:text-white text-black ">
-                Hey there, my name is Alan, <br>
-                Check out my <a href="resume_page/index.html" class="text-blue-600 hover:text-primary-light dark:hover:text-primary-dark transition-colors duration-300">Resume</a> <br>
-
+                    Hi, my name is Alan, 
                 </p>
+                <br>
 
+                <p class="text-lg sm:text-xl font-medium  dark:text-white text-black ">
+                    My primary skillset is within Web Development and UI design, <br>
+                    Creating intuitive and visually appealing applications that can leverage the newest technologies is always the primary goal.
+                </p>
+                <br>
+
+                <p>
+                    Check out my <a href="resume_page/index.html" class="text-blue-600 hover:text-primary-light dark:hover:text-primary-dark transition-colors duration-300">Resume</a> <br>
+                </p>
                 <br>
 
                 <!-- Socials -->
                 <div class="contact-icons">
-                    <div class="contact-icon text-3xl dark:text-white text-gray-800">
+                    <div class="contact-icon space-x-4 text-3xl dark:text-white text-gray-800">
+
                         <a href="https://www.github.com/SandfordAE" target="_blank">
-                            <i class="fab fa-github text-gray-600 dark:text-gray-400 hover:text-primary-light dark:hover:text-primary-dark transition-colors duration-300"></i>
+                            <i class="fab fa-github text-gray-800 dark:text-gray-200 hover:text-primary-light dark:hover:text-primary-dark transition-colors duration-300  hover:scale-125 transition-transform"></i>
                         </a>
                         <a href="https://stackoverflow.com/users/16775571/san" target="_blank">
-                            <i class="fab fa-stack-overflow text-gray-600 dark:text-gray-400 hover:text-primary-light dark:hover:text-primary-dark transition-colors duration-300"></i>
+                            <i class="fab fa-stack-overflow text-gray-800 dark:text-gray-200 hover:text-primary-light dark:hover:text-primary-dark transition-colors duration-300 hover:scale-125 transition-transform"></i>
                         </a>
                         <a href="https://hub.docker.com/u/sanfo599" target="_blank">
-                            <i class="fab fa-docker text-gray-600 dark:text-gray-400 hover:text-primary-light dark:hover:text-primary-dark transition-colors duration-300"></i>
+                            <i class="fab fa-docker text-gray-800 dark:text-gray-200 hover:text-primary-light dark:hover:text-primary-dark transition-colors duration-300 hover:scale-125 transition-transform"></i>
                         </a>
                         <a href="https://gammadelta.ie/" target="_blank">
-                            <i class="fas fa-globe-europe text-gray-600 dark:text-gray-400 hover:text-primary-light dark:hover:text-primary-dark transition-colors duration-300"></i>
+                            <i class="fas fa-globe-europe text-gray-800 dark:text-gray-200 hover:text-primary-light dark:hover:text-primary-dark transition-colors duration-300 hover:scale-125 transition-transform"></i>
                         </a>
+
                     </div>
                 </div>
-
-                <br>
-
-
-                <p class="text-lg sm:text-xl font-medium  dark:text-white text-black ">
-                Fullstack Web Development, AI leveraging, UI Design, and Mobile Development <br>
-                I have honed my skills in Web Development and advanced UI design principles, enabling me to create intuitive and visually appealing applications.
-
-                Creating intuitive and visually appealing applications 
-
-
-                </p>
 
 
             </section>
