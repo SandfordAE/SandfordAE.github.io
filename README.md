@@ -49,11 +49,3 @@ This project is open source and available under the [MIT License](LICENSE).
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/SandfordAE/SandfordAE.github.io/issues).
-
-## 👤 Author
-
-**Alan Sandford**
-
-- GitHub: [@SandfordAE](https://github.com/SandfordAE)
-- Website: [gammadelta.ie](https://gammadelta.ie)
-- LinkedIn: [Alan Sandford](https://linkedin.com/in/your-profile) 
