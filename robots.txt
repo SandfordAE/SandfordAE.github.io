@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+Allow: /img/
+Allow: /style/
+Allow: /styles/
+Disallow: /.github/
+Disallow: /.git/
+Disallow: /node_modules/
+Disallow: /vendor/
+
+Sitemap: https://sandfordae.github.io/sitemap.xml 

@@ -1,0 +1,79 @@
+/* Custom styles for SandfordAE.github.io */
+
+/* Smooth transitions */
+* {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Enhanced card hover effects */
+.hover\:scale-105 {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Improved text readability */
+.text-gray-600 {
+    line-height: 1.6;
+}
+
+/* Enhanced header shadow */
+header {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Dark mode scrollbar */
+.dark ::-webkit-scrollbar-track {
+    background: #1f2937;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+    background: #4b5563;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+    background: #6b7280;
+}
+
+/* Enhanced focus states */
+a:focus, button:focus {
+    outline: 2px solid #1e40af;
+    outline-offset: 2px;
+}
+
+/* Improved mobile menu animation */
+#mobileMenu {
+    transition: transform 0.3s ease-in-out;
+}
+
+#mobileMenu.hidden {
+    transform: translateY(-100%);
+}
+
+/* Enhanced section transitions */
+section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+section.animate-fade-in-up {
+    opacity: 1;
+    transform: translateY(0);
+} 
