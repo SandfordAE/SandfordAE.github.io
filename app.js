@@ -552,7 +552,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else if (type === 'ssh') {
             kmPrefixGroup.style.display = 'block';
             kmPrefixGroup.querySelector('label').textContent = 'SSH Key Comment / Email';
-            kmPrefix.value = 'sandford@github.io';
+            kmPrefix.value = 'SandfordAE@GitHub.io';
             kmLength.min = '256';
             kmLength.max = '4096';
             kmLength.step = '2048';
