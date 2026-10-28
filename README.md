@@ -1,4 +1,4 @@
-# Dev Forge & Interactive Sandbox // SandfordAE.github.io
+# SandfordAE.github.io // Dev Forge
 
 [![System Status](https://img.shields.io/badge/SYSTEM-ONLINE-00f0ff?style=flat-square&logo=git&logoColor=00f0ff)](https://sandfordae.github.io)
 [![Security](https://img.shields.io/badge/100%25-Client--Side-10b981?style=flat-square&logo=shield&logoColor=10b981)](https://sandfordae.github.io)
