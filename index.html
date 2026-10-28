@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev Forge & Interactive Sandbox // SandfordAE</title>
+    <meta name="description" content="High-performance client-side developer workbench, utilities, and interactive algorithms.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <canvas id="bg-canvas"></canvas>
+    
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="logo-area">
+                <div class="logo-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="16 18 22 12 16 6"></polyline>
+                        <polyline points="8 6 2 12 8 18"></polyline>
+                    </svg>
+                </div>
+                <div>
+                    <h1 class="logo-title">SANDFORDAE.GITHUB.IO</h1>
+                    <p class="logo-subtitle">DEV_FORGE // SECURE CLIENT WORKBENCH</p>
+                </div>
+            </div>
+            <div class="header-badges">
+                <span class="badge security"><span class="pulse-dot"></span> 100% Client-Side</span>
+                <span class="badge status">SYSTEM: ONLINE</span>
+            </div>
+        </header>
+
+        <!-- Navigation Tabs -->
+        <nav class="tool-nav" role="tablist">
+            <button class="nav-tab active" role="tab" data-target="keymaker-tool">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"></path><circle cx="7.5" cy="16.5" r="2.5"></circle></svg>
+                Keymaker
+            </button>
+            <button class="nav-tab" role="tab" data-target="json-tool">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                JSON Formatter
+            </button>
+            <button class="nav-tab" role="tab" data-target="jwt-tool">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                JWT Debugger
+            </button>
+            <button class="nav-tab" role="tab" data-target="regex-tool">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                Regex Tester
+            </button>
+            <button class="nav-tab" role="tab" data-target="crypto-tool">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"></path></svg>
+                Crypto & Hashes
+            </button>
+            <button class="nav-tab" role="tab" data-target="algo-tool">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10"></path><path d="M12 20V4"></path><path d="M6 20v-6"></path></svg>
+                Algo Visualizer
+            </button>
+        </nav>
+
+        <!-- Main Workspace -->
+        <main class="workbench-main">
+
+            <!-- 1. Keymaker & Secure Token Generator (Default First Tab) -->
+            <section id="keymaker-tool" class="tool-section active" role="tabpanel">
+                <div class="tool-header">
+                    <h2>Secure Keymaker & Token Generator</h2>
+                    <div class="tool-actions">
+                        <button class="btn btn-sm primary" id="km-generate">Generate New Key</button>
+                    </div>
+                </div>
+                <div class="tool-grid">
+                    <div class="pane">
+                        <label for="km-type">Key / Token Type</label>
+                        <select id="km-type" class="dropdown-select" style="width:100%; margin-bottom: 14px;">
+                            <option value="apikey">API Key / Secret Token (Custom Prefix)</option>
+                            <option value="uuid">UUID v4 (Cryptographic Random)</option>
+                            <option value="hex">Hex / Cryptographic Salt (32 bytes)</option>
+                            <option value="base64">Base64 Secure Token (32 bytes)</option>
+                            <option value="passphrase">Memorable Passphrase (Diceware)</option>
+                            <option value="ssh">SSH Key Pair (Ed25519 / RSA / ECDSA)</option>
+                        </select>
+
+                        <div style="margin-bottom: 14px;">
+                            <label for="km-engine">Generator Engine / RNG Method</label>
+                            <select id="km-engine" class="dropdown-select" style="width:100%;">
+                                <option value="crypto">Web Crypto API (window.crypto.getRandomValues)</option>
+                                <option value="math">Math.random() (Insecure / Sandbox PRNG)</option>
+                                <option value="cli">CLI / OpenSSL Reference Generator</option>
+                            </select>
+                        </div>
+
+                        <div id="km-options-group">
+                            <div style="margin-bottom: 12px;" id="km-prefix-group">
+                                <label for="km-prefix">Key Prefix / Namespace</label>
+                                <input type="text" id="km-prefix" value="id_ed25519 " placeholder="e.g. id_ed25519 , ssh_rsa , sk_live_, app_, token_">
+                            </div>
+                            <div style="margin-bottom: 12px;">
+                                <label for="km-length">Key Length / Byte Size: <strong id="km-length-val">32</strong></label>
+                                <input type="range" id="km-length" min="16" max="128" value="32" step="4" style="width: 100%; accent-color: var(--accent-cyan); cursor: pointer;">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pane">
+                        <div id="ssh-output-container" style="display: none;">
+                            <label for="km-private-key">SSH Private Key (OpenSSH PEM)</label>
+                            <div class="copy-row" style="margin-bottom: 12px;">
+                                <textarea id="km-private-key" readonly placeholder="Private key..." style="min-height: 120px; font-size: 0.75rem;"></textarea>
+                                <button class="btn btn-sm copy-btn" data-target="km-private-key" style="height: fit-content;">Copy Private</button>
+                            </div>
+
+                            <label for="km-public-key">SSH Public Key (.pub)</label>
+                            <div class="copy-row" style="margin-bottom: 12px;">
+                                <input type="text" id="km-public-key" readonly placeholder="Public key...">
+                                <button class="btn btn-sm copy-btn" data-target="km-public-key">Copy Public</button>
+                            </div>
+                        </div>
+
+                        <div id="standard-output-container">
+                            <label for="km-output">Generated Secure Key / Token</label>
+                            <div class="copy-row" style="margin-bottom: 12px;">
+                                <input type="text" id="km-output" readonly placeholder="Generated key will appear here...">
+                                <button class="btn btn-sm copy-btn" data-target="km-output">Copy Key</button>
+                            </div>
+                        </div>
+
+                        <label for="km-cli-cmd">Terminal Command for Local Machine</label>
+                        <div class="copy-row" style="margin-bottom: 12px;">
+                            <input type="text" id="km-cli-cmd" readonly placeholder="CLI command...">
+                            <button class="btn btn-sm copy-btn" data-target="km-cli-cmd">Copy CLI</button>
+                        </div>
+
+                        <div class="stats-bar" style="flex-direction: column; gap: 6px;">
+                            <span>Entropy Strength: <strong id="km-entropy">256 bits</strong></span>
+                            <span>Engine Status: <strong id="km-engine-status" style="color: var(--accent-green);">Cryptographically Secure (Crypto API)</strong></span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- 2. JSON Formatter Tool -->
+            <section id="json-tool" class="tool-section" role="tabpanel">
+                <div class="tool-header">
+                    <h2>JSON Formatter, Validator & Statistics</h2>
+                    <div class="tool-actions">
+                        <button class="btn btn-sm" id="json-format">Format (2 Spaces)</button>
+                        <button class="btn btn-sm" id="json-minify">Minify</button>
+                        <button class="btn btn-sm" id="json-clear">Clear</button>
+                    </div>
+                </div>
+                <div class="tool-grid">
+                    <div class="pane">
+                        <label for="json-input">Input Raw JSON</label>
+                        <textarea id="json-input" placeholder="Paste JSON here... (e.g. {\"hello\": \"world\"})"></textarea>
+                    </div>
+                    <div class="pane">
+                        <div class="pane-header-row">
+                            <label for="json-output">Output / Validation</label>
+                            <span id="json-status" class="status-badge valid">Ready</span>
+                        </div>
+                        <textarea id="json-output" readonly placeholder="Formatted output will appear here..."></textarea>
+                    </div>
+                </div>
+                <div class="stats-bar" id="json-stats">
+                    <span>Nodes: <strong id="stat-nodes">0</strong></span>
+                    <span>Depth: <strong id="stat-depth">0</strong></span>
+                    <span>Size: <strong id="stat-size">0 bytes</strong></span>
+                </div>
+            </section>
+
+            <!-- 3. JWT Debugger Tool -->
+            <section id="jwt-tool" class="tool-section" role="tabpanel">
+                <div class="tool-header">
+                    <h2>JSON Web Token (JWT) Inspector</h2>
+                    <div class="tool-actions">
+                        <button class="btn btn-sm" id="jwt-sample">Load Sample JWT</button>
+                        <button class="btn btn-sm" id="jwt-clear">Clear</button>
+                    </div>
+                </div>
+                <div class="pane full-width">
+                    <label for="jwt-input">Encoded JWT String</label>
+                    <input type="text" id="jwt-input" placeholder="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...">
+                </div>
+                <div class="jwt-split-grid">
+                    <div class="pane">
+                        <label for="jwt-header">Header (Decoded)</label>
+                        <textarea id="jwt-header" readonly></textarea>
+                    </div>
+                    <div class="pane">
+                        <label for="jwt-payload">Payload (Decoded)</label>
+                        <textarea id="jwt-payload" readonly></textarea>
+                    </div>
+                </div>
+                <div class="jwt-claims-card" id="jwt-claims-info">
+                    <div class="claim-item"><span>Issued At (iat):</span> <strong id="claim-iat">N/A</strong></div>
+                    <div class="claim-item"><span>Expiration (exp):</span> <strong id="claim-exp">N/A</strong></div>
+                    <div class="claim-item"><span>Status:</span> <strong id="claim-status" class="status-ok">N/A</strong></div>
+                </div>
+            </section>
+
+            <!-- 4. Regex Tester Tool -->
+            <section id="regex-tool" class="tool-section" role="tabpanel">
+                <div class="tool-header">
+                    <h2>Regular Expression Live Tester</h2>
+                    <div class="regex-flags">
+                        <label><input type="checkbox" id="flag-g" checked> g</label>
+                        <label><input type="checkbox" id="flag-i" checked> i</label>
+                        <label><input type="checkbox" id="flag-m"> m</label>
+                    </div>
+                </div>
+                <div class="regex-controls-grid">
+                    <div class="pane">
+                        <label for="regex-pattern">Regular Expression Pattern</label>
+                        <div class="input-prefix-wrapper">
+                            <span class="prefix">/</span>
+                            <input type="text" id="regex-pattern" placeholder="([a-zA-Z0-9._%+-]+)@([a-zA-Z0-9.-]+\.[a-zA-Z]{2,})">
+                            <span class="prefix">/</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="tool-grid">
+                    <div class="pane">
+                        <label for="regex-test-string">Test String</label>
+                        <textarea id="regex-test-string" placeholder="Enter text to test against regex... Contact support@sandford.ae or admin@devforge.io for queries.">Please reach out to alice.smith@example.com or bob_builder@workplace.org for API keys. Invalid: test@@domain.com</textarea>
+                    </div>
+                    <div class="pane">
+                        <label for="regex-matches-output">Matches & Capture Groups</label>
+                        <div id="regex-matches-output" class="rich-output-box"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. Crypto & Hashes Tool -->
+            <section id="crypto-tool" class="tool-section" role="tabpanel">
+                <div class="tool-header">
+                    <h2>Client-Side Cryptography & Encoders</h2>
+                </div>
+                <div class="pane full-width">
+                    <label for="crypto-input">Plaintext Input / Data</label>
+                    <textarea id="crypto-input" placeholder="Type text to hash and encode instantly...">SandfordAE Dev Forge Secure Utility</textarea>
+                </div>
+                <div class="crypto-outputs-grid">
+                    <div class="pane">
+                        <label>SHA-256 Hash (Web Crypto API)</label>
+                        <div class="copy-row">
+                            <input type="text" id="hash-sha256" readonly>
+                            <button class="btn btn-sm copy-btn" data-target="hash-sha256">Copy</button>
+                        </div>
+                    </div>
+                    <div class="pane">
+                        <label>SHA-512 Hash</label>
+                        <div class="copy-row">
+                            <input type="text" id="hash-sha512" readonly>
+                            <button class="btn btn-sm copy-btn" data-target="hash-sha512">Copy</button>
+                        </div>
+                    </div>
+                    <div class="pane">
+                        <label>Base64 Encode</label>
+                        <div class="copy-row">
+                            <input type="text" id="enc-base64" readonly>
+                            <button class="btn btn-sm copy-btn" data-target="enc-base64">Copy</button>
+                        </div>
+                    </div>
+                    <div class="pane">
+                        <label>URL Encode</label>
+                        <div class="copy-row">
+                            <input type="text" id="enc-url" readonly>
+                            <button class="btn btn-sm copy-btn" data-target="enc-url">Copy</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 6. Algo Visualizer Tool -->
+            <section id="algo-tool" class="tool-section" role="tabpanel">
+                <div class="tool-header">
+                    <h2>Sorting Algorithm Visualizer</h2>
+                    <div class="tool-actions">
+                        <button class="btn btn-sm" id="algo-generate">New Array</button>
+                        <button class="btn btn-sm primary" id="algo-start">Start Sort</button>
+                        <select id="algo-select" class="dropdown-select">
+                            <option value="bubble">Bubble Sort</option>
+                            <option value="selection">Selection Sort</option>
+                            <option value="insertion">Insertion Sort</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="visualizer-container">
+                    <div id="visualizer-bars" class="bars-wrapper"></div>
+                </div>
+                <div class="stats-bar">
+                    <span>Comparisons: <strong id="algo-comparisons">0</strong></span>
+                    <span>Swaps / Writes: <strong id="algo-swaps">0</strong></span>
+                    <span>Status: <strong id="algo-status">Ready</strong></span>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <p>&copy; 2026 SandfordAE // HTML5, CSS3 & JavaScript. No external dependencies.</p>
+            <div class="footer-links">
+                <a href="https://github.com/SandfordAE" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://github.com/SandfordAE/SandfordAE.github.io" target="_blank" rel="noopener">Repository</a>
+            </div>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
