@@ -62,16 +62,21 @@
             </button>
         </nav>
 
+
+
+
+
+
+
         <!-- Main Workspace -->
         <main class="workbench-main">
 
             <!-- 1. Keymaker & Secure Token Generator (Default First Tab) -->
             <section id="keymaker-tool" class="tool-section active" role="tabpanel">
+                
                 <div class="tool-header">
                     <h2>Secure Keymaker & Token Generator</h2>
-                    <div class="tool-actions">
-                        <button class="btn btn-sm primary" id="km-generate">Generate New Key</button>
-                    </div>
+
                 </div>
                 <div class="tool-grid">
                     <div class="pane">
@@ -105,8 +110,31 @@
                             </div>
                         </div>
                     </div>
+
+
+
+
+                    
                     <div class="pane">
+
+                        
+                        <div class="stats-bar" style="flex-direction: column; gap: 6px;">
+                            <span>Entropy Strength: <strong id="km-entropy">256 bits</strong></span>
+                            <span>Engine Status: <strong id="km-engine-status" style="color: var(--accent-green);">Cryptographically Secure (Crypto API)</strong></span>
+                        </div>
+
+
+                        <label for="km-cli-cmd">Terminal Command for Local Machine</label>
+                        <div class="copy-row" style="margin-bottom: 12px;">
+                            <input type="text" id="km-cli-cmd" readonly placeholder="CLI command...">
+                            <button class="btn btn-sm copy-btn" data-target="km-cli-cmd">Copy CLI</button>
+                        </div>
+
+
+
                         <div id="ssh-output-container" style="display: none;">
+
+
                             <label for="km-private-key">SSH Private Key (OpenSSH PEM)</label>
                             <div class="copy-row" style="margin-bottom: 12px;">
                                 <textarea id="km-private-key" readonly placeholder="Private key..." style="min-height: 120px; font-size: 0.75rem;"></textarea>
@@ -118,30 +146,48 @@
                                 <input type="text" id="km-public-key" readonly placeholder="Public key...">
                                 <button class="btn btn-sm copy-btn" data-target="km-public-key">Copy Public</button>
                             </div>
+
+
                         </div>
 
                         <div id="standard-output-container">
+
+
                             <label for="km-output">Generated Secure Key / Token</label>
                             <div class="copy-row" style="margin-bottom: 12px;">
                                 <input type="text" id="km-output" readonly placeholder="Generated key will appear here...">
                                 <button class="btn btn-sm copy-btn" data-target="km-output">Copy Key</button>
                             </div>
+
                         </div>
 
-                        <label for="km-cli-cmd">Terminal Command for Local Machine</label>
-                        <div class="copy-row" style="margin-bottom: 12px;">
-                            <input type="text" id="km-cli-cmd" readonly placeholder="CLI command...">
-                            <button class="btn btn-sm copy-btn" data-target="km-cli-cmd">Copy CLI</button>
-                        </div>
 
-                        <div class="stats-bar" style="flex-direction: column; gap: 6px;">
-                            <span>Entropy Strength: <strong id="km-entropy">256 bits</strong></span>
-                            <span>Engine Status: <strong id="km-engine-status" style="color: var(--accent-green);">Cryptographically Secure (Crypto API)</strong></span>
-                        </div>
+
+
+                    </div>
+                </div>
+               <div class="tool-header">
+                    <h2></h2>
+                    <div class="tool-actions">
+                        <button class="btn btn-sm primary" id="km-generate">Generate New Key</button>
                     </div>
                 </div>
             </section>
             
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             <!-- 2. JSON Formatter Tool -->
             <section id="json-tool" class="tool-section" role="tabpanel">
                 <div class="tool-header">
