@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
+
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,10 +13,20 @@
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
+
+
+
+
+
+
+
+
 <body>
     <canvas id="bg-canvas"></canvas>
     
     <div class="app-container">
+
+
         <!-- Header -->
         <header class="app-header">
             <div class="logo-area">
@@ -33,6 +46,8 @@
                 <span class="badge status">SYSTEM: ONLINE</span>
             </div>
         </header>
+
+
 
         <!-- Navigation Tabs -->
         <nav class="tool-nav" role="tablist">
@@ -80,7 +95,9 @@
                 </div>
                 <div class="tool-grid">
                     <div class="pane">
+                        
                         <label for="km-type">Key / Token Type</label>
+
                         <select id="km-type" class="dropdown-select" style="width:100%; margin-bottom: 14px;">
                             <option value="apikey">API Key / Secret Token (Custom Prefix)</option>
                             <option value="uuid">UUID v4 (Cryptographic Random)</option>
@@ -109,6 +126,7 @@
                                 <input type="range" id="km-length" min="16" max="128" value="32" step="4" style="width: 100%; accent-color: var(--accent-cyan); cursor: pointer;">
                             </div>
                         </div>
+
                     </div>
 
 
@@ -161,35 +179,27 @@
 
                         </div>
 
-
-
-
                     </div>
                 </div>
+
+
                <div class="tool-header">
                     <h2></h2>
                     <div class="tool-actions">
                         <button class="btn btn-sm primary" id="km-generate">Generate New Key</button>
                     </div>
                 </div>
+
+
             </section>
             
 
 
 
 
-
-
-
-
-
-
-
-
-
-
             <!-- 2. JSON Formatter Tool -->
             <section id="json-tool" class="tool-section" role="tabpanel">
+
                 <div class="tool-header">
                     <h2>JSON Formatter, Validator & Statistics</h2>
                     <div class="tool-actions">
@@ -198,6 +208,7 @@
                         <button class="btn btn-sm" id="json-clear">Clear</button>
                     </div>
                 </div>
+
                 <div class="tool-grid">
                     <div class="pane">
                         <label for="json-input">Input Raw JSON</label>
@@ -211,15 +222,20 @@
                         <textarea id="json-output" readonly placeholder="Formatted output will appear here..."></textarea>
                     </div>
                 </div>
+
                 <div class="stats-bar" id="json-stats">
                     <span>Nodes: <strong id="stat-nodes">0</strong></span>
                     <span>Depth: <strong id="stat-depth">0</strong></span>
                     <span>Size: <strong id="stat-size">0 bytes</strong></span>
                 </div>
+
             </section>
+
+
 
             <!-- 3. JWT Debugger Tool -->
             <section id="jwt-tool" class="tool-section" role="tabpanel">
+
                 <div class="tool-header">
                     <h2>JSON Web Token (JWT) Inspector</h2>
                     <div class="tool-actions">
@@ -227,10 +243,12 @@
                         <button class="btn btn-sm" id="jwt-clear">Clear</button>
                     </div>
                 </div>
+
                 <div class="pane full-width">
                     <label for="jwt-input">Encoded JWT String</label>
                     <input type="text" id="jwt-input" placeholder="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...">
                 </div>
+
                 <div class="jwt-split-grid">
                     <div class="pane">
                         <label for="jwt-header">Header (Decoded)</label>
@@ -241,15 +259,21 @@
                         <textarea id="jwt-payload" readonly></textarea>
                     </div>
                 </div>
+
                 <div class="jwt-claims-card" id="jwt-claims-info">
                     <div class="claim-item"><span>Issued At (iat):</span> <strong id="claim-iat">N/A</strong></div>
                     <div class="claim-item"><span>Expiration (exp):</span> <strong id="claim-exp">N/A</strong></div>
                     <div class="claim-item"><span>Status:</span> <strong id="claim-status" class="status-ok">N/A</strong></div>
                 </div>
+
             </section>
+
+
+
 
             <!-- 4. Regex Tester Tool -->
             <section id="regex-tool" class="tool-section" role="tabpanel">
+
                 <div class="tool-header">
                     <h2>Regular Expression Live Tester</h2>
                     <div class="regex-flags">
@@ -258,6 +282,7 @@
                         <label><input type="checkbox" id="flag-m"> m</label>
                     </div>
                 </div>
+
                 <div class="regex-controls-grid">
                     <div class="pane">
                         <label for="regex-pattern">Regular Expression Pattern</label>
@@ -268,6 +293,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="tool-grid">
                     <div class="pane">
                         <label for="regex-test-string">Test String</label>
@@ -278,18 +304,23 @@
                         <div id="regex-matches-output" class="rich-output-box"></div>
                     </div>
                 </div>
+
             </section>
 
             <!-- 5. Crypto & Hashes Tool -->
             <section id="crypto-tool" class="tool-section" role="tabpanel">
+
                 <div class="tool-header">
                     <h2>Client-Side Cryptography & Encoders</h2>
                 </div>
+
                 <div class="pane full-width">
                     <label for="crypto-input">Plaintext Input / Data</label>
                     <textarea id="crypto-input" placeholder="Type text to hash and encode instantly...">SandfordAE Dev Forge Secure Utility</textarea>
                 </div>
+
                 <div class="crypto-outputs-grid">
+
                     <div class="pane">
                         <label>SHA-256 Hash (Web Crypto API)</label>
                         <div class="copy-row">
@@ -297,6 +328,7 @@
                             <button class="btn btn-sm copy-btn" data-target="hash-sha256">Copy</button>
                         </div>
                     </div>
+
                     <div class="pane">
                         <label>SHA-512 Hash</label>
                         <div class="copy-row">
@@ -304,6 +336,7 @@
                             <button class="btn btn-sm copy-btn" data-target="hash-sha512">Copy</button>
                         </div>
                     </div>
+
                     <div class="pane">
                         <label>Base64 Encode</label>
                         <div class="copy-row">
@@ -311,6 +344,7 @@
                             <button class="btn btn-sm copy-btn" data-target="enc-base64">Copy</button>
                         </div>
                     </div>
+
                     <div class="pane">
                         <label>URL Encode</label>
                         <div class="copy-row">
@@ -318,11 +352,17 @@
                             <button class="btn btn-sm copy-btn" data-target="enc-url">Copy</button>
                         </div>
                     </div>
+
                 </div>
+
             </section>
+
+
+
 
             <!-- 6. Algo Visualizer Tool -->
             <section id="algo-tool" class="tool-section" role="tabpanel">
+
                 <div class="tool-header">
                     <h2>Sorting Algorithm Visualizer</h2>
                     <div class="tool-actions">
@@ -335,21 +375,30 @@
                         </select>
                     </div>
                 </div>
+
                 <div class="visualizer-container">
                     <div id="visualizer-bars" class="bars-wrapper"></div>
                 </div>
+
                 <div class="stats-bar">
                     <span>Comparisons: <strong id="algo-comparisons">0</strong></span>
                     <span>Swaps / Writes: <strong id="algo-swaps">0</strong></span>
                     <span>Status: <strong id="algo-status">Ready</strong></span>
                 </div>
+
             </section>
+
 
         </main>
 
+
+
+
+
+
         <!-- Footer -->
         <footer class="app-footer">
-            <p>&copy; 2026 SandfordAE // HTML5, CSS3 & JavaScript. No external dependencies.</p>
+            <p>&copy; 2026 SandfordAE.</p>
             <div class="footer-links">
                 <a href="https://github.com/SandfordAE" target="_blank" rel="noopener">GitHub</a>
                 <a href="https://github.com/SandfordAE/SandfordAE.github.io" target="_blank" rel="noopener">Repository</a>
@@ -358,5 +407,7 @@
     </div>
 
     <script src="app.js"></script>
+
 </body>
+
 </html>
