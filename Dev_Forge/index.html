@@ -51,7 +51,11 @@
 
         <!-- Navigation Tabs -->
         <nav class="tool-nav" role="tablist">
-            <button class="nav-tab active" role="tab" data-target="keymaker-tool">
+            <button class="nav-tab active" role="tab" data-target="palette-tool">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="13.5" cy="6.5" r=".5"></circle><circle cx="17.5" cy="10.5" r=".5"></circle><circle cx="8.5" cy="7.5" r=".5"></circle><circle cx="6.5" cy="12.5" r=".5"></circle><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.504 5.555-5.555C22 6.5 17.5 2 12 2z"></path></svg>
+                Palette Studio
+            </button>
+            <button class="nav-tab" role="tab" data-target="keymaker-tool">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"></path><circle cx="7.5" cy="16.5" r="2.5"></circle></svg>
                 Keymaker
             </button>
@@ -71,10 +75,6 @@
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"></path></svg>
                 Crypto & Hashes
             </button>
-            <button class="nav-tab" role="tab" data-target="algo-tool">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10"></path><path d="M12 20V4"></path><path d="M6 20v-6"></path></svg>
-                Algo Visualizer
-            </button>
         </nav>
 
 
@@ -86,8 +86,81 @@
         <!-- Main Workspace -->
         <main class="workbench-main">
 
-            <!-- 1. Keymaker & Secure Token Generator (Default First Tab) -->
-            <section id="keymaker-tool" class="tool-section active" role="tabpanel">
+            <!-- 1. Color Palette Studio Tool (Default First Tab) -->
+            <section id="palette-tool" class="tool-section active" role="tabpanel">
+
+                <div class="tool-header">
+                    <h2>Color Palette Studio & Harmony Generator</h2>
+                    <div class="tool-actions">
+                        <button class="btn btn-sm primary" id="palette-generate">Generate Random</button>
+                    </div>
+                </div>
+
+                <div class="tool-grid">
+                    <div class="pane">
+                        <label for="palette-base-color">Base Color & Harmony Mode</label>
+                        <div style="display: flex; gap: 10px; margin-bottom: 14px;">
+                            <input type="color" id="palette-base-color" value="#00f0ff" style="width: 60px; height: 44px; padding: 2px; cursor: pointer; background: var(--bg-base); border: 1px solid var(--border-color); border-radius: 6px;">
+                            <input type="text" id="palette-base-hex" value="#00f0ff" style="flex: 1;">
+                        </div>
+
+                        <div style="margin-bottom: 14px;">
+                            <label for="palette-harmony">Color Harmony Algorithm</label>
+                            <select id="palette-harmony" class="dropdown-select" style="width:100%;">
+                                <option value="cyberpunk">Cyberpunk / Neon Vibe</option>
+                                <option value="complementary">Complementary</option>
+                                <option value="analogous">Analogous</option>
+                                <option value="triadic">Triadic</option>
+                                <option value="monochromatic">Monochromatic</option>
+                                <option value="pastel">Pastel & Minimalist</option>
+                            </select>
+                        </div>
+
+                        <label>Curated Developer Themes</label>
+                        <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px;">
+                            <button class="btn btn-sm preset-theme-btn" data-theme="cyberpunk">Cyberpunk</button>
+                            <button class="btn btn-sm preset-theme-btn" data-theme="solarized">Solarized</button>
+                            <button class="btn btn-sm preset-theme-btn" data-theme="dracula">Dracula</button>
+                            <button class="btn btn-sm preset-theme-btn" data-theme="nord">Nord</button>
+                            <button class="btn btn-sm preset-theme-btn" data-theme="matrix">Matrix</button>
+                        </div>
+                    </div>
+
+                    <div class="pane">
+                        <label>Live UI Component Preview</label>
+                        <div id="palette-live-preview" style="background: var(--bg-base); border: 1px solid var(--border-color); border-radius: 6px; padding: 16px; display: flex; flex-direction: column; gap: 12px; height: 100%; min-height: 200px;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span id="preview-title" style="font-family: var(--font-mono); font-size: 0.85rem; font-weight: 700;">Dev Forge Component</span>
+                                <span id="preview-badge" style="font-family: var(--font-mono); font-size: 0.7rem; padding: 2px 8px; border-radius: 4px;">Active</span>
+                            </div>
+                            <p id="preview-text" style="font-size: 0.8rem; color: var(--text-secondary);">This card dynamically reflects your generated color palette in real-time.</p>
+                            <div style="display: flex; gap: 8px; margin-top: auto;">
+                                <button id="preview-btn-primary" class="btn btn-sm" style="flex: 1;">Primary Action</button>
+                                <button id="preview-btn-secondary" class="btn btn-sm" style="flex: 1;">Secondary</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Swatches Container -->
+                <div style="margin-top: 8px;">
+                    <label>Palette Swatches (Click to copy Hex, toggle lock)</label>
+                    <div id="palette-swatches" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px;"></div>
+                </div>
+
+                <!-- Export Box -->
+                <div class="pane full-width" style="margin-top: 12px;">
+                    <label for="palette-export-output">Export Code (CSS Variables / Tailwind / JSON)</label>
+                    <div class="copy-row">
+                        <textarea id="palette-export-output" readonly style="min-height: 100px; font-size: 0.75rem;"></textarea>
+                        <button class="btn btn-sm copy-btn" data-target="palette-export-output" style="height: fit-content;">Copy Export</button>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- 2. Keymaker & Secure Token Generator -->
+            <section id="keymaker-tool" class="tool-section" role="tabpanel">
                 
                 <div class="tool-header">
                     <h2>Secure Keymaker & Token Generator</h2>
@@ -358,35 +431,6 @@
             </section>
 
 
-
-
-            <!-- 6. Algo Visualizer Tool -->
-            <section id="algo-tool" class="tool-section" role="tabpanel">
-
-                <div class="tool-header">
-                    <h2>Sorting Algorithm Visualizer</h2>
-                    <div class="tool-actions">
-                        <button class="btn btn-sm" id="algo-generate">New Array</button>
-                        <button class="btn btn-sm primary" id="algo-start">Start Sort</button>
-                        <select id="algo-select" class="dropdown-select">
-                            <option value="bubble">Bubble Sort</option>
-                            <option value="selection">Selection Sort</option>
-                            <option value="insertion">Insertion Sort</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="visualizer-container">
-                    <div id="visualizer-bars" class="bars-wrapper"></div>
-                </div>
-
-                <div class="stats-bar">
-                    <span>Comparisons: <strong id="algo-comparisons">0</strong></span>
-                    <span>Swaps / Writes: <strong id="algo-swaps">0</strong></span>
-                    <span>Status: <strong id="algo-status">Ready</strong></span>
-                </div>
-
-            </section>
 
 
         </main>

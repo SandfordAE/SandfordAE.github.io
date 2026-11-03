@@ -489,51 +489,78 @@ textarea {
     flex: 1;
 }
 
-/* Algorithm Visualizer */
-.visualizer-container {
-    background: var(--bg-base);
-    border: 1px solid var(--border-color);
-    border-radius: 6px;
-    height: 320px;
-    display: flex;
-    align-items: flex-end;
-    padding: 16px;
-    position: relative;
-    overflow: hidden;
-}
-
-.bars-wrapper {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: flex-end;
-    gap: 4px;
-}
-
-.bar {
-    flex: 1;
-    background: var(--accent-cyan);
-    border-radius: 2px 2px 0 0;
-    transition: height 0.05s ease;
-}
-
-.bar.comparing {
-    background: var(--accent-amber);
-    box-shadow: 0 0 10px var(--accent-amber);
-}
-
-.bar.swapping {
-    background: var(--accent-red);
-    box-shadow: 0 0 10px var(--accent-red);
-}
-
-.bar.sorted {
-    background: var(--accent-green);
-}
-
 .dropdown-select {
     width: auto;
     padding: 8px 12px;
+}
+
+/* Palette Studio Styles */
+.swatch-card {
+    background: var(--bg-base);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition);
+}
+
+.swatch-card:hover {
+    border-color: var(--accent-cyan);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.swatch-color-box {
+    height: 100px;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 8px;
+}
+
+.swatch-lock-btn {
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.swatch-lock-btn.locked {
+    background: var(--accent-cyan);
+    color: var(--bg-base);
+    border-color: var(--accent-cyan);
+}
+
+.swatch-info {
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+}
+
+.swatch-hex {
+    font-weight: 700;
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+
+.swatch-hex:hover {
+    color: var(--accent-cyan);
+}
+
+.swatch-rgb, .swatch-hsl {
+    color: var(--text-secondary);
 }
 
 /* Footer */

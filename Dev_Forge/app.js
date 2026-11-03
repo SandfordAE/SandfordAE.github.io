@@ -376,148 +376,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 7. Sorting Algorithm Visualizer
-    const barsContainer = document.getElementById('visualizer-bars');
-    const algoComparisons = document.getElementById('algo-comparisons');
-    const algoSwaps = document.getElementById('algo-swaps');
-    const algoStatus = document.getElementById('algo-status');
-    const algoSelect = document.getElementById('algo-select');
-    let arraySize = 40;
-    let array = [];
-    let isSorting = false;
-    let comparisons = 0;
-    let swaps = 0;
-
-    function generateNewArray() {
-        if (isSorting) return;
-        array = [];
-        barsContainer.innerHTML = '';
-        comparisons = 0;
-        swaps = 0;
-        algoComparisons.textContent = '0';
-        algoSwaps.textContent = '0';
-        algoStatus.textContent = 'Ready';
-
-        for (let i = 0; i < arraySize; i++) {
-            array.push(Math.floor(Math.random() * 260) + 20);
-        }
-
-        array.forEach((val) => {
-            const bar = document.createElement('div');
-            bar.classList.add('bar');
-            bar.style.height = `${val}px`;
-            barsContainer.appendChild(bar);
-        });
-    }
-
-    document.getElementById('algo-generate').addEventListener('click', generateNewArray);
-    generateNewArray();
-
-    async function sleep(ms) {
-        return new Promise(resolve => setTimeout(resolve, ms));
-    }
-
-    async function startSort() {
-        if (isSorting) return;
-        isSorting = true;
-        algoStatus.textContent = 'Sorting...';
-        const algo = algoSelect.value;
-        const bars = barsContainer.children;
-
-        if (algo === 'bubble') {
-            for (let i = 0; i < array.length; i++) {
-                for (let j = 0; j < array.length - i - 1; j++) {
-                    comparisons++;
-                    algoComparisons.textContent = comparisons;
-                    bars[j].classList.add('comparing');
-                    bars[j + 1].classList.add('comparing');
-                    await sleep(20);
-
-                    if (array[j] > array[j + 1]) {
-                        swaps++;
-                        algoSwaps.textContent = swaps;
-                        let temp = array[j];
-                        array[j] = array[j + 1];
-                        array[j + 1] = temp;
-                        bars[j].style.height = `${array[j]}px`;
-                        bars[j + 1].style.height = `${array[j + 1]}px`;
-                        bars[j].classList.add('swapping');
-                        bars[j + 1].classList.add('swapping');
-                        await sleep(20);
-                        bars[j].classList.remove('swapping');
-                        bars[j + 1].classList.remove('swapping');
-                    }
-                    bars[j].classList.remove('comparing');
-                    bars[j + 1].classList.remove('comparing');
-                }
-                bars[array.length - 1 - i].classList.add('sorted');
-            }
-        } else if (algo === 'selection') {
-            for (let i = 0; i < array.length; i++) {
-                let minIdx = i;
-                bars[minIdx].classList.add('comparing');
-                for (let j = i + 1; j < array.length; j++) {
-                    comparisons++;
-                    algoComparisons.textContent = comparisons;
-                    bars[j].classList.add('comparing');
-                    await sleep(15);
-                    if (array[j] < array[minIdx]) {
-                        bars[minIdx].classList.remove('comparing');
-                        minIdx = j;
-                        bars[minIdx].classList.add('comparing');
-                    } else {
-                        bars[j].classList.remove('comparing');
-                    }
-                }
-                if (minIdx !== i) {
-                    swaps++;
-                    algoSwaps.textContent = swaps;
-                    let temp = array[i];
-                    array[i] = array[minIdx];
-                    array[minIdx] = temp;
-                    bars[i].style.height = `${array[i]}px`;
-                    bars[minIdx].style.height = `${array[minIdx]}px`;
-                }
-                bars[minIdx].classList.remove('comparing');
-                bars[i].classList.add('sorted');
-            }
-        } else if (algo === 'insertion') {
-            for (let i = 1; i < array.length; i++) {
-                let key = array[i];
-                let j = i - 1;
-                bars[i].classList.add('comparing');
-                await sleep(20);
-
-                while (j >= 0 && array[j] > key) {
-                    comparisons++;
-                    swaps++;
-                    algoComparisons.textContent = comparisons;
-                    algoSwaps.textContent = swaps;
-                    array[j + 1] = array[j];
-                    bars[j + 1].style.height = `${array[j + 1]}px`;
-                    bars[j].classList.add('swapping');
-                    await sleep(20);
-                    bars[j].classList.remove('swapping');
-                    j--;
-                }
-                array[j + 1] = key;
-                bars[j + 1].style.height = `${key}px`;
-                bars[i].classList.remove('comparing');
-            }
-            for (let k = 0; k < bars.length; k++) {
-                bars[k].classList.add('sorted');
-            }
-        }
-
-        for (let k = 0; k < bars.length; k++) {
-            bars[k].classList.add('sorted');
-        }
-        algoStatus.textContent = 'Completed';
-        isSorting = false;
-    }
-
-    document.getElementById('algo-start').addEventListener('click', startSort);
-
     // 8. Keymaker & Secure Token Generator
     const kmType = document.getElementById('km-type');
     const kmEngine = document.getElementById('km-engine');
@@ -725,4 +583,263 @@ document.addEventListener('DOMContentLoaded', () => {
     kmPrefix.addEventListener('input', generateKey);
     document.getElementById('km-generate').addEventListener('click', generateKey);
     updateKeymakerOptions();
+
+    // 9. Color Palette Studio Tool
+    const paletteBaseColor = document.getElementById('palette-base-color');
+    const paletteBaseHex = document.getElementById('palette-base-hex');
+    const paletteHarmony = document.getElementById('palette-harmony');
+    const paletteSwatches = document.getElementById('palette-swatches');
+    const paletteExportOutput = document.getElementById('palette-export-output');
+    
+    // Live UI elements
+    const paletteLivePreview = document.getElementById('palette-live-preview');
+    const previewTitle = document.getElementById('preview-title');
+    const previewBadge = document.getElementById('preview-badge');
+    const previewText = document.getElementById('preview-text');
+    const previewBtnPrimary = document.getElementById('preview-btn-primary');
+    const previewBtnSecondary = document.getElementById('preview-btn-secondary');
+
+    let currentSwatches = [
+        { hex: '#0f172a', locked: false },
+        { hex: '#1e293b', locked: false },
+        { hex: '#00f0ff', locked: false },
+        { hex: '#10b981', locked: false },
+        { hex: '#8b5cf6', locked: false }
+    ];
+
+    const curatedThemes = {
+        cyberpunk: ['#090a0f', '#13151f', '#00f0ff', '#f59e0b', '#ef4444'],
+        solarized: ['#002b36', '#073642', '#2aa198', '#b58900', '#cb4b16'],
+        dracula: ['#282a36', '#44475a', '#50fa7b', '#ff79c6', '#8be9fd'],
+        nord: ['#2e3440', '#3b4252', '#88c0d0', '#81a1c1', '#bf616a'],
+        matrix: ['#0d0d0d', '#1a1a1a', '#00ff66', '#003311', '#33ff99']
+    };
+
+    function hexToRgb(hex) {
+        let c = hex.replace('#', '');
+        if (c.length === 3) c = c.split('').map(x => x + x).join('');
+        const num = parseInt(c, 16);
+        return [num >> 16, (num >> 8) & 255, num & 255];
+    }
+
+    function rgbToHex(r, g, b) {
+        return '#' + [r, g, b].map(x => {
+            const hex = Math.max(0, Math.min(255, Math.round(x))).toString(16);
+            return hex.length === 1 ? '0' + hex : hex;
+        }).join('');
+    }
+
+    function hexToHsl(hex) {
+        let [r, g, b] = hexToRgb(hex);
+        r /= 255; g /= 255; b /= 255;
+        const max = Math.max(r, g, b), min = Math.min(r, g, b);
+        let h, s, l = (max + min) / 2;
+        if (max === min) {
+            h = s = 0;
+        } else {
+            const d = max - min;
+            s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+            switch (max) {
+                case r: h = (g - b) / d + (g < b ? 6 : 0); break;
+                case g: h = (b - r) / d + 2; break;
+                case b: h = (r - g) / d + 4; break;
+            }
+            h /= 6;
+        }
+        return [Math.round(h * 360), Math.round(s * 100), Math.round(l * 100)];
+    }
+
+    function hslToHex(h, s, l) {
+        h = (h % 360 + 360) % 360;
+        s /= 100; l /= 100;
+        const c = (1 - Math.abs(2 * l - 1)) * s;
+        const x = c * (1 - Math.abs((h / 60) % 2 - 1));
+        const m = l - c / 2;
+        let r = 0, g = 0, b = 0;
+        if (0 <= h && h < 60) { r = c; g = x; b = 0; }
+        else if (60 <= h && h < 120) { r = x; g = c; b = 0; }
+        else if (120 <= h && h < 180) { r = 0; g = c; b = x; }
+        else if (180 <= h && h < 240) { r = 0; g = x; b = c; }
+        else if (240 <= h && h < 300) { r = x; g = 0; b = c; }
+        else if (300 <= h && h < 360) { r = c; g = 0; b = x; }
+        return rgbToHex((r + m) * 255, (g + m) * 255, (b + m) * 255);
+    }
+
+    function generatePaletteFromBase(baseHex, mode) {
+        let [h, s, l] = hexToHsl(baseHex);
+        let newHexes = [];
+
+        if (mode === 'cyberpunk') {
+            newHexes = [
+                hslToHex(h, Math.min(100, s + 20), 10),
+                hslToHex(h, Math.min(100, s + 10), 20),
+                baseHex,
+                hslToHex((h + 40) % 360, 100, 50),
+                hslToHex((h + 300) % 360, 100, 55)
+            ];
+        } else if (mode === 'complementary') {
+            newHexes = [
+                hslToHex(h, s, Math.max(10, l - 30)),
+                hslToHex(h, s, Math.max(20, l - 15)),
+                baseHex,
+                hslToHex((h + 180) % 360, s, l),
+                hslToHex((h + 180) % 360, s, Math.min(90, l + 20))
+            ];
+        } else if (mode === 'analogous') {
+            newHexes = [
+                hslToHex((h - 30 + 360) % 360, s, l),
+                hslToHex((h - 15 + 360) % 360, s, l),
+                baseHex,
+                hslToHex((h + 15) % 360, s, l),
+                hslToHex((h + 30) % 360, s, l)
+            ];
+        } else if (mode === 'triadic') {
+            newHexes = [
+                baseHex,
+                hslToHex((h + 120) % 360, s, l),
+                hslToHex((h + 240) % 360, s, l),
+                hslToHex(h, Math.max(10, s - 30), Math.min(90, l + 30)),
+                hslToHex((h + 120) % 360, Math.max(10, s - 30), Math.min(90, l + 30))
+            ];
+        } else if (mode === 'monochromatic') {
+            newHexes = [
+                hslToHex(h, s, 15),
+                hslToHex(h, s, 30),
+                baseHex,
+                hslToHex(h, s, 70),
+                hslToHex(h, s, 85)
+            ];
+        } else if (mode === 'pastel') {
+            newHexes = [
+                hslToHex(h, 40, 85),
+                hslToHex((h + 60) % 360, 40, 85),
+                hslToHex((h + 120) % 360, 40, 85),
+                hslToHex((h + 180) % 360, 40, 85),
+                hslToHex((h + 240) % 360, 40, 85)
+            ];
+        } else {
+            for (let i = 0; i < 5; i++) {
+                newHexes.push(hslToHex(Math.random() * 360, 70 + Math.random() * 30, 40 + Math.random() * 30));
+            }
+        }
+
+        currentSwatches = currentSwatches.map((item, idx) => {
+            if (item.locked) return item;
+            return { hex: newHexes[idx] || baseHex, locked: false };
+        });
+
+        renderSwatches();
+        updateLivePreview();
+        updateExportCode();
+    }
+
+    function renderSwatches() {
+        paletteSwatches.innerHTML = '';
+        currentSwatches.forEach((swatch, idx) => {
+            const [r, g, b] = hexToRgb(swatch.hex);
+            const [h, s, l] = hexToHsl(swatch.hex);
+            
+            const card = document.createElement('div');
+            card.className = 'swatch-card';
+            card.innerHTML = `
+                <div class="swatch-color-box" style="background-color: ${swatch.hex};">
+                    <button class="swatch-lock-btn ${swatch.locked ? 'locked' : ''}" title="${swatch.locked ? 'Unlock Color' : 'Lock Color'}">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                    </button>
+                </div>
+                <div class="swatch-info">
+                    <span class="swatch-hex" title="Click to copy">${swatch.hex.toUpperCase()}</span>
+                    <span class="swatch-rgb">RGB: ${r}, ${g}, ${b}</span>
+                    <span class="swatch-hsl">HSL: ${h}&deg;, ${s}%, ${l}%</span>
+                </div>
+            `;
+
+            card.querySelector('.swatch-lock-btn').addEventListener('click', (e) => {
+                e.stopPropagation();
+                currentSwatches[idx].locked = !currentSwatches[idx].locked;
+                renderSwatches();
+            });
+
+            card.querySelector('.swatch-hex').addEventListener('click', () => {
+                navigator.clipboard.writeText(swatch.hex.toUpperCase());
+                const hexEl = card.querySelector('.swatch-hex');
+                const orig = hexEl.textContent;
+                hexEl.textContent = 'COPIED!';
+                setTimeout(() => hexEl.textContent = orig, 1200);
+            });
+
+            paletteSwatches.appendChild(card);
+        });
+    }
+
+    function updateLivePreview() {
+        if (currentSwatches.length >= 5) {
+            const bg = currentSwatches[0].hex;
+            const surface = currentSwatches[1].hex;
+            const accent1 = currentSwatches[2].hex;
+            const accent2 = currentSwatches[3].hex;
+            const textPrimary = currentSwatches[4].hex;
+
+            paletteLivePreview.style.backgroundColor = bg;
+            paletteLivePreview.style.borderColor = surface;
+            previewTitle.style.color = accent1;
+            previewBadge.style.backgroundColor = surface;
+            previewBadge.style.color = accent2;
+            previewBadge.style.border = `1px solid ${accent2}`;
+            previewText.style.color = textPrimary;
+            previewBtnPrimary.style.backgroundColor = accent1;
+            previewBtnPrimary.style.color = bg;
+            previewBtnSecondary.style.backgroundColor = surface;
+            previewBtnSecondary.style.color = textPrimary;
+        }
+    }
+
+    function updateExportCode() {
+        const cssVars = `:root {\n` + currentSwatches.map((s, i) => `  --color-${i + 1}: ${s.hex};`).join('\n') + `\n}`;
+        const tailwindConfig = `// Tailwind config colors\ncolors: {\n` + currentSwatches.map((s, i) => `  'palette-${i + 1}': '${s.hex}',`).join('\n') + `\n}`;
+        const jsonExport = JSON.stringify(currentSwatches.map((s, i) => ({ name: `color-${i + 1}`, hex: s.hex, rgb: hexToRgb(s.hex), hsl: hexToHsl(s.hex) })), null, 2);
+
+        paletteExportOutput.value = `/* === CSS VARIABLES === */\n${cssVars}\n\n/* === TAILWIND COLORS === */\n${tailwindConfig}\n\n/* === JSON FORMAT === */\n${jsonExport}`;
+    }
+
+    paletteBaseColor.addEventListener('input', (e) => {
+        paletteBaseHex.value = e.target.value;
+        generatePaletteFromBase(e.target.value, paletteHarmony.value);
+    });
+
+    paletteBaseHex.addEventListener('input', (e) => {
+        const val = e.target.value;
+        if (/^#[0-9A-Fa-f]{6}$/.test(val)) {
+            paletteBaseColor.value = val;
+            generatePaletteFromBase(val, paletteHarmony.value);
+        }
+    });
+
+    paletteHarmony.addEventListener('change', () => {
+        generatePaletteFromBase(paletteBaseColor.value, paletteHarmony.value);
+    });
+
+    document.getElementById('palette-generate').addEventListener('click', () => {
+        const randomHex = hslToHex(Math.random() * 360, 70 + Math.random() * 30, 45);
+        paletteBaseColor.value = randomHex;
+        paletteBaseHex.value = randomHex;
+        generatePaletteFromBase(randomHex, paletteHarmony.value);
+    });
+
+    document.querySelectorAll('.preset-theme-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const theme = btn.getAttribute('data-theme');
+            const themeHexes = curatedThemes[theme];
+            if (themeHexes) {
+                currentSwatches = themeHexes.map(hex => ({ hex, locked: false }));
+                paletteBaseColor.value = themeHexes[2] || themeHexes[0];
+                paletteBaseHex.value = paletteBaseColor.value;
+                renderSwatches();
+                updateLivePreview();
+                updateExportCode();
+            }
+        });
+    });
+
+    generatePaletteFromBase('#00f0ff', 'cyberpunk');
 });

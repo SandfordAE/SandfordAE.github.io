@@ -1,4 +1,4 @@
-# SandfordAE.github.io // Systems & Engineering Hub
+# [SandfordAE.github.io](http://SandfordAE.GitHub.io) - A GitHub hosted webpage.
 
 [![System Status](https://img.shields.io/badge/SYSTEM-ONLINE-00f0ff?style=flat-square&logo=git&logoColor=00f0ff)](https://sandfordae.github.io)
 [![Security](https://img.shields.io/badge/100%25-Client--Side-10b981?style=flat-square&logo=shield&logoColor=10b981)](https://sandfordae.github.io)
@@ -50,3 +50,4 @@ Open [http://localhost:8080](http://localhost:8080) for the root landing hub, or
 ## 📄 License
 
 Distributed under the MIT License. See [LICENSE](LICENSE) for more information.
+h webp
