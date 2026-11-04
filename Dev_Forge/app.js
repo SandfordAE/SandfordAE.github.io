@@ -842,4 +842,126 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     generatePaletteFromBase('#00f0ff', 'cyberpunk');
+
+    // 10. Color Chooser Tool
+    const ccPicker = document.getElementById('cc-picker');
+    const ccHexInput = document.getElementById('cc-hex-input');
+    const ccRgbOutput = document.getElementById('cc-rgb-output');
+    const ccHslOutput = document.getElementById('cc-hsl-output');
+    const ccCmykOutput = document.getElementById('cc-cmyk-output');
+    const ccContrastWhite = document.getElementById('cc-contrast-white');
+    const ccContrastBlack = document.getElementById('cc-contrast-black');
+    const ccBadgeAa = document.getElementById('cc-badge-aa');
+    const ccBadgeAaa = document.getElementById('cc-badge-aaa');
+    const ccShadesGrid = document.getElementById('cc-shades-grid');
+
+    function rgbToCmyk(r, g, b) {
+        let rc = r / 255, gc = g / 255, bc = b / 255;
+        let k = 1 - Math.max(rc, gc, bc);
+        if (k === 1) return [0, 0, 0, 100];
+        let c = (1 - rc - k) / (1 - k);
+        let m = (1 - gc - k) / (1 - k);
+        let y = (1 - bc - k) / (1 - k);
+        return [Math.round(c * 100), Math.round(m * 100), Math.round(y * 100), Math.round(k * 100)];
+    }
+
+    function getLuminance(r, g, b) {
+        const a = [r, g, b].map(v => {
+            v /= 255;
+            return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
+        });
+        return a[0] * 0.2126 + a[1] * 0.7152 + a[2] * 0.0722;
+    }
+
+    function getContrastRatio(rgb1, rgb2) {
+        const lum1 = getLuminance(...rgb1);
+        const lum2 = getLuminance(...rgb2);
+        const brightest = Math.max(lum1, lum2);
+        const darkest = Math.min(lum1, lum2);
+        return (brightest + 0.05) / (darkest + 0.05);
+    }
+
+    function updateColorChooser(hex) {
+        if (!/^#[0-9A-Fa-f]{6}$/.test(hex)) return;
+        ccPicker.value = hex;
+        ccHexInput.value = hex.toUpperCase();
+
+        const [r, g, b] = hexToRgb(hex);
+        const [h, s, l] = hexToHsl(hex);
+        const cmyk = rgbToCmyk(r, g, b);
+
+        ccRgbOutput.value = `rgb(${r}, ${g}, ${b})`;
+        ccHslOutput.value = `hsl(${h}, ${s}%, ${l}%)`;
+        ccCmykOutput.value = `cmyk(${cmyk[0]}%, ${cmyk[1]}%, ${cmyk[2]}%, ${cmyk[3]}%)`;
+
+        const ratioWhite = getContrastRatio([r, g, b], [255, 255, 255]);
+        const ratioBlack = getContrastRatio([r, g, b], [0, 0, 0]);
+
+        ccContrastWhite.textContent = `${ratioWhite.toFixed(1)}:1`;
+        ccContrastBlack.textContent = `${ratioBlack.toFixed(1)}:1`;
+
+        if (ratioWhite >= 4.5 || ratioBlack >= 4.5) {
+            ccBadgeAa.textContent = 'WCAG AA: Pass';
+            ccBadgeAa.className = 'status-badge valid';
+        } else {
+            ccBadgeAa.textContent = 'WCAG AA: Fail';
+            ccBadgeAa.className = 'status-badge invalid';
+        }
+
+        if (ratioWhite >= 7.0 || ratioBlack >= 7.0) {
+            ccBadgeAaa.textContent = 'WCAG AAA: Pass';
+            ccBadgeAaa.className = 'status-badge valid';
+        } else {
+            ccBadgeAaa.textContent = 'WCAG AAA: Fail';
+            ccBadgeAaa.className = 'status-badge invalid';
+        }
+
+        ccShadesGrid.innerHTML = '';
+        for (let i = -5; i <= 5; i++) {
+            if (i === 0) {
+                renderShadeBox(hex, 'Base');
+                continue;
+            }
+            let newL = Math.max(0, Math.min(100, l + (i * 8)));
+            let newHex = hslToHex(h, s, newL);
+            renderShadeBox(newHex, i < 0 ? `Tint ${Math.abs(i)}` : `Shade ${i}`);
+        }
+    }
+
+    function renderShadeBox(hex, label) {
+        const [r, g, b] = hexToRgb(hex);
+        const lum = getLuminance(r, g, b);
+        const textColor = lum > 0.4 ? '#090a0f' : '#f0f4f8';
+
+        const box = document.createElement('div');
+        box.className = 'shade-item';
+        box.style.backgroundColor = hex;
+        box.style.color = textColor;
+        box.innerHTML = `
+            <span>${label}</span>
+            <span>${hex.toUpperCase()}</span>
+        `;
+        box.addEventListener('click', () => {
+            navigator.clipboard.writeText(hex.toUpperCase());
+            const span = box.querySelector('span:last-child');
+            const orig = span.textContent;
+            span.textContent = 'COPIED!';
+            setTimeout(() => span.textContent = orig, 1200);
+        });
+        ccShadesGrid.appendChild(box);
+    }
+
+    ccPicker.addEventListener('input', (e) => updateColorChooser(e.target.value));
+    ccHexInput.addEventListener('input', (e) => {
+        if (/^#[0-9A-Fa-f]{6}$/.test(e.target.value)) {
+            updateColorChooser(e.target.value);
+        }
+    });
+
+    document.getElementById('color-random').addEventListener('click', () => {
+        const randomHex = hslToHex(Math.random() * 360, 70 + Math.random() * 30, 50);
+        updateColorChooser(randomHex);
+    });
+
+    updateColorChooser('#00f0ff');
 });

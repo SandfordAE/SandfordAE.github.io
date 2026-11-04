@@ -51,7 +51,11 @@
 
         <!-- Navigation Tabs -->
         <nav class="tool-nav" role="tablist">
-            <button class="nav-tab active" role="tab" data-target="palette-tool">
+            <button class="nav-tab active" role="tab" data-target="color-tool">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg>
+                Color Chooser
+            </button>
+            <button class="nav-tab" role="tab" data-target="palette-tool">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="13.5" cy="6.5" r=".5"></circle><circle cx="17.5" cy="10.5" r=".5"></circle><circle cx="8.5" cy="7.5" r=".5"></circle><circle cx="6.5" cy="12.5" r=".5"></circle><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.504 5.555-5.555C22 6.5 17.5 2 12 2z"></path></svg>
                 Palette Studio
             </button>
@@ -86,8 +90,73 @@
         <!-- Main Workspace -->
         <main class="workbench-main">
 
-            <!-- 1. Color Palette Studio Tool (Default First Tab) -->
-            <section id="palette-tool" class="tool-section active" role="tabpanel">
+            <!-- 1. Color Chooser Tool (Default First Tab) -->
+            <section id="color-tool" class="tool-section active" role="tabpanel">
+
+                <div class="tool-header">
+                    <h2>Color Inspector, Tints, Shades & Contrast Checker</h2>
+                    <div class="tool-actions">
+                        <button class="btn btn-sm primary" id="color-random">Randomize Color</button>
+                    </div>
+                </div>
+
+                <div class="tool-grid">
+                    <div class="pane">
+                        <label for="cc-picker">Base Color Picker</label>
+                        <div style="display: flex; gap: 12px; align-items: center; margin-bottom: 16px;">
+                            <input type="color" id="cc-picker" value="#00f0ff" style="width: 70px; height: 50px; padding: 2px; cursor: pointer; background: var(--bg-base); border: 1px solid var(--border-color); border-radius: 6px;">
+                            <div style="flex: 1; display: flex; flex-direction: column; gap: 6px;">
+                                <label for="cc-hex-input" style="font-size: 0.75rem; margin-bottom: 0;">Hex Code</label>
+                                <input type="text" id="cc-hex-input" value="#00f0ff">
+                            </div>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 14px;">
+                            <div>
+                                <label for="cc-rgb-output" style="font-size: 0.75rem;">RGB</label>
+                                <input type="text" id="cc-rgb-output" readonly>
+                            </div>
+                            <div>
+                                <label for="cc-hsl-output" style="font-size: 0.75rem;">HSL</label>
+                                <input type="text" id="cc-hsl-output" readonly>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="cc-cmyk-output" style="font-size: 0.75rem;">CMYK</label>
+                            <input type="text" id="cc-cmyk-output" readonly>
+                        </div>
+                    </div>
+
+                    <div class="pane">
+                        <label>WCAG Accessibility & Contrast Checker</label>
+                        <div id="cc-contrast-card" style="background: var(--bg-base); border: 1px solid var(--border-color); border-radius: 6px; padding: 16px; display: flex; flex-direction: column; gap: 14px; height: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span>Contrast vs White (#FFF):</span>
+                                <strong id="cc-contrast-white">1.0:1</strong>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span>Contrast vs Black (#000):</span>
+                                <strong id="cc-contrast-black">21.0:1</strong>
+                            </div>
+                            <div style="display: flex; gap: 12px; margin-top: auto;">
+                                <div id="cc-badge-aa" class="status-badge valid" style="flex: 1; text-align: center; padding: 6px;">WCAG AA: Pass</div>
+                                <div id="cc-badge-aaa" class="status-badge valid" style="flex: 1; text-align: center; padding: 6px;">WCAG AAA: Pass</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tints and Shades Container -->
+                <div style="margin-top: 8px;">
+                    <label>Tints & Shades (Click any shade to copy Hex)</label>
+                    <div id="cc-shades-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)); gap: 10px;"></div>
+                </div>
+
+            </section>
+
+            <!-- 2. Color Palette Studio Tool -->
+            <section id="palette-tool" class="tool-section" role="tabpanel">
 
                 <div class="tool-header">
                     <h2>Color Palette Studio & Harmony Generator</h2>

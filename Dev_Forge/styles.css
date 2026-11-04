@@ -494,6 +494,29 @@ textarea {
     padding: 8px 12px;
 }
 
+/* Color Chooser Shades */
+.shade-item {
+    height: 70px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 6px;
+    cursor: pointer;
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    font-weight: 700;
+}
+
+.shade-item:hover {
+    transform: translateY(-2px);
+    border-color: var(--accent-cyan);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
 /* Palette Studio Styles */
 .swatch-card {
     background: var(--bg-base);

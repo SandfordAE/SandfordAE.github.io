@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SandfordAE.GitHub.io // CheatSheet</title>
+    <meta name="description" content="Secure client-side developer cheatsheets and command reference hub.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <canvas id="bg-canvas"></canvas>
+    
+    <div class="app-container">
+
+        <!-- Header -->
+        <header class="app-header">
+            <a href="../" class="logo-area">
+                <div class="logo-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                    </svg>
+                </div>
+                <div>
+                    <h1 class="logo-title">SANDFORDAE.GITHUB.IO</h1>
+                    <p class="logo-subtitle">CHEATSHEET // KNOWLEDGE HUB</p>
+                </div>
+            </a>
+            <div class="header-badges">
+                <a href="../" class="badge">Hub</a>
+                <a href="../Dev_Forge/" class="badge">Dev Forge</a>
+                <span class="badge security"><span class="pulse-dot"></span> 100% Client-Side</span>
+            </div>
+        </header>
+
+        <!-- Main Workspace Layout -->
+        <div class="workspace-layout">
+            <!-- Sidebar Navigation -->
+            <aside class="sidebar">
+                <div class="sidebar-title">Cheatsheet Library</div>
+                <div id="sheet-nav-container" style="display: flex; flex-direction: column; gap: 6px;">
+                    <!-- Dynamically populated from manifest.json -->
+                </div>
+            </aside>
+
+            <!-- Main Content Pane -->
+            <main class="content-pane" id="content-pane">
+                <p style="color: var(--text-secondary);">Loading cheatsheets...</p>
+            </main>
+        </div>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <p>&copy; 2026 SandfordAE.// All rights reserved.</p>
+            <div class="footer-links">
+                <a href="../">Hub</a>
+                <a href="../Dev_Forge/">Dev Forge</a>
+                <a href="https://github.com/SandfordAE" target="_blank" rel="noopener">GitHub</a>
+            </div>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

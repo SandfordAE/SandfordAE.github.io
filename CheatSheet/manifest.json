@@ -1,0 +1,82 @@
+{
+  "sheets": [
+    {
+      "id": "arch",
+      "title": "Arch Linux & Pacman",
+      "file": "CS-ArchLinux.md",
+      "category": "Linux"
+    },
+    {
+      "id": "docker",
+      "title": "Docker & Compose",
+      "file": "CS-Docker.md",
+      "category": "Infrastructure"
+    },
+    {
+      "id": "django",
+      "title": "Python // Django",
+      "file": "CS-Python-Django.md",
+      "category": "Backend"
+    },
+    {
+      "id": "fastapi",
+      "title": "Python // FastAPI",
+      "file": "CS-Python-FastAPI.md",
+      "category": "Backend"
+    },
+    {
+      "id": "angular",
+      "title": "TypeScript // Angular",
+      "file": "CS-TypeScript-Angular.md",
+      "category": "Frontend"
+    },
+    {
+      "id": "react",
+      "title": "TypeScript // React",
+      "file": "CS-TypeScript-React.md",
+      "category": "Frontend"
+    },
+    {
+      "id": "vite",
+      "title": "JavaScript // Vite",
+      "file": "CS-JavaScript-Vite.md",
+      "category": "Frontend"
+    },
+    {
+      "id": "node",
+      "title": "Node.js // Express",
+      "file": "CS-Node-Express.md",
+      "category": "Backend"
+    },
+    {
+      "id": "git",
+      "title": "DevOps // Git",
+      "file": "CS-DevOps-Git.md",
+      "category": "Tools"
+    },
+    {
+      "id": "exa",
+      "title": "Linux // Exa",
+      "file": "CS-Linux-Exa.md",
+      "category": "Linux"
+    },
+    {
+      "id": "rsync",
+      "title": "Linux // Rsync",
+      "file": "CS-Linux-Rsync.md",
+      "category": "Linux"
+    },
+    {
+      "id": "ip",
+      "title": "Linux // IP Route",
+      "file": "CS-Linux-Ip.md",
+      "category": "Linux"
+    },
+    {
+      "id": "template",
+      "title": "📄 Cheatsheet Template",
+      "file": "CS-Template.md",
+      "category": "Guide"
+    }
+  ]
+}
