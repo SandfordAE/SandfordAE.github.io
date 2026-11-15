@@ -1,6 +1,12 @@
 {
   "sheets": [
     {
+      "id": "ssh",
+      "title": "Linux // SSH & Keys",
+      "file": "CS-Linux-SSH.md",
+      "category": "Linux"
+    },
+    {
       "id": "arch",
       "title": "Arch Linux & Pacman",
       "file": "CS-ArchLinux.md",
@@ -64,6 +70,12 @@
       "id": "rsync",
       "title": "Linux // Rsync",
       "file": "CS-Linux-Rsync.md",
+      "category": "Linux"
+    },
+    {
+      "id": "mount",
+      "title": "Linux // Drive Mounting",
+      "file": "CS-Linux-Mount.md",
       "category": "Linux"
     },
     {
