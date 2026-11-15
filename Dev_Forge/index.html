@@ -29,29 +29,23 @@
 
         <!-- Header -->
         <header class="app-header">
-            <div class="logo-area">
-
+            <a href="../" class="logo-area">
                 <div class="logo-icon">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                         <polyline points="16 18 22 12 16 6"></polyline>
                         <polyline points="8 6 2 12 8 18"></polyline>
                     </svg>
                 </div>
-
-                <a href="/" >
-                    <div >
-                        <h1>SANDFORDAE.IO</h1>
-                        <p>EV_FORGE // SECURE CLIENT</p>
-                    </div>
-                </a>
-
-            </div>
-
+                <div>
+                    <h1 class="logo-title">SANDFORDAE.GITHUB.IO</h1>
+                    <p class="logo-subtitle">DEV FORGE // SECURE WORKBENCH</p>
+                </div>
+            </a>
             <div class="header-badges">
+                <a href="../" class="badge">Hub</a>
+                <a href="../CheatSheet/" class="badge">CheatSheets</a>
                 <span class="badge security"><span class="pulse-dot"></span> 100% Client-Side</span>
-                <span class="badge status">SYSTEM: ONLINE</span>
             </div>
-
         </header>
 
 
@@ -105,146 +99,8 @@
         <!-- Main Workspace -->
         <main class="workbench-main">
 
-            <!-- 1. Color Chooser Tool (Default First Tab) -->
-            <section id="color-tool" class="tool-section active" role="tabpanel">
-
-                <div class="tool-header">
-                    <h2>Color Inspector, Tints, Shades & Contrast Checker</h2>
-                    <div class="tool-actions">
-                        <button class="btn btn-sm primary" id="color-random">Randomize Color</button>
-                    </div>
-                </div>
-
-                <div class="tool-grid">
-                    <div class="pane">
-                        <label for="cc-picker">Base Color Picker</label>
-                        <div style="display: flex; gap: 12px; align-items: center; margin-bottom: 16px;">
-                            <input type="color" id="cc-picker" value="#00f0ff" style="width: 70px; height: 50px; padding: 2px; cursor: pointer; background: var(--bg-base); border: 1px solid var(--border-color); border-radius: 6px;">
-                            <div style="flex: 1; display: flex; flex-direction: column; gap: 6px;">
-                                <label for="cc-hex-input" style="font-size: 0.75rem; margin-bottom: 0;">Hex Code</label>
-                                <input type="text" id="cc-hex-input" value="#00f0ff">
-                            </div>
-                        </div>
-
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 14px;">
-                            <div>
-                                <label for="cc-rgb-output" style="font-size: 0.75rem;">RGB</label>
-                                <input type="text" id="cc-rgb-output" readonly>
-                            </div>
-                            <div>
-                                <label for="cc-hsl-output" style="font-size: 0.75rem;">HSL</label>
-                                <input type="text" id="cc-hsl-output" readonly>
-                            </div>
-                        </div>
-
-                        <div>
-                            <label for="cc-cmyk-output" style="font-size: 0.75rem;">CMYK</label>
-                            <input type="text" id="cc-cmyk-output" readonly>
-                        </div>
-                    </div>
-
-                    <div class="pane">
-                        <label>WCAG Accessibility & Contrast Checker</label>
-                        <div id="cc-contrast-card" style="background: var(--bg-base); border: 1px solid var(--border-color); border-radius: 6px; padding: 16px; display: flex; flex-direction: column; gap: 14px; height: 100%;">
-                            <div style="display: flex; justify-content: space-between; align-items: center;">
-                                <span>Contrast vs White (#FFF):</span>
-                                <strong id="cc-contrast-white">1.0:1</strong>
-                            </div>
-                            <div style="display: flex; justify-content: space-between; align-items: center;">
-                                <span>Contrast vs Black (#000):</span>
-                                <strong id="cc-contrast-black">21.0:1</strong>
-                            </div>
-                            <div style="display: flex; gap: 12px; margin-top: auto;">
-                                <div id="cc-badge-aa" class="status-badge valid" style="flex: 1; text-align: center; padding: 6px;">WCAG AA: Pass</div>
-                                <div id="cc-badge-aaa" class="status-badge valid" style="flex: 1; text-align: center; padding: 6px;">WCAG AAA: Pass</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Tints and Shades Container -->
-                <div style="margin-top: 8px;">
-                    <label>Tints & Shades (Click any shade to copy Hex)</label>
-                    <div id="cc-shades-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)); gap: 10px;"></div>
-                </div>
-
-            </section>
-
-            <!-- 2. Color Palette Studio Tool -->
-            <section id="palette-tool" class="tool-section" role="tabpanel">
-
-                <div class="tool-header">
-                    <h2>Color Palette Studio & Harmony Generator</h2>
-                    <div class="tool-actions">
-                        <button class="btn btn-sm primary" id="palette-generate">Generate Random</button>
-                    </div>
-                </div>
-
-                <div class="tool-grid">
-                    <div class="pane">
-                        <label for="palette-base-color">Base Color & Harmony Mode</label>
-                        <div style="display: flex; gap: 10px; margin-bottom: 14px;">
-                            <input type="color" id="palette-base-color" value="#00f0ff" style="width: 60px; height: 44px; padding: 2px; cursor: pointer; background: var(--bg-base); border: 1px solid var(--border-color); border-radius: 6px;">
-                            <input type="text" id="palette-base-hex" value="#00f0ff" style="flex: 1;">
-                        </div>
-
-                        <div style="margin-bottom: 14px;">
-                            <label for="palette-harmony">Color Harmony Algorithm</label>
-                            <select id="palette-harmony" class="dropdown-select" style="width:100%;">
-                                <option value="cyberpunk">Cyberpunk / Neon Vibe</option>
-                                <option value="complementary">Complementary</option>
-                                <option value="analogous">Analogous</option>
-                                <option value="triadic">Triadic</option>
-                                <option value="monochromatic">Monochromatic</option>
-                                <option value="pastel">Pastel & Minimalist</option>
-                            </select>
-                        </div>
-
-                        <label>Curated Developer Themes</label>
-                        <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px;">
-                            <button class="btn btn-sm preset-theme-btn" data-theme="cyberpunk">Cyberpunk</button>
-                            <button class="btn btn-sm preset-theme-btn" data-theme="solarized">Solarized</button>
-                            <button class="btn btn-sm preset-theme-btn" data-theme="dracula">Dracula</button>
-                            <button class="btn btn-sm preset-theme-btn" data-theme="nord">Nord</button>
-                            <button class="btn btn-sm preset-theme-btn" data-theme="matrix">Matrix</button>
-                        </div>
-                    </div>
-
-                    <div class="pane">
-                        <label>Live UI Component Preview</label>
-                        <div id="palette-live-preview" style="background: var(--bg-base); border: 1px solid var(--border-color); border-radius: 6px; padding: 16px; display: flex; flex-direction: column; gap: 12px; height: 100%; min-height: 200px;">
-                            <div style="display: flex; justify-content: space-between; align-items: center;">
-                                <span id="preview-title" style="font-family: var(--font-mono); font-size: 0.85rem; font-weight: 700;">Dev Forge Component</span>
-                                <span id="preview-badge" style="font-family: var(--font-mono); font-size: 0.7rem; padding: 2px 8px; border-radius: 4px;">Active</span>
-                            </div>
-                            <p id="preview-text" style="font-size: 0.8rem; color: var(--text-secondary);">This card dynamically reflects your generated color palette in real-time.</p>
-                            <div style="display: flex; gap: 8px; margin-top: auto;">
-                                <button id="preview-btn-primary" class="btn btn-sm" style="flex: 1;">Primary Action</button>
-                                <button id="preview-btn-secondary" class="btn btn-sm" style="flex: 1;">Secondary</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Swatches Container -->
-                <div style="margin-top: 8px;">
-                    <label>Palette Swatches (Click to copy Hex, toggle lock)</label>
-                    <div id="palette-swatches" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px;"></div>
-                </div>
-
-                <!-- Export Box -->
-                <div class="pane full-width" style="margin-top: 12px;">
-                    <label for="palette-export-output">Export Code (CSS Variables / Tailwind / JSON)</label>
-                    <div class="copy-row">
-                        <textarea id="palette-export-output" readonly style="min-height: 100px; font-size: 0.75rem;"></textarea>
-                        <button class="btn btn-sm copy-btn" data-target="palette-export-output" style="height: fit-content;">Copy Export</button>
-                    </div>
-                </div>
-
-            </section>
-
-            <!-- 2. Keymaker & Secure Token Generator -->
-            <section id="keymaker-tool" class="tool-section" role="tabpanel">
+            <!-- 1. Keymaker & Secure Token Generator (Default Active) -->
+            <section id="keymaker-tool" class="tool-section active" role="tabpanel">
                 
                 <div class="tool-header">
                     <h2>Secure Keymaker & Token Generator</h2>
@@ -349,122 +205,8 @@
 
 
             </section>
-            
 
-
-
-
-            <!-- 2. JSON Formatter Tool -->
-            <section id="json-tool" class="tool-section" role="tabpanel">
-
-                <div class="tool-header">
-                    <h2>JSON Formatter, Validator & Statistics</h2>
-                    <div class="tool-actions">
-                        <button class="btn btn-sm" id="json-format">Format (2 Spaces)</button>
-                        <button class="btn btn-sm" id="json-minify">Minify</button>
-                        <button class="btn btn-sm" id="json-clear">Clear</button>
-                    </div>
-                </div>
-
-                <div class="tool-grid">
-                    <div class="pane">
-                        <label for="json-input">Input Raw JSON</label>
-                        <textarea id="json-input" placeholder="Paste JSON here... (e.g. {\"hello\": \"world\"})"></textarea>
-                    </div>
-                    <div class="pane">
-                        <div class="pane-header-row">
-                            <label for="json-output">Output / Validation</label>
-                            <span id="json-status" class="status-badge valid">Ready</span>
-                        </div>
-                        <textarea id="json-output" readonly placeholder="Formatted output will appear here..."></textarea>
-                    </div>
-                </div>
-
-                <div class="stats-bar" id="json-stats">
-                    <span>Nodes: <strong id="stat-nodes">0</strong></span>
-                    <span>Depth: <strong id="stat-depth">0</strong></span>
-                    <span>Size: <strong id="stat-size">0 bytes</strong></span>
-                </div>
-
-            </section>
-
-
-
-            <!-- 3. JWT Debugger Tool -->
-            <section id="jwt-tool" class="tool-section" role="tabpanel">
-
-                <div class="tool-header">
-                    <h2>JSON Web Token (JWT) Inspector</h2>
-                    <div class="tool-actions">
-                        <button class="btn btn-sm" id="jwt-sample">Load Sample JWT</button>
-                        <button class="btn btn-sm" id="jwt-clear">Clear</button>
-                    </div>
-                </div>
-
-                <div class="pane full-width">
-                    <label for="jwt-input">Encoded JWT String</label>
-                    <input type="text" id="jwt-input" placeholder="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...">
-                </div>
-
-                <div class="jwt-split-grid">
-                    <div class="pane">
-                        <label for="jwt-header">Header (Decoded)</label>
-                        <textarea id="jwt-header" readonly></textarea>
-                    </div>
-                    <div class="pane">
-                        <label for="jwt-payload">Payload (Decoded)</label>
-                        <textarea id="jwt-payload" readonly></textarea>
-                    </div>
-                </div>
-
-                <div class="jwt-claims-card" id="jwt-claims-info">
-                    <div class="claim-item"><span>Issued At (iat):</span> <strong id="claim-iat">N/A</strong></div>
-                    <div class="claim-item"><span>Expiration (exp):</span> <strong id="claim-exp">N/A</strong></div>
-                    <div class="claim-item"><span>Status:</span> <strong id="claim-status" class="status-ok">N/A</strong></div>
-                </div>
-
-            </section>
-
-
-
-
-            <!-- 4. Regex Tester Tool -->
-            <section id="regex-tool" class="tool-section" role="tabpanel">
-
-                <div class="tool-header">
-                    <h2>Regular Expression Live Tester</h2>
-                    <div class="regex-flags">
-                        <label><input type="checkbox" id="flag-g" checked> g</label>
-                        <label><input type="checkbox" id="flag-i" checked> i</label>
-                        <label><input type="checkbox" id="flag-m"> m</label>
-                    </div>
-                </div>
-
-                <div class="regex-controls-grid">
-                    <div class="pane">
-                        <label for="regex-pattern">Regular Expression Pattern</label>
-                        <div class="input-prefix-wrapper">
-                            <span class="prefix">/</span>
-                            <input type="text" id="regex-pattern" placeholder="([a-zA-Z0-9._%+-]+)@([a-zA-Z0-9.-]+\.[a-zA-Z]{2,})">
-                            <span class="prefix">/</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="tool-grid">
-                    <div class="pane">
-                        <label for="regex-test-string">Test String</label>
-                        <textarea id="regex-test-string" placeholder="Enter text to test against regex... Contact support@sandford.ae or admin@devforge.io for queries.">Please reach out to alice.smith@example.com or bob_builder@workplace.org for API keys. Invalid: test@@domain.com</textarea>
-                    </div>
-                    <div class="pane">
-                        <label for="regex-matches-output">Matches & Capture Groups</label>
-                        <div id="regex-matches-output" class="rich-output-box"></div>
-                    </div>
-                </div>
-
-            </section>
-
-            <!-- 5. Crypto & Hashes Tool -->
+            <!-- 2. Crypto & Hashes Tool -->
             <section id="crypto-tool" class="tool-section" role="tabpanel">
 
                 <div class="tool-header">
@@ -514,8 +256,248 @@
 
             </section>
 
+            <!-- 3. Color Chooser Tool -->
+            <section id="color-tool" class="tool-section" role="tabpanel">
 
+                <div class="tool-header">
+                    <h2>Color Inspector, Tints, Shades & Contrast Checker</h2>
+                    <div class="tool-actions">
+                        <button class="btn btn-sm primary" id="color-random">Randomize Color</button>
+                    </div>
+                </div>
 
+                <div class="tool-grid">
+                    <div class="pane">
+                        <label for="cc-picker">Base Color Picker</label>
+                        <div style="display: flex; gap: 12px; align-items: center; margin-bottom: 16px;">
+                            <input type="color" id="cc-picker" value="#00f0ff" style="width: 70px; height: 50px; padding: 2px; cursor: pointer; background: var(--bg-base); border: 1px solid var(--border-color); border-radius: 6px;">
+                            <div style="flex: 1; display: flex; flex-direction: column; gap: 6px;">
+                                <label for="cc-hex-input" style="font-size: 0.75rem; margin-bottom: 0;">Hex Code</label>
+                                <input type="text" id="cc-hex-input" value="#00f0ff">
+                            </div>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 14px;">
+                            <div>
+                                <label for="cc-rgb-output" style="font-size: 0.75rem;">RGB</label>
+                                <input type="text" id="cc-rgb-output" readonly>
+                            </div>
+                            <div>
+                                <label for="cc-hsl-output" style="font-size: 0.75rem;">HSL</label>
+                                <input type="text" id="cc-hsl-output" readonly>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="cc-cmyk-output" style="font-size: 0.75rem;">CMYK</label>
+                            <input type="text" id="cc-cmyk-output" readonly>
+                        </div>
+                    </div>
+
+                    <div class="pane">
+                        <label>WCAG Accessibility & Contrast Checker</label>
+                        <div id="cc-contrast-card" style="background: var(--bg-base); border: 1px solid var(--border-color); border-radius: 6px; padding: 16px; display: flex; flex-direction: column; gap: 14px; height: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span>Contrast vs White (#FFF):</span>
+                                <strong id="cc-contrast-white">1.0:1</strong>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span>Contrast vs Black (#000):</span>
+                                <strong id="cc-contrast-black">21.0:1</strong>
+                            </div>
+                            <div style="display: flex; gap: 12px; margin-top: auto;">
+                                <div id="cc-badge-aa" class="status-badge valid" style="flex: 1; text-align: center; padding: 6px;">WCAG AA: Pass</div>
+                                <div id="cc-badge-aaa" class="status-badge valid" style="flex: 1; text-align: center; padding: 6px;">WCAG AAA: Pass</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tints and Shades Container -->
+                <div style="margin-top: 8px;">
+                    <label>Tints & Shades (Click any shade to copy Hex)</label>
+                    <div id="cc-shades-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)); gap: 10px;"></div>
+                </div>
+
+            </section>
+
+            <!-- 4. Color Palette Studio Tool -->
+            <section id="palette-tool" class="tool-section" role="tabpanel">
+
+                <div class="tool-header">
+                    <h2>Color Palette Studio & Harmony Generator</h2>
+                    <div class="tool-actions">
+                        <button class="btn btn-sm primary" id="palette-generate">Generate Random</button>
+                    </div>
+                </div>
+
+                <div class="tool-grid">
+                    <div class="pane">
+                        <label for="palette-base-color">Base Color & Harmony Mode</label>
+                        <div style="display: flex; gap: 10px; margin-bottom: 14px;">
+                            <input type="color" id="palette-base-color" value="#00f0ff" style="width: 60px; height: 44px; padding: 2px; cursor: pointer; background: var(--bg-base); border: 1px solid var(--border-color); border-radius: 6px;">
+                            <input type="text" id="palette-base-hex" value="#00f0ff" style="flex: 1;">
+                        </div>
+
+                        <div style="margin-bottom: 14px;">
+                            <label for="palette-harmony">Color Harmony Algorithm</label>
+                            <select id="palette-harmony" class="dropdown-select" style="width:100%;">
+                                <option value="cyberpunk">Cyberpunk / Neon Vibe</option>
+                                <option value="complementary">Complementary</option>
+                                <option value="analogous">Analogous</option>
+                                <option value="triadic">Triadic</option>
+                                <option value="monochromatic">Monochromatic</option>
+                                <option value="pastel">Pastel & Minimalist</option>
+                            </select>
+                        </div>
+
+                        <label>Curated Developer Themes</label>
+                        <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px;">
+                            <button class="btn btn-sm preset-theme-btn" data-theme="cyberpunk">Cyberpunk</button>
+                            <button class="btn btn-sm preset-theme-btn" data-theme="solarized">Solarized</button>
+                            <button class="btn btn-sm preset-theme-btn" data-theme="dracula">Dracula</button>
+                            <button class="btn btn-sm preset-theme-btn" data-theme="nord">Nord</button>
+                            <button class="btn btn-sm preset-theme-btn" data-theme="matrix">Matrix</button>
+                        </div>
+                    </div>
+
+                    <div class="pane">
+                        <label>Live UI Component Preview</label>
+                        <div id="palette-live-preview" style="background: var(--bg-base); border: 1px solid var(--border-color); border-radius: 6px; padding: 16px; display: flex; flex-direction: column; gap: 12px; height: 100%; min-height: 200px;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span id="preview-title" style="font-family: var(--font-mono); font-size: 0.85rem; font-weight: 700;">Dev Forge Component</span>
+                                <span id="preview-badge" style="font-family: var(--font-mono); font-size: 0.7rem; padding: 2px 8px; border-radius: 4px;">Active</span>
+                            </div>
+                            <p id="preview-text" style="font-size: 0.8rem; color: var(--text-secondary);">This card dynamically reflects your generated color palette in real-time.</p>
+                            <div style="display: flex; gap: 8px; margin-top: auto;">
+                                <button id="preview-btn-primary" class="btn btn-sm" style="flex: 1;">Primary Action</button>
+                                <button id="preview-btn-secondary" class="btn btn-sm" style="flex: 1;">Secondary</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Swatches Container -->
+                <div style="margin-top: 8px;">
+                    <label>Palette Swatches (Click to copy Hex, toggle lock)</label>
+                    <div id="palette-swatches" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px;"></div>
+                </div>
+
+                <!-- Export Box -->
+                <div class="pane full-width" style="margin-top: 12px;">
+                    <label for="palette-export-output">Export Code (CSS Variables / Tailwind / JSON)</label>
+                    <div class="copy-row">
+                        <textarea id="palette-export-output" readonly style="min-height: 100px; font-size: 0.75rem;"></textarea>
+                        <button class="btn btn-sm copy-btn" data-target="palette-export-output" style="height: fit-content;">Copy Export</button>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- 5. JSON Formatter Tool -->
+            <section id="json-tool" class="tool-section" role="tabpanel">
+
+                <div class="tool-header">
+                    <h2>JSON Formatter, Validator & Statistics</h2>
+                    <div class="tool-actions">
+                        <button class="btn btn-sm" id="json-format">Format (2 Spaces)</button>
+                        <button class="btn btn-sm" id="json-minify">Minify</button>
+                        <button class="btn btn-sm" id="json-clear">Clear</button>
+                    </div>
+                </div>
+
+                <div class="tool-grid">
+                    <div class="pane">
+                        <label for="json-input">Input Raw JSON</label>
+                        <textarea id="json-input" placeholder="Paste JSON here... (e.g. {\"hello\": \"world\"})"></textarea>
+                    </div>
+                    <div class="pane">
+                        <div class="pane-header-row">
+                            <label for="json-output">Output / Validation</label>
+                            <span id="json-status" class="status-badge valid">Ready</span>
+                        </div>
+                        <textarea id="json-output" readonly placeholder="Formatted output will appear here..."></textarea>
+                    </div>
+                </div>
+
+                <div class="stats-bar" id="json-stats">
+                    <span>Nodes: <strong id="stat-nodes">0</strong></span>
+                    <span>Depth: <strong id="stat-depth">0</strong></span>
+                    <span>Size: <strong id="stat-size">0 bytes</strong></span>
+                </div>
+
+            </section>
+
+            <!-- 6. JWT Debugger Tool -->
+            <section id="jwt-tool" class="tool-section" role="tabpanel">
+
+                <div class="tool-header">
+                    <h2>JSON Web Token (JWT) Inspector</h2>
+                    <div class="tool-actions">
+                        <button class="btn btn-sm" id="jwt-sample">Load Sample JWT</button>
+                        <button class="btn btn-sm" id="jwt-clear">Clear</button>
+                    </div>
+                </div>
+
+                <div class="pane full-width">
+                    <label for="jwt-input">Encoded JWT String</label>
+                    <input type="text" id="jwt-input" placeholder="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...">
+                </div>
+
+                <div class="jwt-split-grid">
+                    <div class="pane">
+                        <label for="jwt-header">Header (Decoded)</label>
+                        <textarea id="jwt-header" readonly></textarea>
+                    </div>
+                    <div class="pane">
+                        <label for="jwt-payload">Payload (Decoded)</label>
+                        <textarea id="jwt-payload" readonly></textarea>
+                    </div>
+                </div>
+
+                <div class="jwt-claims-card" id="jwt-claims-info">
+                    <div class="claim-item"><span>Issued At (iat):</span> <strong id="claim-iat">N/A</strong></div>
+                    <div class="claim-item"><span>Expiration (exp):</span> <strong id="claim-exp">N/A</strong></div>
+                    <div class="claim-item"><span>Status:</span> <strong id="claim-status" class="status-ok">N/A</strong></div>
+                </div>
+
+            </section>
+
+            <!-- 7. Regex Tester Tool -->
+            <section id="regex-tool" class="tool-section" role="tabpanel">
+
+                <div class="tool-header">
+                    <h2>Regular Expression Live Tester</h2>
+                    <div class="regex-flags">
+                        <label><input type="checkbox" id="flag-g" checked> g</label>
+                        <label><input type="checkbox" id="flag-i" checked> i</label>
+                        <label><input type="checkbox" id="flag-m"> m</label>
+                    </div>
+                </div>
+
+                <div class="regex-controls-grid">
+                    <div class="pane">
+                        <label for="regex-pattern">Regular Expression Pattern</label>
+                        <div class="input-prefix-wrapper">
+                            <span class="prefix">/</span>
+                            <input type="text" id="regex-pattern" placeholder="([a-zA-Z0-9._%+-]+)@([a-zA-Z0-9.-]+\.[a-zA-Z]{2,})">
+                            <span class="prefix">/</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tool-grid">
+                    <div class="pane">
+                        <label for="regex-test-string">Test String</label>
+                        <textarea id="regex-test-string" placeholder="Enter text to test against regex... Contact support@sandford.ae or admin@devforge.io for queries.">Please reach out to alice.smith@example.com or bob_builder@workplace.org for API keys. Invalid: test@@domain.com</textarea>
+                    </div>
+                    <div class="pane">
+                        <label for="regex-matches-output">Matches & Capture Groups</label>
+                        <div id="regex-matches-output" class="rich-output-box"></div>
+                    </div>
+                </div>
+
+            </section>
 
         </main>
 
